@@ -1,0 +1,39 @@
+:root {
+	// --theme-trans: 800ms var(--easeInOut);
+	--theme-trans: 300ms ease-in-out;
+}
+
+body {
+	background-color: rgb(var(--bg-color));
+	color: rgb(var(--text-color));
+
+	will-change: color;
+	transition: background-color var(--theme-trans), color var(--theme-trans);
+	// transition: background-color var(--theme-trans);
+}
+
+footer .main-logo {
+	transition: filter var(--theme-trans);
+}
+
+a {
+	color: currentColor;
+	// color: rgb(var(--link-color), 80%);
+	// transition: color var(--theme-trans);
+
+	// &:hover {
+	// color: rgb(var(--link-color), 50%);
+	// color: color-mix(in srgb, currentColor 50%, transparent);
+	// }
+}
+
+.inline-svg {
+	&--fill {
+		fill: currentColor;
+		// transition: fill var(--theme-trans);
+	}
+	&--stroke {
+		stroke: currentColor;
+		// transition: stroke var(--theme-trans);
+	}
+}

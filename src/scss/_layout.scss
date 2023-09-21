@@ -1,0 +1,31 @@
+body::-webkit-scrollbar {
+	width: 0;
+}
+
+section:first-of-type:not(.pt-0) {
+	padding-top: var(--siteHeader-height);
+}
+
+// .container-fluid {
+// 	@include make-container(0);
+// }
+
+.container-narrow {
+	@extend .container;
+	@include media-breakpoint-up(md) {
+		max-width: 756px;
+	}
+}
+
+.container-wide {
+	@extend .container;
+	@include media-breakpoint-up(xxl) {
+		max-width: 1680px;
+	}
+}
+
+.navbar-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

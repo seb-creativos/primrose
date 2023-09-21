@@ -1,0 +1,95 @@
+/*
+Theme Name: Barbasap
+Theme URI: https://github.com/Blvcked/barbasap/tree/barbasap
+Author: Miles
+Author URI: https://youtu.be/xvFZjo5PgG0
+Description: Vite + Bootstrap + GSAP + Barba.js Overkill WordPress theme.
+Text Domain: barbasap
+Version: 1.2.0
+*/
+
+body {
+	--block-border-radius: 0.375rem;
+	--block-color: #fcfdff;
+	--border-color: #eee;
+}
+
+body.is-dark-theme {
+	--block-color: #24292f;
+	--border-color: #2d333b;
+	--text-color: #bbc8d4;
+}
+
+.block-editor-block-list__layout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.block-editor-block-list__layout.is-root-container {
+	gap: 4rem;
+}
+
+.block-editor-block-list__block:not(.editor-post-title),
+.mb-block-preview > .components-placeholder {
+	position: relative;
+	width: -webkit-fill-available;
+	margin: 0;
+	padding: 2rem;
+	border: 1px solid var(--border-color);
+	border-radius: var(--block-border-radius);
+	background-color: var(--block-color);
+	box-shadow: 0 0 40px -15px rgb(0, 0, 0, 10%);
+	color: var(--text-color);
+	overflow: hidden;
+}
+
+.block-editor-block-breadcrumb__button.components-button {
+	color: var(--text-color);
+}
+
+.block-editor-block-list__block:not(.editor-post-title)::before {
+	content: attr(data-title);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom-right-radius: 0.25rem;
+	padding: 0.125rem 0.75rem;
+	background-color: var(--wp-admin-theme-color);
+	color: #fff;
+	font-size: 0.75rem;
+	opacity: 0.2;
+	transition: opacity 300ms ease-out;
+}
+
+.block-editor-block-list__block:not(.editor-post-title):hover::before {
+	opacity: 1;
+}
+
+.block-editor-block-list__block:not(.editor-post-title):focus::after {
+	box-shadow: unset !important;
+	border-radius: var(--block-border-radius) !important;
+	border: 1px dashed var(--wp-admin-theme-color);
+}
+
+.mb-block-preview__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 0.625rem;
+}
+
+.mb-block-preview__grid img {
+	height: 20vh;
+	width: 100%;
+	object-fit: cover;
+}
+
+audio,
+video {
+	height: auto;
+}
+
+.edit-post-layout__metaboxes {
+	margin-top: 4.5rem;
+}

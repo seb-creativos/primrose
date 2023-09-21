@@ -1,0 +1,51 @@
+:root {
+	// Layout
+	--gutter: 1.875rem;
+	--gutter--half: calc(var(--gutter) * 0.5);
+	--gutter--twice: calc(var(--gutter) * 2);
+
+	// Z-Index
+	--layer--under: -99;
+	--layer--1: 10;
+	--layer--2: 20;
+	--layer--3: 30;
+	--layer--4: 40;
+	--layer--above-bs: 1100;
+	--layer--above-all: 1110;
+
+	// Eases
+	--easeInQuad: cubic-bezier(0.55, 0.08, 0.68, 0.53);
+	--easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--easeInOutQuad: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+	--easeIn: var(--easeInQuad);
+	--easeOut: var(--easeOutQuad);
+	--easeInOut: var(--easeInOutQuad);
+}
+
+body,
+button,
+a,
+label,
+.wsf-field {
+	cursor: none !important;
+}
+
+img,
+video {
+	height: auto;
+	max-width: 100%;
+}
+
+.is-internal {
+	.custom-logo-link {
+		pointer-events: none;
+	}
+}
+
+.is-external {
+	.if-is-external--hide,
+	#cmplz-cookiebanner-container {
+		display: none;
+	}
+}

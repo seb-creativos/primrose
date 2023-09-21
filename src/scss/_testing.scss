@@ -1,0 +1,128 @@
+.box,
+.circle,
+.triangle,
+.rombo,
+.star {
+	height: 20vh;
+	width: 20vh;
+	background-color: color-mix(in srgb, var(--shape-color) 50%, transparent);
+	// background-color: rgb(var(--shape-color), 50%);
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.triangle {
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	border-radius: 50%;
+}
+
+.rombo {
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.star {
+	clip-path: polygon(
+		50% 0%,
+		61% 35%,
+		98% 35%,
+		68% 57%,
+		79% 91%,
+		50% 70%,
+		21% 91%,
+		32% 57%,
+		2% 35%,
+		39% 35%
+	);
+}
+
+// .is--inview {
+// 	box-shadow: inset 0 0 100px 50px rgb(255, 0, 0, 40%);
+// 	filter: sepia(1);
+// }
+
+// section {
+// 	--debug-width: 1px;
+// 	--debug-style: solid;
+// 	--debug-color: var(--border-color);
+// 	border-top: var(--debug-width) var(--debug-style) var(--debug-color);
+// 	border-bottom: var(--debug-width) var(--debug-style) var(--debug-color);
+// }
+
+.cliplink {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+
+	&::after,
+	&__label {
+		transition: transform 800ms var(--easeOut) 150ms,
+			opacity 800ms var(--easeOut), clip-path 800ms var(--easeOut);
+	}
+
+	&::after {
+		content: attr(title);
+		position: absolute;
+		top: 0;
+
+		transform: translateY(100%);
+		opacity: 0;
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+	}
+
+	&__label {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+
+	&:hover {
+		&::after {
+			transform: unset;
+			opacity: 1;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		}
+
+		.cliplink__label {
+			transform: translateY(-100%);
+			opacity: 0;
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		}
+	}
+}
+
+.comparison {
+	height: 100vh;
+
+	&__wrapper,
+	&__wrapper--starter {
+		height: 100%;
+		width: 100%;
+	}
+
+	&__wrapper {
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+	}
+
+	&__image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+#quote {
+	text-wrap: balance;
+
+	.line__mask {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgb(var(--bg-color));
+		opacity: 0.8;
+	}
+}

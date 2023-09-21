@@ -1,0 +1,16 @@
+.glightbox-container {
+	z-index: var(--layer--above-bs) !important;
+}
+
+.goverlay {
+	background-color: rgb(var(--bg-color), 75%) !important;
+	backdrop-filter: blur(20px) saturate(150%);
+}
+
+@include media-breakpoint-up(md) {
+	.gslide:not(.zoomed) .gslide-media {
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 0 30px rgb(0 0 0 / 20%) !important;
+	}
+}

@@ -1,0 +1,84 @@
+@mixin bigger-hitbox($x: 2, $y: 2, $debug: false) {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform: scale($x, $y);
+		transform-origin: bottom right;
+
+		@if ($debug) {
+			background-color: rgba(#f00, 30%);
+		}
+	}
+}
+
+@mixin vertical-text {
+	@include media-breakpoint-up(md) {
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+	}
+}
+.vertical-text {
+	@include vertical-text;
+}
+
+@mixin object-cover {
+	object-fit: cover;
+}
+.object-cover {
+	@include object-cover;
+}
+
+@mixin text-balance {
+	text-wrap: balance;
+}
+.text-balance {
+	@include text-balance;
+}
+
+@mixin text-revert {
+	text-transform: revert;
+	letter-spacing: 0;
+}
+.text-revert {
+	@include text-revert;
+}
+
+@mixin reset-button {
+	border: unset;
+	padding: unset;
+	background: unset;
+	outline: unset;
+}
+.reset-button {
+	@include reset-button;
+}
+
+.center-items {
+	place-items: center;
+}
+.justify-items-center {
+	justify-items: center;
+}
+
+@mixin filter-blend($blend-mode: exclusion, $invert-percentage: false) {
+	mix-blend-mode: $blend-mode;
+	@if $invert-percentage {
+		filter: invert($invert-percentage);
+	}
+}
+
+.filter--exclusion {
+	@include filter-blend(exclusion);
+}
+
+.filter--overlay {
+	@include filter-blend(overlay);
+}
+
+.filter--plus-lighter--invert-half {
+	@include filter-blend(plus-lighter, 50%);
+}

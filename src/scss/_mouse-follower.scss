@@ -1,0 +1,33 @@
+// Default Styling
+.mf-cursor {
+	z-index: var(--layer--above-all);
+	mix-blend-mode: exclusion;
+}
+
+// Pointer Styling
+.mf-cursor.-pointer::before {
+	transform: scale(140%);
+}
+
+// Media Styling
+.mf-cursor.-media {
+	&::before {
+		transform: scale(0%);
+	}
+
+	// Adjust Media Size if Needed
+	.mf-cursor-media {
+		$height: 575px;
+		$width: 575px;
+		height: $height;
+		width: $width;
+		margin: (-$height * 0.5) 0 0 (-$width * 0.5);
+
+		// Change Border Radius if Needed
+		// &-box,
+		// img,
+		// video {
+		// 	border-radius: 0;
+		// }
+	}
+}

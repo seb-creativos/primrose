@@ -1,0 +1,15 @@
+.btn {
+	text-transform: uppercase;
+	letter-spacing: 0.075em;
+}
+
+.btn-link {
+	padding: 0;
+}
+
+.has-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	width: max-content;
+}

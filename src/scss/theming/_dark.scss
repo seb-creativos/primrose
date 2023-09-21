@@ -1,0 +1,10 @@
+:root {
+	color-scheme: dark;
+
+	--bg-color: var(--bs-dark-rgb);
+	--text-color: var(--bs-light-rgb);
+	--link-color: var(--text-color);
+
+	--loader-color: var(--bg-color);
+	--grid-color: var(--bs-light-rgb);
+}

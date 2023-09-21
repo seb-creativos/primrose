@@ -1,0 +1,71 @@
+@import "my-utilities";
+
+$enable-important-utilities: false;
+
+// #region COLORS
+$primary: #707070;
+
+$light: #f8f9fa;
+$dark: #222;
+
+$body-bg: $light;
+$body-color: $dark;
+// #endregion
+
+// #region TYPOGRAPHY
+$font-family-fallback: system-ui, -apple-system, "Segoe UI", Roboto,
+	"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-family-sans-serif: Lato, #{$font-family-fallback};
+$font-family-serif: $font-family-sans-serif;
+
+$font-size-base: 1rem;
+$font-weight-base: 300;
+$line-height-base: 1.875;
+$line-height-sm: 1.4;
+$paragraph-margin-bottom: 1.875rem;
+
+$headings-font-family: $font-family-serif;
+$headings-line-height: $line-height-sm;
+$headings-margin-bottom: 1em;
+
+@function get-font-size($size) {
+	@return map-get(map-get($my-utilities, "font-size"), "values", $size);
+}
+$h1-font-size: get-font-size(40);
+$h2-font-size: get-font-size(30);
+$h3-font-size: get-font-size(20);
+$h4-font-size: get-font-size(16);
+$h5-font-size: get-font-size(14);
+$h6-font-size: get-font-size(12);
+// #endregion
+
+// #region BUTTONS
+$link-decoration: none;
+$btn-transition: background-color var(--theme-trans), color var(--theme-trans);
+
+$btn-padding-x: 2.5rem;
+$btn-padding-y: 0.5rem;
+$btn-border-radius: 0;
+
+$btn-link-color: rgb(var(--link-color), 80%);
+$btn-link-hover-color: rgb(var(--link-color), 50%);
+$btn-link-disabled-color: rgb(var(--link-color), 20%);
+// #endregion
+
+// #region OFFCANVAS
+$offcanvas-horizontal-width: auto;
+$offcanvas-vertical-height: auto;
+$offcanvas-border-width: 0;
+$offcanvas-backdrop-opacity: 0;
+$offcanvas-bg-color: rgb(var(--bg-color), 60%);
+// #endregion
+
+// #region DROPDOWN
+$dropdown-link-color: rgb(var(--text-color), 50%);
+$dropdown-link-hover-color: rgb(var(--text-color));
+$dropdown-link-active-color: $dropdown-link-hover-color;
+$dropdown-link-hover-bg: unset;
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+// #endregion
