@@ -68,17 +68,21 @@ export default function betterOffcanvas() {
 		 * - When the Offcanvas is shown, GSAP's ScrollSmoother is paused.
 		 * - When the Offcanvas is hidden, ScrollSmoother is resumed.
 		 */
-		function shouldPauseScroll() {
-			return offcanvasElement.getAttribute("data-bs-scroll") === "false";
-		}
+		if (!ScrollTrigger.isTouch) {
+			function shouldPauseScroll() {
+				return (
+					offcanvasElement.getAttribute("data-bs-scroll") === "false"
+				);
+			}
 
-		if (shouldPauseScroll()) {
-			offcanvasElement.addEventListener("show.bs.offcanvas", () => {
-				ScrollSmoother.get().paused(true);
-			});
-			offcanvasElement.addEventListener("hide.bs.offcanvas", () => {
-				ScrollSmoother.get().paused(false);
-			});
+			if (shouldPauseScroll()) {
+				offcanvasElement.addEventListener("show.bs.offcanvas", () => {
+					ScrollSmoother.get().paused(true);
+				});
+				offcanvasElement.addEventListener("hide.bs.offcanvas", () => {
+					ScrollSmoother.get().paused(false);
+				});
+			}
 		}
 	});
 
