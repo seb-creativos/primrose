@@ -10,16 +10,19 @@
 <body <?= body_class() ?>>
 	
 	<!-- App Wrapper -->
-	<div id="siteWrapper" data-barba="wrapper">
+	<div id="appWrapper" data-barba="wrapper">
 
-		<!-- Loader -->
-		<?php get_template_part( 'templates/loader--fill-logo' ) ?>
+		<?php if( get_theme_mod( 'enable_loader', true ) ): ?>
+			<?php get_template_part( 'templates/loader--fill-logo' ) ?>
+		<?php endif ?>
 
-		<!-- Decoration Grid -->
-		<div id="siteGrid"></div>
-
-		<!-- Scroll Progress -->
-		<?php get_template_part( 'templates/scroll-progress' ) ?>
+		<?php if( get_theme_mod( 'enable_decoration-grid', true ) ): ?>
+			<div id="siteGrid"></div>
+		<?php endif ?>
+		
+		<?php if( get_theme_mod( 'enable_scroll-progress-indicator', true ) ): ?>
+			<?php get_template_part( 'templates/scroll-progress' ) ?>
+		<?php endif ?>
 
 		<!-- Header -->
 		<?php get_template_part( 'templates/header' ) ?>
@@ -31,8 +34,9 @@
 		<div id="smooth-wrapper">
 			<div id="smooth-content">
 
-				<!-- Decoration Noise -->
-				<div id="siteNoise"></div>
+				<?php if( get_theme_mod( 'enable_decoration-noise', true ) ): ?>
+					<div id="siteNoise"></div>
+				<?php endif ?>
 
 				<!-- App Content -->
 				<main 

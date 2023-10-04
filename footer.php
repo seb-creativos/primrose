@@ -15,7 +15,7 @@
 
 			</div> <!-- #smooth-content -->
 		</div> <!-- #smooth-wrapper -->
-	</div> <!-- #siteWrapper -->
+	</div> <!-- #appWrapper -->
 <?php wp_footer(); ?>
 </body>
 </html>
