@@ -20,8 +20,8 @@
 @import "mouse-follower";
 @import "~/glightbox/dist/css/glightbox.min.css";
 @import "lightbox";
-@import "wsform";
-@import "wsform--horizonte";
+@import "vendors/wsform/wsform";
+@import "vendors/wsform/wsform--project";
 @import "cmplz";
 @import "gdpr";
 
