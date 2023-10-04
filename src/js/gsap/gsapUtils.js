@@ -45,7 +45,6 @@ export function updateTriggers() {
 
 export function updateEffects() {
 	const smoother = ScrollSmoother.get();
-	// smoother.effects().forEach((effect) => effect.kill());
 	smoother.effects(`[data-speed], [data-lag]`);
 }
 

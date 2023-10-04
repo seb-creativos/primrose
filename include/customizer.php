@@ -19,12 +19,12 @@ function barbasap_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) );
 
-    // Scroll Progress
-    $wp_customize->add_setting( 'enable_scroll-progress-indicator', array(
+    // Decoration Filter
+    $wp_customize->add_setting( 'enable_decoration-filter', array(
         'default' => true,
     ) );
-    $wp_customize->add_control( 'enable_scroll-progress-indicator', array(
-        'label'    => __( 'Enable Scroll Progress Indicator', 'barbasap' ),
+    $wp_customize->add_control( 'enable_decoration-filter', array(
+        'label'    => __( 'Enable Decoration Filter', 'barbasap' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -48,6 +48,16 @@ function barbasap_customize_register( $wp_customize ) {
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
+
+    // Scroll Progress
+    $wp_customize->add_setting( 'enable_scroll-progress-indicator', array(
+        'default' => true,
+    ) );
+    $wp_customize->add_control( 'enable_scroll-progress-indicator', array(
+        'label'    => __( 'Enable Scroll Progress Indicator', 'barbasap' ),
+        'section'  => 'theme_settings',
+        'type'     => 'checkbox',
+    ) );
     
     // Map Settings
     $wp_customize->add_setting( 'map_api_key', [
@@ -58,4 +68,13 @@ function barbasap_customize_register( $wp_customize ) {
         'section'   => 'theme_settings',
         'label'     => __( 'Google Maps API Key', 'barbasap' ),
     ] );
+}
+
+// Push Classes to Body
+add_filter( 'body_class', 'push_body_classes' );
+function push_body_classes( $classes ) {
+    if( get_theme_mod( 'enable_decoration-grid', true ) ) {
+        $classes[] = 'decoration-grid--enabled';
+    }
+    return $classes;
 }

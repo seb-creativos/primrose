@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> data-theme="light">
+<html <?php language_attributes(); ?> data-theme="dark">
 <head>
 	<!-- Required Meta Tags -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,8 +16,8 @@
 			<?php get_template_part( 'templates/loader--fill-logo' ) ?>
 		<?php endif ?>
 
-		<?php if( get_theme_mod( 'enable_decoration-grid', true ) ): ?>
-			<div id="siteGrid"></div>
+		<?php if( get_theme_mod( 'enable_decoration-filter', true ) ): ?>
+			<div id="siteFilter"></div>
 		<?php endif ?>
 		
 		<?php if( get_theme_mod( 'enable_scroll-progress-indicator', true ) ): ?>

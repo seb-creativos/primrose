@@ -1,13 +1,15 @@
-section {
-	--debug-width: 1px;
-	--debug-style: solid;
-	--debug-color: var(--border-color);
-	border-top: var(--debug-width) var(--debug-style) var(--debug-color);
-	border-bottom: var(--debug-width) var(--debug-style) var(--debug-color);
-}
+.debug--enabled {
+	section {
+		--debug-width: 1px;
+		--debug-style: solid;
+		--debug-color: var(--border-color);
+		border-top: var(--debug-width) var(--debug-style) var(--debug-color);
+		border-bottom: var(--debug-width) var(--debug-style) var(--debug-color);
+	}
 
-.parallax__wrapper {
-	border: 5px solid red;
+	.parallax__wrapper {
+		border: 5px solid red;
+	}
 }
 
 #quote {

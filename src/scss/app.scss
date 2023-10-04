@@ -4,9 +4,10 @@
 @import "helpers/vars";
 
 @import "themes/light";
-// @import "themes/dark";
+@import "themes/dark";
 @import "themes/my-theme";
 
+@import "fonts";
 @import "typography";
 
 @import "layout/header";
@@ -21,6 +22,7 @@
 @import "components/buttons";
 @import "components/icons/hamburger-icon";
 @import "components/icons/plus-icon";
+@import "components/decoration-filter";
 @import "components/decoration-noise";
 @import "components/has-border";
 @import "components/has-gradient";
@@ -29,7 +31,6 @@
 @import "components/parallax";
 @import "components/scroll-progress";
 @import "components/strikewrap";
-@import "components/decoration-grid";
 @import "components/comparison";
 
 // @import "vendors/swiper";
