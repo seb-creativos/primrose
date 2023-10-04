@@ -40,13 +40,3 @@ $container-max-widths: (
 	lg: 960px,
 	xl: 1140px,
 );
-
-$theme-colors: map-remove(
-	$theme-colors,
-	"success",
-	"info",
-	"warning",
-	"danger"
-);
-$colors: ();
-$grays: ();

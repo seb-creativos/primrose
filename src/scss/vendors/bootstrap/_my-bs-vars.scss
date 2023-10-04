@@ -1,4 +1,4 @@
-@import "my-utilities";
+@import "my-bs-utils";
 
 $enable-important-utilities: false;
 
@@ -31,7 +31,7 @@ $headings-line-height: $line-height-sm;
 $headings-margin-bottom: 1em;
 
 @function get-font-size($size) {
-	@return map-get(map-get($my-utilities, "font-size"), "values", $size);
+	@return map-get(map-get($my-bs-utils, "font-size"), "values", $size);
 }
 $h1-font-size: get-font-size(40);
 $h2-font-size: get-font-size(30);
