@@ -12,7 +12,7 @@ import initGsapAOS from "./gsapAOS";
 export function initTriggers() {
 	// initGsapXScroll();
 	// initGsapThemeSwap();
-	// initGsapMarquee();
+	initGsapMarquee();
 	initGsapOdometer();
 	// initGsapSticker();
 	initGsapComparison();
