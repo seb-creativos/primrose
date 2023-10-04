@@ -4,11 +4,11 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $meta_boxes[] = [
 
 		// BLOCK
-        'title'     =>  'Seb Link',
+        'title'     =>  'Custom Link',
         'id'        =>  'link',
         'type'      =>  'block',
         'icon'      =>  'admin-links',
-        'category'  =>  'custom',
+        'category'  =>  'custom-components',
         'context'   =>  'center',
 
         // BLOCK PROPS

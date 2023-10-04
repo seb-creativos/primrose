@@ -4,11 +4,11 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $meta_boxes[] = [
 
 		// BLOCK
-        'title'     =>  'Seb Heading',
+        'title'     =>  'Custom Heading',
         'id'        =>  'heading',
         'type'      =>  'block',
         'icon'      =>  'heading',
-        'category'  =>  'custom',
+        'category'  =>  'custom-components',
         'context'   =>  'center',
 
         // BLOCK PROPS

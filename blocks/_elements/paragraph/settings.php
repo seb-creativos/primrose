@@ -4,11 +4,11 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $meta_boxes[] = [
 
 		// BLOCK
-        'title'     =>  'Seb Paragraph',
+        'title'     =>  'Custom Paragraph',
         'id'        =>  'paragraph',
         'type'      =>  'block',
         'icon'      =>  'editor-paragraph',
-        'category'  =>  'custom',
+        'category'  =>  'custom-components',
         'context'   =>  'center',
 
         // BLOCK PROPS

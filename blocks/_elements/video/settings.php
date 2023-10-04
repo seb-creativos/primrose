@@ -4,11 +4,11 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $meta_boxes[] = [
 
 		// BLOCK
-        'title'     => 'Seb Video',
+        'title'     => 'Custom Video',
         'id'        => 'video',
         'type'      => 'block',
         'icon'      => 'video-alt',
-        'category'  => 'custom',
+        'category'  => 'custom-components',
         'context'   => 'center',
 
         // BLOCK PROPS

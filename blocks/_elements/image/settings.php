@@ -4,11 +4,11 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $meta_boxes[] = [
 
 		// BLOCK
-        'title'     => 'Seb Image',
+        'title'     => 'Custom Image',
         'id'        => 'image',
         'type'      => 'block',
         'icon'      => 'format-image',
-        'category'  => 'custom',
+        'category'  => 'custom-components',
         'context'   => 'center',
 
         // BLOCK PROPS

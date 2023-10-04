@@ -8,7 +8,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
         'id'        => 'row',
         'type'      => 'block',
         'icon'      => 'layout',
-        'category'  => 'custom',
+        'category'  => 'custom-layout',
         'context'   => 'side',
 
         // BLOCK PROPS

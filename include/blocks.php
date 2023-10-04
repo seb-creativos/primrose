@@ -40,14 +40,25 @@ function better_gutenberg() {
 }
 
 // Custom Blocks Category
-add_filter( 'block_categories_all', 'custom_block_category', 10, 2);
-function custom_block_category( $categories, $post ) {
+add_filter( 'block_categories_all', 'custom_block_categories', 10, 2);
+function custom_block_categories( $categories, $post ) {
 	
-	array_unshift( $categories, array(
-		'slug'	=> 'custom',
-		'title' => 'Custom',
-	) );
-	return $categories;
+	$new_categories = array(
+		array(
+            'slug'	=> 'custom-layout',
+            'title' => 'Layout',
+        ),
+        array(
+            'slug'	=> 'custom-components',
+            'title' => 'Components',
+        ),
+        array(
+            'slug'	=> 'custom',
+            'title' => 'Custom',
+        )
+	);
+	
+	return array_merge( $new_categories, $categories );
 }
 
 // Add Patterns to Admin Column

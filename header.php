@@ -19,7 +19,7 @@
 		<div id="siteGrid"></div>
 
 		<!-- Scroll Progress -->
-		<?php // get_template_part( 'templates/scroll-progress' ) ?>
+		<?php get_template_part( 'templates/scroll-progress' ) ?>
 
 		<!-- Header -->
 		<?php get_template_part( 'templates/header' ) ?>
@@ -32,7 +32,7 @@
 			<div id="smooth-content">
 
 				<!-- Decoration Noise -->
-				<!-- <div id="siteNoise"></div> -->
+				<div id="siteNoise"></div>
 
 				<!-- App Content -->
 				<main 
