@@ -11,7 +11,7 @@ import initGsapAOS from "./gsapAOS";
 
 export function initTriggers() {
 	// initGsapXScroll();
-	// initGsapThemeSwap();
+	initGsapThemeSwap();
 	initGsapMarquee();
 	initGsapOdometer();
 	// initGsapSticker();
