@@ -1,0 +1,23 @@
+.dropdown-menu.show {
+	display: grid;
+}
+
+.navbar-nav .menu-item-has-children {
+	position: relative;
+
+	.dropdown-menu {
+		transform: unset !important;
+		top: 100% !important;
+	}
+}
+
+.menu-item-has-children {
+	.nav-link,
+	.dropdown-toggle {
+		vertical-align: middle;
+	}
+
+	.dropdown-toggle {
+		margin-left: 0.5rem;
+	}
+}

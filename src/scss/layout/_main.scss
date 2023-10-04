@@ -6,10 +6,6 @@ section:first-of-type:not(.pt-0) {
 	padding-top: var(--siteHeader-height);
 }
 
-// .container-fluid {
-// 	@include make-container(0);
-// }
-
 .container-narrow {
 	@extend .container;
 	@include media-breakpoint-up(md) {

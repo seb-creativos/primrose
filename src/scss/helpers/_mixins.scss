@@ -1,4 +1,5 @@
-@mixin bigger-hitbox($x: 2, $y: 2, $debug: false) {
+// Bigger Hitbox ==
+@mixin bigger-hitbox($scaleX: 2, $scaleY: 2, $debug: false) {
 	position: relative;
 
 	&::before {
@@ -6,7 +7,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		transform: scale($x, $y);
+		transform: scale($scaleX, $scaleY);
 		transform-origin: bottom right;
 
 		@if ($debug) {
@@ -14,24 +15,20 @@
 		}
 	}
 }
+.bigger-hitbox {
+	@include bigger-hitbox;
+}
 
+// Vertical Text ==
 @mixin vertical-text {
-	@include media-breakpoint-up(md) {
-		writing-mode: vertical-rl;
-		transform: rotate(180deg);
-	}
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
 }
 .vertical-text {
 	@include vertical-text;
 }
 
-@mixin object-cover {
-	object-fit: cover;
-}
-.object-cover {
-	@include object-cover;
-}
-
+// Text Balance ==
 @mixin text-balance {
 	text-wrap: balance;
 }
@@ -39,31 +36,18 @@
 	@include text-balance;
 }
 
-@mixin text-revert {
-	text-transform: revert;
-	letter-spacing: 0;
-}
-.text-revert {
-	@include text-revert;
-}
-
-@mixin reset-button {
+// Raw Button ==
+@mixin raw-btn {
 	border: unset;
 	padding: unset;
 	background: unset;
 	outline: unset;
 }
-.reset-button {
-	@include reset-button;
+.raw-btn {
+	@include raw-btn;
 }
 
-.center-items {
-	place-items: center;
-}
-.justify-items-center {
-	justify-items: center;
-}
-
+// Filtering ==
 @mixin filter-blend($blend-mode: exclusion, $invert-percentage: false) {
 	mix-blend-mode: $blend-mode;
 	@if $invert-percentage {

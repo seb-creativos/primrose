@@ -1,0 +1,30 @@
+.hz-scroll {
+	--section-height: 100vh;
+
+	&--portrait {
+		--item-height: 66vh;
+		--item-width: 30vmax;
+	}
+
+	&--landscape {
+		--item-height: 60vh;
+		--item-width: 60vmax;
+	}
+
+	height: var(--section-height);
+	display: flex;
+	align-items: center;
+	gap: 1.6vmax;
+
+	&__item {
+		height: var(--item-height);
+		min-width: var(--item-width);
+	}
+
+	&__annotation {
+		position: absolute;
+		top: calc((var(--section-height) - var(--item-height)) / 2);
+		right: 100%;
+		min-width: 230px;
+	}
+}

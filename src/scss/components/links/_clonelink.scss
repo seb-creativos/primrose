@@ -1,0 +1,33 @@
+.clonelink {
+	display: inline-flex;
+	width: max-content;
+
+	position: relative;
+	overflow: hidden;
+
+	&::after,
+	&__label {
+		display: flex;
+		transition: transform 500ms var(--easeOut);
+		// letter-spacing 500ms var(--easeOut);
+	}
+
+	&::after {
+		content: attr(alt);
+		position: absolute;
+		top: 0;
+		transform: translateY(100%);
+	}
+
+	&:hover {
+		&::after {
+			transform: unset;
+			// letter-spacing: -0.02em;
+		}
+
+		.clonelink__label {
+			transform: translateY(-100%);
+			// letter-spacing: 0.02em;
+		}
+	}
+}

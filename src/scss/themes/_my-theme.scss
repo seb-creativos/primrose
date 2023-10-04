@@ -29,10 +29,12 @@ a {
 
 .inline-svg {
 	&--fill {
+		color: initial;
 		fill: currentColor;
 		// transition: fill var(--theme-trans);
 	}
 	&--stroke {
+		color: initial;
 		stroke: currentColor;
 		// transition: stroke var(--theme-trans);
 	}

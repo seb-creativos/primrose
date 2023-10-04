@@ -1,36 +1,49 @@
 @import "vendors/bootstrap/my-bs";
-@import "mixins";
 
-@import "theming/light";
-// @import "theming/dark";
-@import "theming/my-theme";
+@import "helpers/mixins";
+@import "helpers/vars";
 
-@import "main";
+@import "themes/light";
+// @import "themes/dark";
+@import "themes/my-theme";
+
 @import "typography";
-@import "layout";
 
-@import "header";
-@import "footer";
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
 
-@import "components";
-@import "loader";
-// @import "scroll-progress";
-// @import "swiper";
+@import "components/loader";
+@import "components/gdpr";
+@import "components/offcanvas";
+@import "components/dropdown";
+@import "components/buttons";
+@import "components/icons/hamburger-icon";
+@import "components/icons/plus-icon";
+@import "components/decoration-noise";
+@import "components/has-border";
+@import "components/has-gradient";
+@import "components/has-shadow";
+@import "components/hzscroll";
+@import "components/marquee";
+@import "components/parallax";
+@import "components/scroll-progress";
+@import "components/strikewrap";
+@import "components/decoration-grid";
+@import "components/comparison";
+
+// @import "vendors/swiper";
+@import "vendors/cmplz";
+@import "vendors/odometer";
+
 @import "~/mouse-follower/src/scss/index";
-@import "mouse-follower";
-@import "~/glightbox/dist/css/glightbox.min.css";
-@import "lightbox";
-@import "vendors/wsform/wsform";
-@import "vendors/wsform/wsform--project";
-@import "cmplz";
-@import "gdpr";
+@import "vendors/mouse-follower";
 
-@import "odometer";
-@import "offcanvas";
-@import "dropdown";
-@import "buttons";
-@import "icons/hamburger-icon";
-@import "icons/plus-icon";
+@import "~/glightbox/dist/css/glightbox.min.css";
+@import "vendors/lightbox";
+
+@import "vendors/wsform/wsform";
+@import "vendors/wsform/wsform--custom";
 
 @import "admin";
-@import "testing";
+@import "wip";

@@ -1,0 +1,15 @@
+.marquee {
+	&__track {
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	&__text {
+		&::before {
+			content: "\00A0"; // &nbsp;
+		}
+		&::after {
+			content: "\2014"; // &mdash;
+		}
+	}
+}

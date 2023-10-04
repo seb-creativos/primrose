@@ -1,0 +1,35 @@
+section {
+	--debug-width: 1px;
+	--debug-style: solid;
+	--debug-color: var(--border-color);
+	border-top: var(--debug-width) var(--debug-style) var(--debug-color);
+	border-bottom: var(--debug-width) var(--debug-style) var(--debug-color);
+}
+
+.parallax__wrapper {
+	border: 5px solid red;
+}
+
+#quote {
+	text-wrap: balance;
+
+	.line__mask {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgb(var(--bg-color));
+		opacity: 0.8;
+	}
+}
+
+// Reveal
+.reveal__container {
+	overflow: hidden;
+}
+
+.map {
+	height: clamp(400px, 50vh, 600px);
+}

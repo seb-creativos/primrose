@@ -1,0 +1,21 @@
+.comparison {
+	height: 100vh;
+
+	&__wrapper,
+	&__wrapper--starter {
+		height: 100%;
+		width: 100%;
+	}
+
+	&__wrapper {
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+	}
+
+	&__image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}

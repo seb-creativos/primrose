@@ -16,7 +16,7 @@
 		height: var(--line-stroke);
 		margin-top: calc(var(--line-stroke) / -2);
 		width: 100%;
-		background-color: currentColor;
+		background-color: rgb(var(--text-color));
 		transition: transform 600ms var(--easeOut);
 
 		&:first-of-type {

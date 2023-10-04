@@ -1,0 +1,27 @@
+#siteGrid {
+	position: fixed;
+	z-index: var(--layer--2);
+	pointer-events: none;
+	height: 100%;
+	width: 100%;
+
+	// background-image: linear-gradient(
+	// 		rgb(var(--grid-color)) 1px,
+	// 		transparent 1px
+	// 	),
+	// 	linear-gradient(90deg, rgb(var(--grid-color)) 1px, transparent 1px);
+	// background-size: 20vw 50vh;
+	// background-position: -0.5px -0.5px, -0.5px -0.5px;
+
+	mix-blend-mode: overlay;
+	// mix-blend-mode: soft-light;
+	// backdrop-filter: saturate(115%);
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(#000, 0.5);
+	}
+}
