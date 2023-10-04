@@ -79,10 +79,10 @@ function windowLoad() {
 window.addEventListener(`load`, windowLoad, false);
 
 // WINDOW Scroll
-// function windowScroll() {
-// getScrollProgress();
-// }
-// window.addEventListener(`scroll`, windowScroll, { passive: true });
+function windowScroll() {
+	getScrollProgress();
+}
+window.addEventListener(`scroll`, windowScroll, { passive: true });
 
 // DOC Move
 function mouseMove(e) {
