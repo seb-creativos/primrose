@@ -13,7 +13,7 @@ function gsapMarquee(track) {
 	// and animates the xPercent in a loop to make it appear to roll across the screen.
 	function roll(
 		targets,
-		vars = { ease: "none", duration: 3 },
+		vars = { ease: "none", duration: 4 },
 		reverse = false
 	) {
 		const tl = gsap.timeline({
