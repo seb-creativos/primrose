@@ -4,9 +4,8 @@ export default function initGsapMarquee() {
 	const marquees = document.querySelectorAll(".marquee__track");
 
 	marquees.forEach((marquee) => {
-		const content = marquee.querySelector(".marquee__content");
-		if (!content)
-			return console.error(".marquee__content element not found");
+		const content = marquee.querySelector(".marquee__item");
+		if (!content) return console.error(".marquee__item element not found");
 
 		// Get the width of the content
 		const contentWidth = content.offsetWidth;

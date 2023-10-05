@@ -3,13 +3,14 @@
 		display: flex;
 	}
 
-	&__content {
+	&__item {
 		white-space: nowrap;
 		line-height: 1;
+		margin-bottom: 0;
 
 		&::after {
-			padding: 0 0.4em;
-			content: "←";
+			padding-inline-start: 0.2em;
+			padding-inline-end: 0.4em;
 			content: "↑";
 			content: "↓";
 			content: "↔";
@@ -19,6 +20,12 @@
 			content: "↘";
 			content: "↙";
 			content: "—";
+		}
+
+		&--left-arrow::after {
+			content: "←";
+		}
+		&--right-arrow::after {
 			content: "→";
 		}
 	}
