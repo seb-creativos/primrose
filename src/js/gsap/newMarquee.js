@@ -1,3 +1,5 @@
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function initMarquees() {
 	const marquees = document.querySelectorAll(".marquee__track");
 
@@ -7,8 +9,8 @@ export default function initMarquees() {
 
 		const contentWidth = content.offsetWidth;
 		const repeats = Math.ceil(window.innerWidth / contentWidth);
-		const direction = marquee.dataset.direction === "right" ? 1 : -1;
-		const speed = parseFloat(marquee.dataset.velocity) || 1;
+		let velocity = parseFloat(marquee.dataset.velocity) || 1;
+		let direction = marquee.dataset.direction === "right" ? 1 : -1;
 		let position = direction === 1 ? -contentWidth : 0;
 
 		// Clone and append the content for the necessary repeats
@@ -17,9 +19,7 @@ export default function initMarquees() {
 		);
 
 		function moveMarquee() {
-			position += direction * speed;
-
-			// Reset position based on direction
+			position += direction * velocity;
 			position =
 				direction === 1 && position >= 0
 					? -contentWidth
@@ -32,5 +32,27 @@ export default function initMarquees() {
 		}
 
 		moveMarquee();
+
+		// Create a ScrollTrigger for the marquee track
+		// ScrollTrigger.create({
+		// 	markers: true,
+		// 	trigger: marquee,
+
+		// 	onUpdate(self) {
+		// 		let scrollVelocity = self.getVelocity() / 200;
+		// 		scrollVelocity = Math.abs(scrollVelocity);
+
+		// 		if (self.direction === 1) {
+		// 			direction = marquee.dataset.direction === "right" ? 1 : -1;
+		// 		} else {
+		// 			direction = marquee.dataset.direction === "right" ? -1 : 1;
+		// 		}
+
+		// 		velocity =
+		// 			scrollVelocity > 0
+		// 				? Math.max(scrollVelocity, 0.5)
+		// 				: Math.min(scrollVelocity, -0.5);
+		// 	},
+		// });
 	});
 }
