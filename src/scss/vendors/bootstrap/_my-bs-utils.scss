@@ -91,4 +91,31 @@ $my-bs-utils: (
 			100: 100%,
 		),
 	),
+	"rotate": (
+		property: rotate,
+		responsive: false,
+		values: (
+			2: 2deg,
+			4: 4deg,
+			6: 6deg,
+			8: 8deg,
+			10: 10deg,
+			12: 12deg,
+			14: 14deg,
+			16: 16deg,
+			18: 18deg,
+			20: 20deg,
+		),
+	),
+	"scale": (
+		property: scale,
+		responsive: false,
+		values: (
+			110: 110%,
+			120: 120%,
+			130: 130%,
+			140: 140%,
+			150: 150%,
+		),
+	),
 );
