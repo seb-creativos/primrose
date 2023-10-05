@@ -59,19 +59,20 @@ function documentReady() {
 	getHeight("#siteHeader", "#siteNavbar", "#siteFooter");
 
 	initGsap();
-	initTriggers();
 	// initSwipers();
 	initVideos();
 	if (!ScrollTrigger.isTouch) initMouseFollower();
 
 	anchorSetupListeners();
 
-	// new FPSMeter();
+	new FPSMeter();
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
 // WINDOW Load
 function windowLoad() {
+	initTriggers();
+
 	initGLightbox();
 	initMaps();
 	betterOffcanvas();
