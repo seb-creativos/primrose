@@ -1,15 +1,25 @@
 .marquee {
 	&__track {
-		white-space: nowrap;
-		overflow: hidden;
+		display: flex;
 	}
 
-	&__text {
-		&::before {
-			content: "\00A0"; // &nbsp;
-		}
+	&__content {
+		white-space: nowrap;
+		line-height: 1;
+
 		&::after {
-			content: "\2014"; // &mdash;
+			padding: 0 0.4em;
+			content: "←";
+			content: "↑";
+			content: "↓";
+			content: "↔";
+			content: "↕";
+			content: "↖";
+			content: "↗";
+			content: "↘";
+			content: "↙";
+			content: "—";
+			content: "→";
 		}
 	}
 }

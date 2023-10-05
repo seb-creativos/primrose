@@ -10,9 +10,10 @@ import initGsapComparison from "./gsapComparison";
 import initGsapAOS from "./gsapAOS";
 
 export function initTriggers() {
-	// initGsapXScroll();
-	initGsapThemeSwap();
 	initGsapMarquee();
+	initGsapThemeSwap();
+	// initGsapXScroll();
+
 	initGsapOdometer();
 	// initGsapSticker();
 	initGsapComparison();

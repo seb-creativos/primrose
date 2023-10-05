@@ -1,114 +1,77 @@
-import { gsap, ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function initGsapMarquee() {
-	gsap.utils.toArray(".marquee__track").forEach(gsapMarquee);
-}
+	const marquees = document.querySelectorAll(".marquee__track");
 
-function gsapMarquee(track) {
-	const marqueeTrack = track;
-	const marqueeText = track.querySelectorAll(".marquee__text");
-	const rolled = roll(marqueeText);
+	marquees.forEach((marquee) => {
+		const content = marquee.querySelector(".marquee__content");
+		if (!content)
+			return console.error(".marquee__content element not found");
 
-	// Helper function that clones the targets, places them next to the original,
-	// and animates the xPercent in a loop to make it appear to roll across the screen.
-	function roll(
-		targets,
-		vars = { ease: "none", duration: 4 },
-		reverse = false
-	) {
-		const tl = gsap.timeline({
-			repeat: -1,
-			onReverseComplete() {
-				this.totalTime(this.rawTime() + this.duration() * 10);
-			},
-		});
+		// Get the width of the content
+		const contentWidth = content.offsetWidth;
+		// Calculate how many times to repeat the content based on screen width
+		const repeats = Math.ceil(window.innerWidth / contentWidth);
+		// Get the velocity from the dataset, or set it to 1 as default
+		let originalVelocity = parseFloat(marquee.dataset.velocity) || 1;
+		let velocity = originalVelocity;
+		// Determine the direction based on the dataset, either 1 (right) or -1 (left)
+		let direction = marquee.dataset.direction === "right" ? 1 : -1;
+		// Initial position for translation; dependent on the direction
+		let position = direction === 1 ? -contentWidth : 0;
 
-		let clones = [];
-
-		// Positions the clones relative to the originals
-		const positionClones = () => {
-			clones.forEach((clone, i) =>
-				gsap.set(clone, {
-					position: "absolute",
-					overwrite: false,
-					top: targets[0].offsetTop,
-					left:
-						targets[0].offsetLeft +
-						(reverse
-							? -targets[0].offsetWidth
-							: targets[0].offsetWidth) *
-							(i + 1),
-				})
-			);
-		};
-
-		const createClones = () => {
-			const marqueeWidth = marqueeTrack.offsetWidth;
-			const textWidth = targets[0].offsetWidth;
-			const numClones = Math.ceil(marqueeWidth / textWidth);
-
-			clones.forEach((clone) => clone.remove());
-			clones = [];
-
-			for (let i = 0; i < numClones; i++) {
-				const clone = targets[0].cloneNode(true);
-				targets[0].parentNode.appendChild(clone);
-				clones.push(clone);
-			}
-
-			positionClones();
-		};
-
-		createClones();
-
-		targets.forEach((el, i) =>
-			tl.to(
-				[el, ...clones],
-				{ xPercent: reverse ? 100 : -100, ...vars },
-				0
-			)
+		// Clone and append the content for the necessary number of repeats
+		Array.from({ length: repeats }, () => content.cloneNode(true)).forEach(
+			(clone) => marquee.appendChild(clone)
 		);
 
-		window.addEventListener("resize", () => {
-			resetTimeline(tl);
-			createClones();
+		const moveMarquee = () => {
+			// Increment position by direction times velocity
+			position += direction * velocity;
+			// Reset the position based on direction when it reaches either end
+			position =
+				direction === 1 && position >= 0
+					? -contentWidth
+					: direction === -1 && -position >= contentWidth
+					? 0
+					: position;
+
+			// Apply the new position to the element's transform property
+			marquee.style.transform = `translateX(${position}px)`;
+			// Call the function again on the next animation frame
+			requestAnimationFrame(moveMarquee);
+		};
+		moveMarquee();
+
+		// Flag to identify the first run of ScrollTrigger's onUpdate
+		let isFirstRun = true;
+		// Create a ScrollTrigger to update velocity and direction based on scroll
+		ScrollTrigger.create({
+			trigger: marquee,
+
+			onUpdate(self) {
+				// Skip the first run of the callback
+				if (isFirstRun) {
+					isFirstRun = false;
+					return;
+				}
+
+				// Calculate the absolute velocity of scrolling
+				const scrollVelocity = Math.abs(self.getVelocity() / 200);
+
+				// Update direction based on the scroll direction
+				direction =
+					self.direction === 1
+						? marquee.dataset.direction === "right"
+							? 1
+							: -1
+						: marquee.dataset.direction === "right"
+						? -1
+						: 1;
+
+				// Update velocity based on scroll velocity
+				velocity = Math.max(scrollVelocity, 1) * originalVelocity;
+			},
 		});
-
-		return tl;
-	}
-
-	// Resets the timeline and repositions the clones on window resize
-	function resetTimeline(timeline) {
-		const time = timeline.totalTime();
-		timeline.totalTime(0);
-		positionClones();
-		timeline.totalTime(time);
-	}
-
-	// Creates a ScrollTrigger for the marquee track
-	ScrollTrigger.create({
-		trigger: marqueeTrack,
-		// markers: true,
-		start: "top bottom",
-		end: "bottom top",
-
-		onUpdate(self) {
-			// Calculate the scroll velocity and adjust the animation speed
-			let scrollVelocity = self.getVelocity() / 200;
-			scrollVelocity =
-				scrollVelocity > 0
-					? Math.max(scrollVelocity, 0.5)
-					: Math.min(scrollVelocity, -0.5);
-
-			gsap.timeline({
-				defaults: {
-					ease: "none",
-					duration: 0,
-				},
-			}).to([rolled], {
-				timeScale: scrollVelocity,
-				overwrite: true,
-			});
-		},
 	});
 }
