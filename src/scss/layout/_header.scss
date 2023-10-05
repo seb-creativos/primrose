@@ -8,6 +8,8 @@
 	backdrop-filter: blur(18px) saturate(150%);
 	box-shadow: 0 0 40px rgb(0 0 0 / 5%);
 
+	transition: background-color var(--theme-trans);
+
 	// will-change: transform;
 	// transition: transform 500ms var(--easeOut), opacity 500ms var(--easeOut);
 }
