@@ -32,6 +32,10 @@ export default function initGsapAOS() {
 			},
 		},
 
+		"fade-in": {
+			origin: { opacity: 0 },
+			target: { opacity: 1 },
+		},
 		"fade-up": {
 			origin: { opacity: 0, y: 50 },
 			target: { opacity: 1, y: 0 },
@@ -49,39 +53,43 @@ export default function initGsapAOS() {
 			target: { opacity: 1, scale: 1 },
 		},
 
-		"clip-up": {
+		"clip-top": {
 			origin: {
 				opacity: 0,
-				y: 50,
 				clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
 			},
 			target: {
 				opacity: 1,
-				y: 0,
 				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+			},
+		},
+		"clip-bottom": {
+			origin: {
+				opacity: 0,
+				clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+			},
+			target: {
+				opacity: 1,
+				clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
 			},
 		},
 		"clip-left": {
 			origin: {
 				opacity: 0,
-				y: 50,
 				clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
 			},
 			target: {
 				opacity: 1,
-				y: 0,
 				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 			},
 		},
 		"clip-right": {
 			origin: {
 				opacity: 0,
-				y: 50,
 				clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
 			},
 			target: {
 				opacity: 1,
-				y: 0,
 				clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 			},
 		},
