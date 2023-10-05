@@ -3,28 +3,30 @@ export default function initMarquees() {
 
 	marquees.forEach((marquee) => {
 		const content = marquee.querySelector(".marquee__content");
-
-		if (!marquee || !content) {
-			console.error("Element not found");
-			return;
-		}
+		if (!content) return console.error("Element not found");
 
 		const contentWidth = content.offsetWidth;
-		const viewportWidth = window.innerWidth;
-		const repeats = Math.ceil(viewportWidth / contentWidth);
+		const repeats = Math.ceil(window.innerWidth / contentWidth);
+		const direction = marquee.dataset.direction === "right" ? 1 : -1;
+		const speed = parseFloat(marquee.dataset.velocity) || 1;
+		let position = direction === 1 ? -contentWidth : 0;
 
-		for (let i = 0; i < repeats; i++) {
-			const clone = content.cloneNode(true);
-			marquee.appendChild(clone);
-		}
-
-		let position = 0;
+		// Clone and append the content for the necessary repeats
+		Array.from({ length: repeats }, () => content.cloneNode(true)).forEach(
+			(clone) => marquee.appendChild(clone)
+		);
 
 		function moveMarquee() {
-			position -= 1;
-			if (-position >= contentWidth) {
-				position = 0;
-			}
+			position += direction * speed;
+
+			// Reset position based on direction
+			position =
+				direction === 1 && position >= 0
+					? -contentWidth
+					: direction === -1 && -position >= contentWidth
+					? 0
+					: position;
+
 			marquee.style.transform = `translateX(${position}px)`;
 			requestAnimationFrame(moveMarquee);
 		}
