@@ -15,7 +15,7 @@ export function initTriggers() {
 	// initGsapXScroll();
 
 	initGsapOdometer();
-	// initGsapSticker();
+	initGsapSticker();
 	initGsapComparison();
 
 	if (!ScrollTrigger.isTouch) initGsapAOS(), initGsapReveal();

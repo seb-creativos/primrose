@@ -2,7 +2,7 @@ import { gsap, ScrollTrigger } from "gsap/all";
 
 export default function initGsapSticker() {
 	function gsapSticker(section) {
-		const element = gsap.utils.toArray(".sticky__target", section);
+		const element = gsap.utils.toArray(".sticky__item", section);
 
 		ScrollTrigger.create({
 			// markers: true,
@@ -33,6 +33,6 @@ export default function initGsapSticker() {
 		});
 	}
 	gsap.utils
-		.toArray(".sticky__container")
+		.toArray(".sticky__track")
 		.forEach((section) => gsapSticker(section));
 }
