@@ -1,13 +1,7 @@
-import { clipAnimations } from "./clip";
-import { fadeAnimations } from "./fade";
-import { splitAnimations } from "./split";
-import { zoomAnimations } from "./zoom";
+const animationModules = import.meta.globEager("./*.js");
 
-const gsapAnimations = {
-	...clipAnimations,
-	...fadeAnimations,
-	...splitAnimations,
-	...zoomAnimations,
-};
+const gsapAnimations = Object.values(animationModules).reduce((acc, mod) => {
+	return { ...acc, ...mod.default };
+}, {});
 
 export default gsapAnimations;

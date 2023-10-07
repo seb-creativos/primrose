@@ -1,3 +1,7 @@
-export { fadeOut, fadeIn } from "./fade";
-export { slideInFromLeft, slideOutToRight } from "./slide";
-export { zoomOut, zoomIn } from "./zoom";
+const animationModules = import.meta.globEager("./*.js");
+
+const barbaAnimations = Object.values(animationModules).reduce((acc, mod) => {
+	return { ...acc, ...mod };
+}, {});
+
+export default barbaAnimations;

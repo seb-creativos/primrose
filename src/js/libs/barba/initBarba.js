@@ -1,7 +1,7 @@
 import barba from "@barba/core";
 import barbaPrefetch from "@barba/prefetch";
 
-import { fadeOut, fadeIn } from "./animations/animationsIndex";
+import barbaAnimations from "./animations/animationsIndex";
 
 barba.use(barbaPrefetch);
 
@@ -20,9 +20,10 @@ export default function initBarba() {
 				// once({ next }) {
 				// 	animationFadeIn(next.container);
 				// },
-				leave: ({ current }) => fadeOut(current.container),
+				leave: ({ current }) =>
+					barbaAnimations.fadeOut(current.container),
 				enter({ next }) {
-					fadeIn(next.container);
+					barbaAnimations.fadeIn(next.container);
 				},
 			},
 			// Slide In from Left and Slide Out to Right transition
