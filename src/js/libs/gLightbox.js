@@ -1,4 +1,5 @@
 import GLightbox from "glightbox";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 /**
  * Initializes a GLightbox gallery.
@@ -21,6 +22,23 @@ export default function initGLightbox() {
 		openEffect: "fade",
 		closeEffect: "fade",
 		slideEffect: "fade",
+
+		onOpen: () => {
+			ScrollSmoother.get().paused(true);
+
+			const wheelHandler = (e) => {
+				e.deltaY > 0 ? lightbox.nextSlide() : lightbox.prevSlide();
+			};
+
+			document.addEventListener("wheel", wheelHandler);
+			lightbox.on("close", () => {
+				document.removeEventListener("wheel", wheelHandler);
+			});
+		},
+
+		onClose: () => {
+			ScrollSmoother.get().paused(false);
+		},
 	});
 
 	// Open Gallery Externally
