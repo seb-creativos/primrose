@@ -34,8 +34,13 @@ import {
 // Swiper
 // import { initSwipers } from "./swiper/initSwipers";
 
+// Mouse Follower
+import initMouseFollower from "./vendors/mouseFollower";
+
+// GLightbox
+import initGLightbox from "./vendors/gLightbox";
+
 // Utilities
-import initMouseFollower from "./utils/mouseFollower";
 import getHeight from "./utils/getHeight";
 import initVideos from "./utils/initVideos";
 import initMaps from "./utils/initMaps";
@@ -48,7 +53,6 @@ import {
 	anchorExecuteExternal,
 } from "./utils/anchorsManager";
 import FPSMeter from "./utils/fpsMeter.js";
-import initGLightbox from "./utils/initGLightbox";
 
 // ======================
 // EVENT LISTENERS
