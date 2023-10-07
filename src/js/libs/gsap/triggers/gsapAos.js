@@ -15,7 +15,7 @@ export default function initGsapAos() {
 		let delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
 		let start = el.getAttribute("data-aos-start") || "top bottom";
 		let end = el.getAttribute("data-aos-end") || "center center";
-		let scrub = el.getAttribute("data-aos-scrub") === "true";
+		let scrub = el.hasAttribute("data-aos-scrub");
 		let split;
 		let splitType = el.getAttribute("data-aos-split") || "words";
 		let splitStagger =

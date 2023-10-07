@@ -12,17 +12,17 @@ export default {
 	"clip-down": {
 		origin: {
 			opacity: 0,
-			clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+			clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
 		},
 		target: {
 			opacity: 1,
-			clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+			clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
 		},
 	},
 	"clip-left": {
 		origin: {
 			opacity: 0,
-			clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+			clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
 		},
 		target: {
 			opacity: 1,
@@ -32,7 +32,7 @@ export default {
 	"clip-right": {
 		origin: {
 			opacity: 0,
-			clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+			clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
 		},
 		target: {
 			opacity: 1,
