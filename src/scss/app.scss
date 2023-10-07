@@ -1,4 +1,4 @@
-@import "vendors/bootstrap/my-bs";
+@import "libs/bootstrap/my-bs";
 
 @import "helpers/mixins";
 @import "helpers/vars";
@@ -33,18 +33,18 @@
 @import "components/comparison";
 @import "components/has-glass";
 
-// @import "vendors/swiper";
-@import "vendors/cmplz";
-@import "vendors/odometer";
+// @import "libs/swiper";
+@import "libs/cmplz";
+@import "libs/odometer";
 
 @import "~/mouse-follower/src/scss/index";
-@import "vendors/mouse-follower";
+@import "libs/mouse-follower";
 
 @import "~/glightbox/dist/css/glightbox.min.css";
-@import "vendors/glightbox";
+@import "libs/glightbox";
 
-@import "vendors/wsform/wsform";
-@import "vendors/wsform/wsform--custom";
+@import "libs/wsform/wsform";
+@import "libs/wsform/wsform--custom";
 
 @import "admin";
 @import "wip";

@@ -1,7 +1,7 @@
 @import "my-bs-utils";
 
 $enable-important-utilities: false;
-$enable-negative-margins: true;
+// $enable-negative-margins: true;
 
 // #region COLORS
 $primary: #707070;
@@ -12,22 +12,21 @@ $body-color: $dark;
 // #endregion
 
 // #region TYPOGRAPHY
-$font-family-fallback: system-ui, -apple-system, "Segoe UI", Roboto,
-	"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-fallback: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+	sans-serif;
 
 $font-family-sans-serif: "PP Neue Montreal", #{$font-family-fallback};
 $font-family-serif: "Iskry", #{$font-family-fallback};
 
 $font-size-base: 1rem;
-$font-weight-base: 300;
+$font-weight-base: 400;
 $line-height-base: 1.875;
-$line-height-sm: 1.4;
-$paragraph-margin-bottom: 1.875rem;
+$paragraph-margin-bottom: 1em;
 
 $headings-font-family: $font-family-serif;
-$headings-line-height: $line-height-sm;
-$headings-margin-bottom: 1em;
+$headings-font-weight: $font-weight-base;
+$headings-line-height: 1.2;
+$headings-margin-bottom: 0.3em;
 
 @function get-font-size($size) {
 	@return map-get(map-get($my-bs-utils, "font-size"), "values", $size);

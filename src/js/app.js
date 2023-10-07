@@ -16,29 +16,29 @@ import "../scss/app.scss";
 
 // Barba
 import barba from "@barba/core";
-import initBarba from "./vendors/barba/initBarba";
+import initBarba from "./libs/barba/initBarba";
 // import barbaBackButton from "./barba/barbaBackButton";
 
 // GSAP
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import initGsap from "./vendors/gsap/initGsap";
-import initTriggers from "./vendors/gsap/initTriggers";
+import initGsap from "./libs/gsap/initGsap";
+import initTriggers from "./libs/gsap/initTriggers";
 import {
 	killTriggers,
 	// refreshTriggers,
 	updateTriggers,
 	updateEffects,
 	scrollTo,
-} from "./vendors/gsap/gsapUtils";
+} from "./libs/gsap/gsapUtils";
 
 // Swiper
 // import { initSwipers } from "./swiper/initSwipers";
 
 // Mouse Follower
-import initMouseFollower from "./vendors/mouseFollower";
+import initMouseFollower from "./libs/mouseFollower";
 
 // GLightbox
-import initGLightbox from "./vendors/gLightbox";
+import initGLightbox from "./libs/gLightbox";
 
 // Utilities
 import getHeight from "./utils/getHeight";

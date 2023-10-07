@@ -65,11 +65,11 @@ $my-bs-utils: (
 	),
 	"aspect-ratio": (
 		property: aspect-ratio,
-		class: ar,
+		class: ratio,
 		responsive: true,
 		values: (
 			auto: auto,
-			1x1: 1,
+			1: 1,
 			4x3: calc(4 / 3),
 			3x4: calc(3 / 4),
 			16x9: calc(16 / 9),
@@ -132,9 +132,11 @@ $my-bs-utils: (
 		class: ls,
 		responsive: false,
 		values: (
-			05: 0.05em,
-			1: 0.1em,
-			2: 0.2em,
+			2: 0.02em,
+			5: 0.05em,
+			10: 0.1em,
+			15: 0.15em,
+			20: 0.2em,
 		),
 	),
 );
