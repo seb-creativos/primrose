@@ -1,4 +1,4 @@
-export const zoomAnimations = {
+export default {
 	"zoom-in": {
 		origin: { opacity: 0, scale: 0.8 },
 		target: { opacity: 1, scale: 1 },

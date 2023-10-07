@@ -1,4 +1,4 @@
-export const splitAnimations = {
+export default {
 	"split-text": {
 		origin: { opacity: 0 },
 		target: { opacity: 1 },

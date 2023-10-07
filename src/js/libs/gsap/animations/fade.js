@@ -1,4 +1,4 @@
-export const fadeAnimations = {
+export default {
 	"fade-in": {
 		origin: { opacity: 0 },
 		target: { opacity: 1 },

@@ -1,4 +1,4 @@
-export const clipAnimations = {
+export default {
 	"clip-up": {
 		origin: {
 			opacity: 0,
