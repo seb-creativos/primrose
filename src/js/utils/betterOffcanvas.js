@@ -44,7 +44,7 @@ export default function betterOffcanvas() {
 		 *   2. It has the attribute 'target="_blank"'.
 		 * - The protocols to be ignored are stored in an array called 'ignoredProtocols'.
 		 */
-		document.querySelectorAll("a").forEach((link) => {
+		offcanvasElement.querySelectorAll("a").forEach((link) => {
 			link.addEventListener("click", (e) => {
 				const href = e.currentTarget.getAttribute("href");
 				const isTargetBlank =
