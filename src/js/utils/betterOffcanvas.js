@@ -77,7 +77,9 @@ export default function betterOffcanvas() {
 
 			if (shouldPauseScroll()) {
 				offcanvasElement.addEventListener("show.bs.offcanvas", () => {
-					ScrollSmoother.get().paused(true);
+					setTimeout(() => {
+						ScrollSmoother.get().paused(true);
+					}, 600);
 				});
 				offcanvasElement.addEventListener("hide.bs.offcanvas", () => {
 					ScrollSmoother.get().paused(false);

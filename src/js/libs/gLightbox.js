@@ -24,7 +24,9 @@ export default function initGLightbox() {
 		slideEffect: "fade",
 
 		onOpen: () => {
-			ScrollSmoother.get().paused(true);
+			setTimeout(() => {
+				ScrollSmoother.get().paused(true);
+			}, 600);
 
 			const wheelHandler = (e) => {
 				e.deltaY > 0 ? lightbox.nextSlide() : lightbox.prevSlide();
