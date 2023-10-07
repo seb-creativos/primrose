@@ -1,7 +1,7 @@
 import barba from "@barba/core";
 import barbaPrefetch from "@barba/prefetch";
 
-import { fadeOut, fadeIn } from "./animations/index";
+import { fadeOut, fadeIn } from "./animations/animationsIndex";
 
 barba.use(barbaPrefetch);
 

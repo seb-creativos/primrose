@@ -1,4 +1,4 @@
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import initGsapAos from "./triggers/gsapAos";
 import initGsapComparison from "./triggers/gsapComparison";

@@ -1,5 +1,5 @@
 import { gsap, ScrollTrigger, SplitText } from "gsap/all";
-import gsapAnimations from "../animations/index";
+import gsapAnimations from "../animations/animationsIndex";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 

@@ -20,12 +20,12 @@ import initBarba from "./vendors/barba/initBarba";
 // import barbaBackButton from "./barba/barbaBackButton";
 
 // GSAP
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import initGsap from "./vendors/gsap/initGsap";
 import initTriggers from "./vendors/gsap/initTriggers";
 import {
 	killTriggers,
-	refreshTriggers,
+	// refreshTriggers,
 	updateTriggers,
 	updateEffects,
 	scrollTo,
