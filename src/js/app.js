@@ -16,19 +16,20 @@ import "../scss/app.scss";
 
 // Barba
 import barba from "@barba/core";
-import initBarba from "./barba/initBarba";
+import initBarba from "./vendors/barba/initBarba";
 // import barbaBackButton from "./barba/barbaBackButton";
 
 // GSAP
 import ScrollTrigger from "gsap/ScrollTrigger";
-import initGsap from "./gsap/initGsap";
+import initGsap from "./vendors/gsap/initGsap";
+import initTriggers from "./vendors/gsap/initTriggers";
 import {
-	initTriggers,
 	killTriggers,
+	refreshTriggers,
 	updateTriggers,
 	updateEffects,
 	scrollTo,
-} from "./gsap/gsapUtils";
+} from "./vendors/gsap/gsapUtils";
 
 // Swiper
 // import { initSwipers } from "./swiper/initSwipers";

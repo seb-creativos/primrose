@@ -8,7 +8,7 @@
  */
 
 import barba from "@barba/core";
-import { scrollTo } from "../gsap/gsapUtils";
+import { scrollTo } from "../vendors/gsap/gsapUtils";
 
 /**
  * Attach event listeners to all anchor links on the page.

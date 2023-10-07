@@ -1,26 +1,5 @@
 import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
 
-import initGsapThemeSwap from "./gsapThemeSwap";
-import initGsapMarquee from "./gsapMarquee";
-import initGsapXScroll from "./gsapXScroll";
-import initGsapReveal from "./gsapReveal";
-import initGsapOdometer from "./gsapOdometer";
-import initGsapSticker from "./gsapSticker";
-import initGsapComparison from "./gsapComparison";
-import initGsapAOS from "./gsapAOS";
-
-export function initTriggers() {
-	initGsapMarquee();
-	initGsapThemeSwap();
-	// initGsapXScroll();
-
-	initGsapOdometer();
-	initGsapSticker();
-	initGsapComparison();
-
-	if (!ScrollTrigger.isTouch) initGsapAOS(), initGsapReveal();
-}
-
 export function killTriggers() {
 	const triggers = ScrollTrigger.getAll();
 	triggers.forEach((trigger) => trigger.kill());

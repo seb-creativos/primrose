@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-export const scaleDown = (container) => {
+export const zoomOut = (container) => {
 	return gsap.to(container, {
 		scale: 0,
 		ease: "power2.in",
@@ -8,7 +8,7 @@ export const scaleDown = (container) => {
 	});
 };
 
-export const scaleUp = (container) => {
+export const zoomIn = (container) => {
 	return gsap.from(container, {
 		scale: 0,
 		ease: "power2.out",
