@@ -17,4 +17,17 @@ export default {
 			clearProps: "all",
 		});
 	},
+	crossFadeIn: (container) => {
+		gsap.set(container, {
+			position: "absolute",
+			top: 0,
+			left: 0,
+		});
+		return gsap.from(container, {
+			opacity: 0,
+			duration: 0.4,
+			ease: "none",
+			clearProps: "all",
+		});
+	},
 };
