@@ -8,32 +8,40 @@ barba.use(barbaPrefetch);
 export default function initBarba() {
 	barba.init({
 		debug: window.DEBUG,
-		// sync: true,
 		preventRunning: true,
+
 		prevent: ({ el }) =>
-			(el.classList && el.classList.contains("ab-item")) ||
-			(el.classList && el.classList.contains("glightbox")) ||
-			(el.hasAttribute && el.hasAttribute("data-gallery-name")),
+			el.classList.contains("ab-item") ||
+			el.classList.contains("glightbox") ||
+			el.hasAttribute("data-gallery-name"),
 
 		transitions: [
 			{
-				// once({ next }) {
-				// 	animationFadeIn(next.container);
-				// },
+				name: "self",
 				leave: ({ current }) =>
 					barbaAnimations.fadeOut(current.container),
 				enter({ next }) {
 					barbaAnimations.fadeIn(next.container);
 				},
 			},
-			// Slide In from Left and Slide Out to Right transition
-			// {
-			// 	name: "slide-transition",
-			// 	leave: ({ current }) => slideOutToRight(current.container),
-			// 	enter({ next }) {
-			// 		slideInFromLeft(next.container);
-			// 	},
-			// },
+			{
+				name: "fade",
+				leave: ({ current }) =>
+					barbaAnimations.fadeOut(current.container),
+				enter({ next }) {
+					barbaAnimations.fadeIn(next.container);
+				},
+			},
+			{
+				namespace: "Barba",
+				name: "slide",
+				sync: true,
+				leave: ({ current }) =>
+					barbaAnimations.slideOutToRight(current.container),
+				enter({ next }) {
+					barbaAnimations.slideInFromLeft(next.container);
+				},
+			},
 		],
 	});
 }
