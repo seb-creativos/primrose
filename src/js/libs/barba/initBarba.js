@@ -33,15 +33,27 @@ export default function initBarba() {
 				},
 			},
 			{
-				namespace: "Barba",
-				name: "slide",
+				name: "cross-fade",
+				from: { namespace: ["Test", "Barba"] },
+				to: { namespace: ["Test", "Barba"] },
 				sync: true,
 				leave: ({ current }) =>
-					barbaAnimations.slideOutToRight(current.container),
+					barbaAnimations.fadeOut(current.container),
 				enter({ next }) {
-					barbaAnimations.slideInFromLeft(next.container);
+					barbaAnimations.crossFadeIn(next.container);
 				},
 			},
+			// {
+			// 	name: "slide",
+			// 	from: { namespace: ["Test", "Barba"] },
+			// 	to: { namespace: ["Test", "Barba"] },
+			// 	sync: true,
+			// 	leave: ({ current }) =>
+			// 		barbaAnimations.slideToLeft(current.container),
+			// 	enter({ next }) {
+			// 		barbaAnimations.slideFromRight(next.container);
+			// 	},
+			// },
 		],
 	});
 }
