@@ -11,15 +11,19 @@ export default function initGsapAos() {
 	 */
 	function gsapAos(el) {
 		let animationType = el.getAttribute("data-aos");
+
 		let duration = parseFloat(el.getAttribute("data-aos-duration")) || 1;
 		let delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
 		let start = el.getAttribute("data-aos-start") || "top bottom";
 		let end = el.getAttribute("data-aos-end") || "center center";
+
 		let scrub = el.hasAttribute("data-aos-scrub");
+
 		let split;
-		let splitType = el.getAttribute("data-aos-split") || "words";
+		let splitType = el.getAttribute("data-aos-split-type") || "words";
 		let splitStagger =
-			parseFloat(el.getAttribute("data-aos-stagger")) || 0.05;
+			parseFloat(el.getAttribute("data-aos-split-stagger")) || 0.05;
+		let splitFrom = el.getAttribute("data-aos-split-from") || "start";
 
 		// Check if the animation type includes any form of "split-text".
 		if (animationType.includes("split-text")) {
@@ -43,8 +47,10 @@ export default function initGsapAos() {
 			...gsapAnimations[animationType].target,
 			duration: duration,
 			delay: delay,
-			ease: "Power4.inOut",
-			stagger: animationType.includes("split-text") ? splitStagger : null,
+			ease: "Power3.inOut",
+			stagger: animationType.includes("split-text")
+				? { each: splitStagger, from: splitFrom }
+				: null,
 
 			scrollTrigger: {
 				trigger: el,
