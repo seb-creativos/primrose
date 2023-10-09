@@ -6,19 +6,6 @@
 
             <!-- Logo -->
             <?php the_custom_logo() ?>
-        
-            <!-- Offcanvas Navigation Trigger -->
-            <button 
-                class="d-xl-none hamburger-icon"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavigation"
-                aria-controls="offcanvasNavigation"
-                title="<?php printf( esc_html__( 'Open Navigation Menu', 'barbasap' ) ) ?>"
-            >
-                <span class="hamburger-icon__line"></span>
-                <span class="hamburger-icon__line"></span>
-            </button>
 
             <!-- Menu -->
             <div class="d-none d-xl-block">
