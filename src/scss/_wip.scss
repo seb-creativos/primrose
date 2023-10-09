@@ -12,20 +12,20 @@
 	}
 }
 
-// #quote {
-// 	text-wrap: balance;
+#quote {
+	text-wrap: balance;
 
-// 	.line__mask {
-// 		content: "";
-// 		position: absolute;
-// 		top: 0;
-// 		right: 0;
-// 		height: 100%;
-// 		width: 100%;
-// 		background-color: rgb(var(--bg-color));
-// 		opacity: 0.8;
-// 	}
-// }
+	.line__mask {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgb(var(--bg-color));
+		opacity: 0.8;
+	}
+}
 
 .map {
 	height: clamp(400px, 50vh, 600px);
