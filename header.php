@@ -17,7 +17,7 @@
 	<div id="appWrapper" data-barba="wrapper">
 
 		<?php if( get_theme_mod( 'enable_loader', true ) ): ?>
-			<?php get_template_part( 'templates/loader--fill-logo' ) ?>
+			<?php get_template_part( 'templates/loader' ) ?>
 		<?php endif ?>
 
 		<?php if( get_theme_mod( 'enable_decoration-filter', true ) ): ?>
