@@ -41,7 +41,7 @@ $h6-font-size: get-font-size(12);
 
 // #region BUTTONS
 $link-decoration: none;
-$btn-transition: background-color var(--theme-trans), color var(--theme-trans);
+$btn-transition: background-color var(--theme-trans);
 
 $btn-padding-x: 2.5rem;
 $btn-padding-y: 0.5rem;

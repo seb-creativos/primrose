@@ -1,19 +1,15 @@
 :root {
-	// --theme-trans: 800ms var(--easeInOut);
-	--theme-trans: 300ms ease-in-out;
+	--theme-trans: 500ms var(--easeOut);
 }
 
 body {
 	background-color: rgb(var(--bg-color));
 	color: rgb(var(--text-color));
 
-	will-change: color;
-	transition: background-color var(--theme-trans), color var(--theme-trans);
-	// transition: background-color var(--theme-trans);
-}
-
-footer .main-logo {
-	transition: filter var(--theme-trans);
+	transition: background-color var(--theme-trans);
+	// Transitioning color causes really high CPU usage and visual stutter, avoid it if possible.
+	// will-change: color;
+	// transition: background-color var(--theme-trans), color var(--theme-trans);
 }
 
 a {

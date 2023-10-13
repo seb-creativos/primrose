@@ -3,7 +3,7 @@ import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function initGsap() {
-	ScrollTrigger.normalizeScroll(true);
+	ScrollTrigger.normalizeScroll(!ScrollTrigger.isTouch);
 
 	ScrollSmoother.create({
 		smooth: 1.6,

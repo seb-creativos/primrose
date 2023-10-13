@@ -24,6 +24,13 @@
 			transparent 1px
 		),
 		linear-gradient(90deg, rgb(var(--grid-color)) 1px, transparent 1px);
-	background-size: 25vw 50vh;
-	background-position: -0.5px -0.5px, -0.5px -0.5px;
+	background-size: 50vw 33.33vh;
+	// background-position: -0.5px -0.5px, -0.5px -0.5px;
+
+	@include media-breakpoint-up(lg) {
+		background-size: 33.33vw 50vh;
+	}
+	@include media-breakpoint-up(xxl) {
+		background-size: 25vw 50vh;
+	}
 }
