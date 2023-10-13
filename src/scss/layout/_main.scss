@@ -2,7 +2,7 @@ body::-webkit-scrollbar {
 	width: 0;
 }
 
-section:first-of-type:not(.pt-0) {
+main > section:first-of-type:not(.pt-0) {
 	padding-top: var(--siteHeader-height);
 }
 

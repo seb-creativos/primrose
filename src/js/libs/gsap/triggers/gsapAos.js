@@ -10,20 +10,21 @@ export default function initGsapAos() {
 	 * @param {HTMLElement} el - The HTML element to be animated.
 	 */
 	function gsapAos(el) {
-		let animationType = el.getAttribute("data-aos");
+		const animationType = el.getAttribute("data-aos");
 
-		let duration = parseFloat(el.getAttribute("data-aos-duration")) || 1;
-		let delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
-		let start = el.getAttribute("data-aos-start") || "top bottom";
-		let end = el.getAttribute("data-aos-end") || "center center";
+		const duration = parseFloat(el.getAttribute("data-aos-duration")) || 1;
+		const delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
+		const start = el.getAttribute("data-aos-start") || "top bottom";
+		const end = el.getAttribute("data-aos-end") || "center center";
 
-		let scrub = el.hasAttribute("data-aos-scrub");
+		const repeat = el.hasAttribute("data-aos-repeat");
+		const scrub = el.hasAttribute("data-aos-scrub");
 
 		let split;
-		let splitType = el.getAttribute("data-aos-split-type") || "words";
-		let splitStagger =
+		const splitType = el.getAttribute("data-aos-split-type") || "words";
+		const splitStagger =
 			parseFloat(el.getAttribute("data-aos-split-stagger")) || 0.05;
-		let splitFrom = el.getAttribute("data-aos-split-from") || "start";
+		const splitFrom = el.getAttribute("data-aos-split-from") || "start";
 
 		// Check if the animation type includes any form of "split-text".
 		if (animationType.includes("split-text")) {
@@ -39,7 +40,7 @@ export default function initGsapAos() {
 		}
 
 		// Determine the target of the animation - either the splitted text elements or just the element itself.
-		let animatedElement = animationType.includes("split-text")
+		const animatedElement = animationType.includes("split-text")
 			? split[splitType]
 			: el;
 
@@ -59,8 +60,11 @@ export default function initGsapAos() {
 				start: start,
 				end: end,
 
+				toggleActions: repeat
+					? "play none none reverse"
+					: "play none none none",
 				scrub: scrub,
-				once: !scrub,
+				once: !(scrub || repeat),
 			},
 		});
 	}

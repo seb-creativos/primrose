@@ -1,5 +1,5 @@
 <header id="siteHeader">
-    <div class="container-wide">
+    <div class="container">
 
         <!-- Site Navbar -->
         <nav id="siteNavbar" class="py-24 d-flex align-items-center justify-content-between">
