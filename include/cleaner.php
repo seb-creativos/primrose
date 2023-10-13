@@ -27,3 +27,6 @@ function remove_sidemenu_items() {
     remove_menu_page('edit.php');
     remove_menu_page('edit-comments.php');
 }
+
+// Disable Native WordPress Images Lazyload 
+add_filter('wp_lazy_loading_enabled', '__return_false');

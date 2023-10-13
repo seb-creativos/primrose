@@ -10,7 +10,8 @@ import initGsapThemeSwap from "./triggers/gsapThemeSwap";
 // import initGsapXScroll from "./triggers/gsapXScroll";
 
 export default function initTriggers() {
-	if (!ScrollTrigger.isTouch) initGsapAos(), initGsapReveal();
+	if (!ScrollTrigger.isTouch) initGsapReveal();
+	initGsapAos();
 	initGsapComparison();
 	initGsapMarquee();
 	initGsapOdometer();
