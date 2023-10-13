@@ -1,7 +1,9 @@
 				</main> <!-- #siteMain -->
 
 				<!-- Footer -->
-				<?php get_template_part( 'templates/footer' ) ?>
+				<footer id="siteFooter">
+					<?php render_pattern('Footer') ?>
+				</footer>
 
 				<!-- WS Form Dynamic Enqueue Hack
 				In order to use WS Form with Barba.js

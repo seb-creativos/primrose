@@ -2,7 +2,7 @@ import { gsap, ScrollTrigger } from "gsap/all";
 
 export default function initGsapReveal() {
 	const gsapReveal = (container) => {
-		const revealTarget = container.querySelectorAll(".reveal__target");
+		const revealTarget = container.querySelector(".reveal__target");
 
 		gsap.set(revealTarget, { yPercent: -100 });
 		const reveal = gsap.timeline({ paused: true });
