@@ -98,3 +98,7 @@ video {
 .rwmb-clone {
 	background-color: transparent !important;
 }
+
+* {
+	background-color: red;
+}
