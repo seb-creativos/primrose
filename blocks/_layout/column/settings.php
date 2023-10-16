@@ -33,6 +33,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
                         'name'  =>  'ATTRIBUTE(S)',
                         'id'    =>  'attributes',
                         'type'  =>  'textarea',
+                        'rows'  =>  '10',
                         'desc'  =>  'Separate multiple attributes with spaces or line break.'
                     ],
                 ],

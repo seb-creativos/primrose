@@ -5,20 +5,18 @@
     <?php 
     $heading_ = $heading['heading'] ?? '';
     $heading_tag = $heading['heading-settings']['heading-tag'] ?? '';
-    $classes = $heading['heading-settings']['classes'] ?? '';
-    $attributes = $heading['heading-settings']['attributes'] ?? '';
+    $classes = trim(preg_replace('/\s+/', ' ', $heading['heading-settings']['classes'] ?? ''));
+    $attributes = trim(preg_replace('/\s+/', ' ', $heading['heading-settings']['attributes'] ?? ''));
     ?>
 
     <?php if ( $heading_ && $heading_tag ) : ?>
 
-        <!-- <h1> -->
         <<?= $heading_tag ?>
             <?= $classes ? "class='$classes'" : '' ?>
             <?= $attributes ?>
         >
             <?= $heading_ ?>
         </<?= $heading_tag ?>>
-        <!-- </h1> -->
         
     <?php endif ?>
 

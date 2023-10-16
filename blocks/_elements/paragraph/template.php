@@ -4,8 +4,8 @@
 
     <?php 
     $paragraph_ = $paragraph['paragraph'] ?? '';
-    $classes = $paragraph['paragraph-settings']['classes'] ?? '';
-    $attributes = $paragraph['paragraph-settings']['attributes'] ?? '';
+    $classes = trim(preg_replace('/\s+/', ' ', $paragraph['paragraph-settings']['classes'] ?? ''));
+    $attributes = trim(preg_replace('/\s+/', ' ', $paragraph['paragraph-settings']['attributes'] ?? ''));
     ?>
 
     <?php if ( $paragraph_ ) : ?>
