@@ -93,3 +93,8 @@ video {
 .edit-post-layout__metaboxes {
 	margin-top: 4.5rem;
 }
+
+.editor-styles-wrapper .rwmb-meta-box,
+.rwmb-clone {
+	background-color: transparent !important;
+}

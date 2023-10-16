@@ -26,8 +26,8 @@ export default function initGsapAos() {
 			parseFloat(el.getAttribute("data-aos-split-stagger")) || 0.05;
 		const splitFrom = el.getAttribute("data-aos-split-from") || "start";
 
-		// Check if the animation type includes any form of "split-text".
-		if (animationType.includes("split-text")) {
+		// Check if the animation type includes any form of "split".
+		if (animationType.includes("split")) {
 			// Split the text of the element based on the specified type.
 			split = new SplitText(el, { type: splitType });
 
@@ -40,7 +40,7 @@ export default function initGsapAos() {
 		}
 
 		// Determine the target of the animation - either the splitted text elements or just the element itself.
-		const animatedElement = animationType.includes("split-text")
+		const animatedElement = animationType.includes("split")
 			? split[splitType]
 			: el;
 
@@ -49,7 +49,7 @@ export default function initGsapAos() {
 			duration: duration,
 			delay: delay,
 			ease: "Power3.inOut",
-			stagger: animationType.includes("split-text")
+			stagger: animationType.includes("split")
 				? { each: splitStagger, from: splitFrom }
 				: null,
 
