@@ -19,7 +19,7 @@ git cherry-pick $1
 git push upstream main
 
 #Back to origin/main
-git checkout origin/main
+git checkout main
 
 # Delete the temporary branch
 git branch -D "cherry-$1"
