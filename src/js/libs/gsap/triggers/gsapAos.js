@@ -12,6 +12,11 @@ export default function initGsapAos() {
 	function gsapAos(el) {
 		const animationType = el.getAttribute("data-aos");
 
+		if (!gsapAnimations[animationType]) {
+			console.error(`Invalid animation type: ${animationType}`);
+			return;
+		}
+
 		const duration = parseFloat(el.getAttribute("data-aos-duration")) || 1;
 		const delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
 		const start = el.getAttribute("data-aos-start") || "top bottom";
