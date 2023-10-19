@@ -1,4 +1,6 @@
-import { gsap, ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -8,9 +10,10 @@ export default function initGsap() {
 	ScrollSmoother.create({
 		smooth: 1.6,
 		speed: 1,
+		// ease: "power4.out",
 		effects: true,
 		// smoothTouch: 0.1,
-		// ignoreMobileResize: false,
+		// ignoreMobileResize: true,
 	});
 
 	// gsap.defaults({
