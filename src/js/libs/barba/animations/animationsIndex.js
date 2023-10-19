@@ -1,7 +1,10 @@
-const animationModules = import.meta.globEager("./*.js");
+const context = require.context(".", false, /\.js$/);
 
-const barbaAnimations = Object.values(animationModules).reduce((acc, mod) => {
-	return { ...acc, ...mod.default };
-}, {});
+const barbaAnimations = context
+	.keys()
+	.filter((file) => file !== "./animationsIndex.js")
+	.reduce((acc, file) => {
+		return { ...acc, ...context(file).default };
+	}, {});
 
 export default barbaAnimations;
