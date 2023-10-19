@@ -8,6 +8,7 @@ module.exports = {
 	output: {
 		filename: "app.min.js",
 	},
+	devtool: "source-map",
 
 	resolve: {
 		alias: {
