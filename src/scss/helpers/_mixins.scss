@@ -1,68 +1,68 @@
 // Bigger Hitbox ==
 @mixin bigger-hitbox($scaleX: 2, $scaleY: 2, $debug: false) {
-	position: relative;
+    position: relative;
 
-	&::before {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		transform: scale($scaleX, $scaleY);
-		transform-origin: bottom right;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: scale($scaleX, $scaleY);
+        transform-origin: bottom right;
 
-		@if ($debug) {
-			background-color: rgba(#f00, 30%);
-		}
-	}
+        @if ($debug) {
+            background-color: rgba(#f00, 30%);
+        }
+    }
 }
 .bigger-hitbox {
-	@include bigger-hitbox;
+    @include bigger-hitbox;
 }
 
 // Vertical Text ==
 @mixin vertical-text {
-	writing-mode: vertical-rl;
-	transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
 .vertical-text {
-	@include vertical-text;
+    @include vertical-text;
 }
 
 // Text Balance ==
 @mixin text-balance {
-	text-wrap: balance;
+    text-wrap: balance;
 }
 .text-balance {
-	@include text-balance;
+    @include text-balance;
 }
 
 // Raw Button ==
 @mixin raw-btn {
-	border: unset;
-	padding: unset;
-	background: unset;
-	outline: unset;
+    border: unset;
+    padding: unset;
+    background: unset;
+    outline: unset;
 }
 .raw-btn {
-	@include raw-btn;
+    @include raw-btn;
 }
 
 // Filtering ==
 @mixin filter-blend($blend-mode: exclusion, $invert-percentage: false) {
-	mix-blend-mode: $blend-mode;
-	@if $invert-percentage {
-		filter: invert($invert-percentage);
-	}
+    mix-blend-mode: $blend-mode;
+    @if $invert-percentage {
+        filter: invert($invert-percentage);
+    }
 }
 
 .filter--exclusion {
-	@include filter-blend(exclusion);
+    @include filter-blend(exclusion);
 }
 
 .filter--overlay {
-	@include filter-blend(overlay);
+    @include filter-blend(overlay);
 }
 
 .filter--plus-lighter--invert-half {
-	@include filter-blend(plus-lighter, 50%);
+    @include filter-blend(plus-lighter, 50%);
 }

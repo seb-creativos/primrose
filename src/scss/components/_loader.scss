@@ -1,57 +1,57 @@
 $loaderStyle: "fill-logo";
 
 #siteLoader {
-	position: fixed;
-	z-index: var(--layer--above-all);
-	height: 100%;
-	width: 100%;
-	background-color: rgb(var(--bg-color));
+    position: fixed;
+    z-index: var(--layer--above-all);
+    height: 100%;
+    width: 100%;
+    background-color: rgb(var(--bg-color));
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-	transition: opacity 900ms var(--easeOut);
+    transition: opacity 900ms var(--easeOut);
 }
 
 .page--loaded #siteLoader {
-	opacity: 0;
-	pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 @if $loaderStyle == "fill-logo" {
-	#siteLoader {
-		--initial-opacity: 20%;
-	}
-	.site-loader__image {
-		&-bg {
-			opacity: var(--initial-opacity);
-			position: absolute;
-		}
-		&-filler {
-			@media (prefers-reduced-motion: no-preference) {
-				animation: clipLeftToRight 2400ms infinite var(--easeOut);
+    #siteLoader {
+        --initial-opacity: 20%;
+    }
+    .site-loader__image {
+        &-bg {
+            opacity: var(--initial-opacity);
+            position: absolute;
+        }
+        &-filler {
+            @media (prefers-reduced-motion: no-preference) {
+                animation: clipLeftToRight 2400ms infinite var(--easeOut);
 
-				@keyframes clipLeftToRight {
-					0% {
-						opacity: var(--initial-opacity);
-						clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-					}
-					50% {
-						opacity: 100%;
-						clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-					}
-					100% {
-						opacity: var(--initial-opacity);
-						clip-path: polygon(
-							100% 0%,
-							100% 0%,
-							100% 100%,
-							100% 100%
-						);
-					}
-				}
-			}
-		}
-	}
+                @keyframes clipLeftToRight {
+                    0% {
+                        opacity: var(--initial-opacity);
+                        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+                    }
+                    50% {
+                        opacity: 100%;
+                        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    }
+                    100% {
+                        opacity: var(--initial-opacity);
+                        clip-path: polygon(
+                            100% 0%,
+                            100% 0%,
+                            100% 100%,
+                            100% 100%
+                        );
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,33 +1,33 @@
 button.swiper-button {
-	padding: 0;
-	border: unset;
-	background: unset;
+    padding: 0;
+    border: unset;
+    background: unset;
 }
 
 .swiper-button {
-	&--prev,
-	&--next {
-		&:not(.swiper-button-disabled) .swiper-arrow__shaft {
-			animation: arrowShaftExpansion 800ms var(--easeOut) infinite
-				alternate;
-		}
-	}
+    &--prev,
+    &--next {
+        &:not(.swiper-button-disabled) .swiper-arrow__shaft {
+            animation: arrowShaftExpansion 800ms var(--easeOut) infinite
+                alternate;
+        }
+    }
 
-	&--next .swiper-arrow__shaft {
-		transform-origin: right;
-	}
+    &--next .swiper-arrow__shaft {
+        transform-origin: right;
+    }
 
-	@keyframes arrowShaftExpansion {
-		0% {
-			transform: scaleX(50%);
-		}
-		100% {
-			transform: scaleX(100%);
-		}
-	}
+    @keyframes arrowShaftExpansion {
+        0% {
+            transform: scaleX(50%);
+        }
+        100% {
+            transform: scaleX(100%);
+        }
+    }
 }
 
 .swiper-pagination-fraction {
-	min-width: 50px;
-	text-align: center;
+    min-width: 50px;
+    text-align: center;
 }

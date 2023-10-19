@@ -1,23 +1,23 @@
 .dropdown-menu.show {
-	display: grid;
+    display: grid;
 }
 
 .navbar-nav .menu-item-has-children {
-	position: relative;
+    position: relative;
 
-	.dropdown-menu {
-		transform: unset !important;
-		top: 100% !important;
-	}
+    .dropdown-menu {
+        transform: unset !important;
+        top: 100% !important;
+    }
 }
 
 .menu-item-has-children {
-	.nav-link,
-	.dropdown-toggle {
-		vertical-align: middle;
-	}
+    .nav-link,
+    .dropdown-toggle {
+        vertical-align: middle;
+    }
 
-	.dropdown-toggle {
-		margin-left: 0.5rem;
-	}
+    .dropdown-toggle {
+        margin-left: 0.5rem;
+    }
 }

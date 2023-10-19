@@ -1,35 +1,35 @@
 .marquee {
-	&__track {
-		display: flex;
-	}
+    &__track {
+        display: flex;
+    }
 
-	&__item {
-		white-space: nowrap;
-		line-height: 1;
-		margin-bottom: 0;
+    &__item {
+        white-space: nowrap;
+        line-height: 1;
+        margin-bottom: 0;
 
-		display: flex;
-		align-items: center;
-		gap: 0.4em;
-		padding-inline-end: 0.4em;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        padding-inline-end: 0.4em;
 
-		&::after {
-			content: "↑";
-			content: "↓";
-			content: "↔";
-			content: "↕";
-			content: "↖";
-			content: "↗";
-			content: "↘";
-			content: "↙";
-			content: "—";
-		}
+        &::after {
+            content: "↑";
+            content: "↓";
+            content: "↔";
+            content: "↕";
+            content: "↖";
+            content: "↗";
+            content: "↘";
+            content: "↙";
+            content: "—";
+        }
 
-		&--left-arrow::after {
-			content: "←";
-		}
-		&--right-arrow::after {
-			content: "→";
-		}
-	}
+        &--left-arrow::after {
+            content: "←";
+        }
+        &--right-arrow::after {
+            content: "→";
+        }
+    }
 }

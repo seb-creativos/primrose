@@ -1,40 +1,40 @@
 .odometer,
 .odometer-digit {
-	position: relative;
-	display: inline-flex;
+    position: relative;
+    display: inline-flex;
 }
 
 .odometer-digit-spacer {
-	opacity: 0;
-	visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .odometer-digit-inner {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
 .odometer-ribbon-inner {
-	display: block;
-	transition: transform 2000ms;
+    display: block;
+    transition: transform 2000ms;
 }
 
 .odometer-last-value {
-	position: absolute;
+    position: absolute;
 }
 
 .odometer-animating-up.odometer-animating .odometer-ribbon-inner {
-	transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .odometer-animating-down.odometer-animating .odometer-ribbon-inner {
-	transform: translateY(0);
+    transform: translateY(0);
 }
 
 .odometer-animating-down .odometer-ribbon-inner {
-	transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 // .vertical-text .odometer {

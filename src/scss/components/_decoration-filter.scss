@@ -1,36 +1,36 @@
 #siteFilter {
-	position: fixed;
-	z-index: var(--layer--2);
-	pointer-events: none;
-	height: 100%;
-	width: 100%;
+    position: fixed;
+    z-index: var(--layer--2);
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
 
-	mix-blend-mode: overlay;
-	// mix-blend-mode: soft-light;
-	// backdrop-filter: saturate(115%);
+    mix-blend-mode: overlay;
+    // mix-blend-mode: soft-light;
+    // backdrop-filter: saturate(115%);
 
-	&::after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(#000, 0.5);
-	}
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(#000, 0.5);
+    }
 }
 
 .decoration-grid--enabled #siteFilter {
-	background-image: linear-gradient(
-			rgb(var(--grid-color)) 1px,
-			transparent 1px
-		),
-		linear-gradient(90deg, rgb(var(--grid-color)) 1px, transparent 1px);
-	background-size: 50vw 33.33vh;
-	// background-position: -0.5px -0.5px, -0.5px -0.5px;
+    background-image: linear-gradient(
+            rgb(var(--grid-color)) 1px,
+            transparent 1px
+        ),
+        linear-gradient(90deg, rgb(var(--grid-color)) 1px, transparent 1px);
+    background-size: 50vw 33.33vh;
+    // background-position: -0.5px -0.5px, -0.5px -0.5px;
 
-	@include media-breakpoint-up(lg) {
-		background-size: 33.33vw 50vh;
-	}
-	@include media-breakpoint-up(xxl) {
-		background-size: 20vw 50vh;
-	}
+    @include media-breakpoint-up(lg) {
+        background-size: 33.33vw 50vh;
+    }
+    @include media-breakpoint-up(xxl) {
+        background-size: 20vw 50vh;
+    }
 }

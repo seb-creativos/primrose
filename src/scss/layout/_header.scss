@@ -1,18 +1,18 @@
 #siteHeader {
-	position: fixed;
-	z-index: var(--layer--above-bs);
-	top: 0;
-	width: 100%;
+    position: fixed;
+    z-index: var(--layer--above-bs);
+    top: 0;
+    width: 100%;
 
-	mix-blend-mode: difference;
+    mix-blend-mode: difference;
 
-	// background-color: rgb(var(--bg-color), 50%);
-	// backdrop-filter: blur(18px) saturate(150%);
-	// box-shadow: 0 0 40px rgb(0 0 0 / 5%);
-	// transition: background-color var(--theme-trans);
+    // background-color: rgb(var(--bg-color), 50%);
+    // backdrop-filter: blur(18px) saturate(150%);
+    // box-shadow: 0 0 40px rgb(0 0 0 / 5%);
+    // transition: background-color var(--theme-trans);
 
-	// will-change: transform;
-	// transition: transform 500ms var(--easeOut), opacity 500ms var(--easeOut);
+    // will-change: transform;
+    // transition: transform 500ms var(--easeOut), opacity 500ms var(--easeOut);
 }
 
 // .threshold--surpassed {

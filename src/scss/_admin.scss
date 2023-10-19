@@ -1,24 +1,24 @@
 #wpadminbar {
-	opacity: 0;
-	top: -46px !important;
-	transition: top 600ms ease, opacity 600ms ease;
+    opacity: 0;
+    top: -46px !important;
+    transition: top 600ms ease, opacity 600ms ease;
 
-	&::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		top: 100%;
-		height: 1rem;
-		width: 100%;
-		// background-color: red;
-	}
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 100%;
+        height: 1rem;
+        width: 100%;
+        // background-color: red;
+    }
 
-	&:hover {
-		opacity: 1;
-		top: 0 !important;
-	}
+    &:hover {
+        opacity: 1;
+        top: 0 !important;
+    }
 
-	@media (min-width: 783px) {
-		top: -2rem !important;
-	}
+    @media (min-width: 783px) {
+        top: -2rem !important;
+    }
 }

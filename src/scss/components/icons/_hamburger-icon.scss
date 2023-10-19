@@ -1,40 +1,40 @@
 .hamburger-icon {
-	--line-stroke: 1px;
+    --line-stroke: 1px;
 
-	background: unset;
-	border: unset;
-	outline: unset;
+    background: unset;
+    border: unset;
+    outline: unset;
 
-	width: 56px;
-	height: 40px;
+    width: 56px;
+    height: 40px;
 
-	@include bigger-hitbox;
+    @include bigger-hitbox;
 
-	&__line {
-		position: absolute;
-		right: 0;
-		height: var(--line-stroke);
-		margin-top: calc(var(--line-stroke) / -2);
-		width: 100%;
-		background-color: rgb(var(--text-color));
-		transition: transform 600ms var(--easeOut);
+    &__line {
+        position: absolute;
+        right: 0;
+        height: var(--line-stroke);
+        margin-top: calc(var(--line-stroke) / -2);
+        width: 100%;
+        background-color: rgb(var(--text-color));
+        transition: transform 600ms var(--easeOut);
 
-		&:first-of-type {
-			transform: translateY(-4px);
-		}
+        &:first-of-type {
+            transform: translateY(-4px);
+        }
 
-		&:last-of-type {
-			transform: translateY(4px);
-		}
-	}
+        &:last-of-type {
+            transform: translateY(4px);
+        }
+    }
 
-	&--active {
-		.hamburger-icon__line:first-child {
-			transform: translateY(0) rotate(45deg) scale(80%);
-		}
+    &--active {
+        .hamburger-icon__line:first-child {
+            transform: translateY(0) rotate(45deg) scale(80%);
+        }
 
-		.hamburger-icon__line:last-child {
-			transform: translateY(0) rotate(-45deg) scale(80%);
-		}
-	}
+        .hamburger-icon__line:last-child {
+            transform: translateY(0) rotate(-45deg) scale(80%);
+        }
+    }
 }

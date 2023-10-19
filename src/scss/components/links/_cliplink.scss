@@ -1,39 +1,39 @@
 .cliplink {
-	position: relative;
-	overflow: hidden;
-	display: inline-block;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 
-	&::after,
-	&__label {
-		transition: transform 800ms var(--easeOut) 150ms,
-			opacity 800ms var(--easeOut), clip-path 800ms var(--easeOut);
-	}
+    &::after,
+    &__label {
+        transition: transform 800ms var(--easeOut) 150ms,
+            opacity 800ms var(--easeOut), clip-path 800ms var(--easeOut);
+    }
 
-	&::after {
-		content: attr(title);
-		position: absolute;
-		top: 0;
+    &::after {
+        content: attr(title);
+        position: absolute;
+        top: 0;
 
-		transform: translateY(100%);
-		opacity: 0;
-		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-	}
+        transform: translateY(100%);
+        opacity: 0;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
 
-	&__label {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	}
+    &__label {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
 
-	&:hover {
-		&::after {
-			transform: unset;
-			opacity: 1;
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-		}
+    &:hover {
+        &::after {
+            transform: unset;
+            opacity: 1;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
 
-		.cliplink__label {
-			transform: translateY(-100%);
-			opacity: 0;
-			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-		}
-	}
+        .cliplink__label {
+            transform: translateY(-100%);
+            opacity: 0;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+    }
 }

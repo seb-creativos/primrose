@@ -1,15 +1,15 @@
 .wsf-form {
-	--form-gutter--y: 1.5rem;
-	--field-padding--y: 1rem;
+    --form-gutter--y: 1.5rem;
+    --field-padding--y: 1rem;
 }
 
 .wsf-field {
-	background-color: transparent !important;
-	border: 0 !important;
-	border-bottom: 1px solid var(--field-border-color) !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--field-border-color) !important;
 }
 
 .wsf-label,
 .wsf-field::placeholder {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }

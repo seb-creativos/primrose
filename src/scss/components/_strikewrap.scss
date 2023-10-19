@@ -1,21 +1,21 @@
 .strikewrap {
-	display: flex;
-	align-items: center;
-	gap: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 
-	&::before,
-	&::after {
-		content: "";
-		flex: 1 1 auto;
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
-		border-bottom-color: currentColor;
-	}
+    &::before,
+    &::after {
+        content: "";
+        flex: 1 1 auto;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: currentColor;
+    }
 
-	&--start::after {
-		content: unset;
-	}
-	&--end::before {
-		content: unset;
-	}
+    &--start::after {
+        content: unset;
+    }
+    &--end::before {
+        content: unset;
+    }
 }
