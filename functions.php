@@ -6,14 +6,14 @@ if ( ! defined( '_VER' ) ) {
 }
 
 // Enqueue Dist
-add_action('wp_enqueue_scripts', 'enqueue_dist');
-function enqueue_dist() {
+add_action('wp_enqueue_scripts', 'enqueue_frontend_dist');
+function enqueue_frontend_dist() {
 	
-	wp_enqueue_style( 'app', get_theme_file_uri( '/dist/app.min.css' ), false, _VER, 'all' );
-	wp_enqueue_script( 'app', get_theme_file_uri( '/dist/app.min.js' ), null, _VER, true );
+	wp_enqueue_style( 'frontend', get_theme_file_uri( 'dist/css/frontend.css' ), false, _VER, 'all' );
+	wp_enqueue_script( 'frontend', get_theme_file_uri( 'dist/js/frontend.js' ), null, _VER, true );
 
 	// Allows to pass server-side PHP variables to client-side JavaScript
-    wp_localize_script( 'app', 'global_params', array(
+    wp_localize_script( 'frontend', 'global_params', array(
         'map_api_key' => get_option( 'map_api_key', 'AIzaSyBY4Y942umBAtFyrAyHtp69JehsJRPyPSQ' )
     ));
 }

@@ -31,6 +31,19 @@ function barbasap_setup() {
 			'flex-height' => true,
 		)
 	);
+
+    /**
+	 * Add support for Backend CSS.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+	 */
+    add_theme_support( 'editor-styles' );
+}
+
+// Enqueue Backend CSS
+add_action( 'admin_init', 'enqueue_backend_style' );
+function enqueue_backend_style() {
+    add_editor_style( 'dist/css/backend.css' );
 }
 
 // Register Menus
@@ -40,15 +53,3 @@ register_nav_menus(
 		'footer-navigation' => esc_html__( 'Footer Navigation', 'barbasap' ),
 	)
 );
-
-// Custom Image Sizes
-// add_filter('intermediate_image_sizes_advanced', 'add_image_insert_override' );
-// function add_image_insert_override($sizes){
-//     unset( $sizes['thumbnail']);
-//     unset( $sizes['medium']);
-//     unset( $sizes['medium_large']);
-//     unset( $sizes['large']);
-// 	unset( $sizes['1536x1536']);
-// 	unset( $sizes['2048x2048']);
-//     return $sizes;
-// }

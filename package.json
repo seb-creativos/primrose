@@ -1,37 +1,42 @@
 {
-	"name": "barbasap",
-	"private": true,
-	"version": "1.0.1",
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead",
-		"not op_mini all"
-	],
-	"scripts": {
-		"build": "webpack --watch"
-	},
-	"devDependencies": {
-		"autoprefixer": "^10.4.14",
-		"css-loader": "^6.8.1",
-		"mini-css-extract-plugin": "^2.7.6",
-		"postcss": "^8.4.27",
-		"postcss-loader": "^7.3.3",
-		"sass": "^1.69.4",
-		"sass-loader": "^13.3.2",
-		"webpack": "^5.89.0",
-		"webpack-cli": "^5.1.4",
-		"webpackbar": "^5.0.2"
-	},
-	"dependencies": {
-		"@barba/core": "^2.9.7",
-		"@barba/prefetch": "^2.1.10",
-		"@popperjs/core": "^2.11.8",
-		"bootstrap": "^5.3.0",
-		"glightbox": "^3.2.0",
-		"gsap": "npm:@gsap/shockingly@^3.12.1",
-		"mouse-follower": "^1.1.2",
-		"odometer": "^0.4.8",
-		"swiper": "^10.0.4"
-	}
+    "name": "barbasap",
+    "version": "1.0.1",
+    "private": true,
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not op_mini all"
+    ],
+    "scripts": {
+        "build": "webpack --env NODE_ENV=production --env production",
+        "build:watch": "webpack --env NODE_ENV=production --env production --watch",
+        "dev": "webpack --env NODE_ENV=development",
+        "dev:watch": "webpack --env NODE_ENV=development --watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "browser-sync": "^2.29.3",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "css-loader": "^6.8.1",
+        "mini-css-extract-plugin": "^2.7.6",
+        "postcss": "^8.4.27",
+        "postcss-loader": "^7.3.3",
+        "sass": "^1.69.4",
+        "sass-loader": "^13.3.2",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpackbar": "^5.0.2"
+    },
+    "dependencies": {
+        "@barba/core": "^2.9.7",
+        "@barba/prefetch": "^2.1.10",
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.0",
+        "glightbox": "^3.2.0",
+        "gsap": "npm:@gsap/shockingly@^3.12.1",
+        "mouse-follower": "^1.1.2",
+        "odometer": "^0.4.8",
+        "swiper": "^10.0.4"
+    }
 }

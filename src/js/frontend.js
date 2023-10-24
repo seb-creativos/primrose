@@ -12,7 +12,7 @@ window.cursorPosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 // ======================
 
 // CSS
-import "../scss/app.scss";
+import "../scss/frontend.scss";
 
 // Barba
 import barba from "@barba/core";
@@ -24,11 +24,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import initGsap from "./libs/gsap/initGsap";
 import initTriggers from "./libs/gsap/initTriggers";
 import {
-	killTriggers,
-	// refreshTriggers,
-	updateTriggers,
-	updateEffects,
-	scrollTo,
+    killTriggers,
+    // refreshTriggers,
+    updateTriggers,
+    updateEffects,
+    scrollTo,
 } from "./libs/gsap/gsapUtils";
 
 // Swiper
@@ -49,8 +49,8 @@ import exitLoader from "./utils/exitLoader";
 import betterOffcanvas from "./utils/betterOffcanvas";
 import getScrollProgress from "./utils/getScrollProgress";
 import {
-	anchorSetupListeners,
-	anchorExecuteExternal,
+    anchorSetupListeners,
+    anchorExecuteExternal,
 } from "./utils/anchorsManager";
 import FPSMeter from "./utils/fpsMeter.js";
 
@@ -60,41 +60,41 @@ import FPSMeter from "./utils/fpsMeter.js";
 
 // DOC Ready
 function documentReady() {
-	initBarba();
-	getHeight("#siteHeader", "#siteNavbar", "#siteFooter");
+    initBarba();
+    getHeight("#siteHeader", "#siteNavbar", "#siteFooter");
 
-	initGsap();
-	// initSwipers();
-	initVideos();
-	if (!ScrollTrigger.isTouch) initMouseFollower();
+    initGsap();
+    // initSwipers();
+    initVideos();
+    if (!ScrollTrigger.isTouch) initMouseFollower();
 
-	anchorSetupListeners();
+    anchorSetupListeners();
 
-	new FPSMeter();
+    new FPSMeter();
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
 // WINDOW Load
 function windowLoad() {
-	initTriggers();
+    initTriggers();
 
-	initGLightbox();
-	initMaps();
-	betterOffcanvas();
+    initGLightbox();
+    initMaps();
+    betterOffcanvas();
 
-	exitLoader();
+    exitLoader();
 }
 window.addEventListener(`load`, windowLoad, false);
 
 // WINDOW Scroll
 function windowScroll() {
-	getScrollProgress();
+    getScrollProgress();
 }
 window.addEventListener(`scroll`, windowScroll, { passive: true });
 
 // DOC Move
 function mouseMove(e) {
-	window.cursorPosition = { x: e.clientX, y: e.clientY };
+    window.cursorPosition = { x: e.clientX, y: e.clientY };
 }
 document.addEventListener("mousemove", mouseMove, false);
 
@@ -117,70 +117,70 @@ document.addEventListener("mousemove", mouseMove, false);
 // ======================
 
 barba.hooks.beforeOnce(() => {
-	if (DEBUG) console.log(`beforeOnce`);
+    if (DEBUG) console.log(`beforeOnce`);
 });
 
 barba.hooks.once(() => {
-	if (DEBUG) console.log(`once`);
+    if (DEBUG) console.log(`once`);
 });
 
 barba.hooks.afterOnce(() => {
-	if (DEBUG) console.log(`afterOnce`);
+    if (DEBUG) console.log(`afterOnce`);
 });
 
 barba.hooks.before(() => {
-	if (DEBUG) console.log(`before`);
+    if (DEBUG) console.log(`before`);
 });
 
 barba.hooks.beforeLeave(() => {
-	if (DEBUG) console.log(`beforeLeave`);
+    if (DEBUG) console.log(`beforeLeave`);
 });
 
 barba.hooks.leave((data) => {
-	if (DEBUG) console.log(`Leaving: ${data.current.namespace}`);
+    if (DEBUG) console.log(`Leaving: ${data.current.namespace}`);
 });
 
 barba.hooks.afterLeave(() => {
-	if (DEBUG) console.log("afterLeave");
-	killTriggers();
+    if (DEBUG) console.log("afterLeave");
+    killTriggers();
 });
 
 barba.hooks.beforeEnter(() => {
-	if (DEBUG) console.log(`beforeEnter`);
+    if (DEBUG) console.log(`beforeEnter`);
 });
 
 barba.hooks.enter((data) => {
-	if (DEBUG) console.log(`Entering: ${data.next.namespace}`);
+    if (DEBUG) console.log(`Entering: ${data.next.namespace}`);
 });
 
 barba.hooks.afterEnter(() => {
-	if (DEBUG) console.log(`afterEnter`);
+    if (DEBUG) console.log(`afterEnter`);
 });
 
 barba.hooks.after(() => {
-	if (DEBUG) console.log("after");
+    if (DEBUG) console.log("after");
 
-	// Reattach event listeners for anchor links
-	anchorSetupListeners();
+    // Reattach event listeners for anchor links
+    anchorSetupListeners();
 
-	// Other setup after entering a new page
-	if (!ScrollTrigger.isTouch) initMouseFollower();
+    // Other setup after entering a new page
+    if (!ScrollTrigger.isTouch) initMouseFollower();
 
-	initTriggers();
-	updateEffects();
-	updateTriggers();
+    initTriggers();
+    updateEffects();
+    updateTriggers();
 
-	// initSwipers();
-	initVideos();
-	initGLightbox();
-	initMaps();
-	initForms();
-	// barbaBackButton();
+    // initSwipers();
+    initVideos();
+    initGLightbox();
+    initMaps();
+    initForms();
+    // barbaBackButton();
 
-	// if (!window.isBackButtonClicked) {
-	scrollTo(0, false);
-	// }
-	// window.isBackButtonClicked = false;
+    // if (!window.isBackButtonClicked) {
+    scrollTo(0, false);
+    // }
+    // window.isBackButtonClicked = false;
 
-	anchorExecuteExternal();
+    anchorExecuteExternal();
 });
