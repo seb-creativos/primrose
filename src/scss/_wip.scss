@@ -30,3 +30,7 @@
 .map {
     height: clamp(400px, 50vh, 600px);
 }
+
+body {
+    background-color: color-mix(in sRGB, red 50%, blue);
+}
