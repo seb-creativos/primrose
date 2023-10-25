@@ -12,6 +12,7 @@ window.cursorPosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 // ======================
 
 // CSS
+import "../scss/libs/bootstrap/_my-bs.scss";
 import "../scss/frontend.scss";
 
 // Barba

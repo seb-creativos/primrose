@@ -1,5 +1,15 @@
-@import "libs/bootstrap/my-bs";
+// Due to stripping Bootstrap SCSS as a whole from frontend.scss and importing
+// it via JavaScript (frontend.js) to reduce custom SCSS compiling times
+// tremendously, we lose the capability of using $variables, @includes,
+// @extends, @etc. from our custom SCSS. In order to keep that functionality,
+// we are forced to import those dependencies.
+@import "bootstrap/scss/functions";
+@import "libs/bootstrap/my-bs-vars";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/containers";
 
+// Custom SCSS
 @import "helpers/mixins";
 @import "helpers/vars";
 
