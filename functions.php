@@ -6,11 +6,20 @@ if ( ! defined( '_VER' ) ) {
 }
 
 // Enqueue Dist
-add_action('wp_enqueue_scripts', 'enqueue_frontend_dist');
+add_action( 'wp_enqueue_scripts', 'enqueue_frontend_dist' );
 function enqueue_frontend_dist() {
 	
-	wp_enqueue_style( 'frontend', get_theme_file_uri( 'dist/css/frontend.css' ), false, _VER, 'all' );
-	wp_enqueue_script( 'frontend', get_theme_file_uri( 'dist/js/frontend.js' ), null, _VER, true );
+	wp_enqueue_style(
+        'frontend',
+        get_template_directory_uri() . '/dist/css/frontend.css',
+        array(), _VER, 'all'
+    );
+
+	wp_enqueue_script(
+        'frontend',
+        get_template_directory_uri() . '/dist/js/frontend.js',
+        array(), _VER, true
+    );
 
 	// Allows to pass server-side PHP variables to client-side JavaScript
     wp_localize_script( 'frontend', 'global_params', array(
