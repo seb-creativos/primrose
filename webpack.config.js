@@ -12,6 +12,7 @@ const projectFiles = {
         enable: true,
         host: "localhost",
         port: 3000,
+
         mode: "proxy",
         proxy: "http://barbasap.faster",
 
