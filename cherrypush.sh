@@ -16,7 +16,7 @@ git checkout -b "cherry-$1" upstream/main
 git cherry-pick $1
 
 # Push to upstream main
-git push upstream main
+git push upstream "cherry-$1":main
 
 #Back to origin/main
 git checkout main
