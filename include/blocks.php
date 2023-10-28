@@ -6,7 +6,7 @@ add_action('init', 'load_blocks');
 // Function to load block settings
 function load_blocks(){
     // Define the blocks directory
-    $blocks_dir = get_stylesheet_directory() . '/blocks/';
+    $blocks_dir = get_template_directory() . '/blocks/';
     
     // Call the recursive function to load block settings
     load_block_settings($blocks_dir);
