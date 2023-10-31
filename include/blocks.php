@@ -63,3 +63,41 @@ function custom_block_categories( $categories, $post ) {
 
 // Add Patterns to Admin Column
 add_menu_page( 'linked_url', 'Patterns', 'read', 'edit.php?post_type=wp_block', '', 'dashicons-layout', 30 );
+
+function get_common_blocks_fields(){
+
+    $fields = [
+        [
+            'id'        =>  'field-settings',
+            'type'      =>  'group',
+            'visible'   =>  [ 'advanced', true ],
+
+            'fields'    =>  [
+                [
+                    'name'  =>  'CSS CLASS(ES)',
+                    'id'    =>  'classes',
+                    'type'  =>  'textarea',
+                    'desc'  =>  'Separate multiple classes with spaces.'
+                ],
+                [
+                    'name'  =>  'HTML ATTRIBUT(ES)',
+                    'id'    =>  'attributes',
+                    'type'  =>  'textarea',
+                    'desc'  =>  'Separate multiple attributes with spaces. ej: data-speed="auto" data-lag="0.9"'
+                ],
+            ],
+        ],
+        [
+            'name'          =>  'Advanced Settings',
+            'id'            =>  'advanced',
+            'type'          =>  'switch',
+            'on_label'      =>  '<i class="dashicons dashicons-yes"></i>',
+        ],
+    ];
+    
+    if ( has_filter( 'common_blocks_fields' ) ) {
+        $fields = apply_filters( 'common_blocks_fields', $fields );
+    }
+
+    return $fields;
+}

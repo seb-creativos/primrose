@@ -14,6 +14,11 @@ function enqueue_frontend_dist() {
         get_template_directory_uri() . '/dist/css/frontend.css',
         array(), _VER, 'all'
     );
+	wp_enqueue_style(
+        'icons',
+        get_template_directory_uri() . '/dist/icons/css/icons.css',
+        array(), _VER, 'all'
+    );
 
 	wp_enqueue_script(
         'frontend',
@@ -31,3 +36,4 @@ function enqueue_frontend_dist() {
 foreach ( glob( get_template_directory() . '/include/*.php' ) as $file ) {
     require_once $file;
 }
+require_once get_template_directory() . '/include/meta-box-aio/meta-box-aio.php';

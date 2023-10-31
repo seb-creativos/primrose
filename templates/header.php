@@ -1,8 +1,8 @@
 <header id="siteHeader">
-    <div class="container">
+    <div class="container-fluid">
 
         <!-- Site Navbar -->
-        <nav id="siteNavbar" class="py-24 d-flex align-items-center justify-content-between">
+        <nav id="siteNavbar" class="px-30 py-20 d-flex align-items-center justify-content-between">
 
             <!-- Logo -->
             <?php the_custom_logo() ?>
@@ -18,6 +18,12 @@
                     'walker'         => new WP_Bootstrap_5_Navwalker(),
                 ]);
                 ?>
+            </div>
+            
+            <!-- Actions -->
+            <div>
+                <?= do_shortcode( '[favorite_count_btn]' ) ?>
+                <?= do_shortcode( '[language-switcher]' ) ?>
             </div>
         </nav>
 
