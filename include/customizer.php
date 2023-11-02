@@ -1,11 +1,11 @@
 <?php
 
-add_action( 'customize_register', 'barbasap_customize_register' );
-function barbasap_customize_register( $wp_customize ) {
+add_action( 'customize_register', 'primrose_customize_register' );
+function primrose_customize_register( $wp_customize ) {
 
     // Theme Settings
     $wp_customize->add_section( 'theme_settings', array(
-        'title'    => __( 'Theme Settings', 'barbasap' ),
+        'title'    => __( 'Theme Settings', 'primrose' ),
         'priority' => 30,
     ) );
 
@@ -14,7 +14,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_loader', array(
-        'label'    => __( 'Enable Loader', 'barbasap' ),
+        'label'    => __( 'Enable Loader', 'primrose' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -24,7 +24,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-filter', array(
-        'label'    => __( 'Enable Decoration Filter', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Filter', 'primrose' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -34,7 +34,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-grid', array(
-        'label'    => __( 'Enable Decoration Grid', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Grid', 'primrose' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -44,7 +44,7 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_decoration-noise', array(
-        'label'    => __( 'Enable Decoration Noise', 'barbasap' ),
+        'label'    => __( 'Enable Decoration Noise', 'primrose' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
@@ -54,10 +54,24 @@ function barbasap_customize_register( $wp_customize ) {
         'default' => true,
     ) );
     $wp_customize->add_control( 'enable_scroll-progress-indicator', array(
-        'label'    => __( 'Enable Scroll Progress Indicator', 'barbasap' ),
+        'label'    => __( 'Enable Scroll Progress Indicator', 'primrose' ),
         'section'  => 'theme_settings',
         'type'     => 'checkbox',
     ) );
+
+    // Additional Logo
+    $wp_customize->add_setting('additional_logo', array(
+        'default'   => '',
+        'capability' => 'edit_theme_options',
+        'type'      => 'theme_mod',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'additional_logo', array(
+        'label'     => __('Additional Logo', 'primrose'),
+        'section'   => 'title_tagline', // You can change this section to match the default logo section.
+        'settings'  => 'additional_logo',
+    )));
     
     // Map Settings
     $wp_customize->add_setting( 'map_api_key', [
@@ -66,7 +80,7 @@ function barbasap_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'map_api_key', [
         'type'      => 'text',
         'section'   => 'theme_settings',
-        'label'     => __( 'Google Maps API Key', 'barbasap' ),
+        'label'     => __( 'Google Maps API Key', 'primrose' ),
     ] );
 }
 

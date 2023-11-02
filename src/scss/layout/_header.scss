@@ -3,28 +3,25 @@
     z-index: var(--layer--above-bs);
     top: 0;
     width: 100%;
+    will-change: transform;
+    transition: background-color var(--theme-trans);
 
-    mix-blend-mode: difference;
 
-    // background-color: rgb(var(--bg-color), 50%);
-    // backdrop-filter: blur(18px) saturate(150%);
-    // box-shadow: 0 0 40px rgb(0 0 0 / 5%);
-    // transition: background-color var(--theme-trans);
+    background-color: rgb(var(--bg-color), 100%);
+    backdrop-filter: blur(18px) saturate(150%);
+    box-shadow: 0 0 40px rgb(0 0 0 / 5%);
 
-    // will-change: transform;
-    // transition: transform 500ms var(--easeOut), opacity 500ms var(--easeOut);
+    .custom-logo-link { display: inline; }
+    .custom-logo-link--additional { display: none; }
 }
-
-// .threshold--surpassed {
-// 	#siteHeader {
-// 		transform: translateY(calc(var(--siteHeader-height) * -1));
-// 		opacity: 0;
-// 		pointer-events: none;
-// 	}
-
-// 	&.scrolling--up #siteHeader {
-// 		transform: translateY(calc(var(--siteTopbar-height) * -1));
-// 		opacity: 1;
-// 		pointer-events: auto;
-// 	}
-// }
+body.home:not(.threshold--surpassed) {
+    #siteHeader {
+        background-color: rgb(var(--bg-color), 0%);
+        backdrop-filter: unset;
+        box-shadow: none;
+        color: var(--bs-white);
+        
+        .custom-logo-link { display: none; }
+        .custom-logo-link--additional { display: inline; }
+    }
+}
