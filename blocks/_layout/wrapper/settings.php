@@ -22,7 +22,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
         // BLOCK FIELDS
         'fields'        =>  [
-            create_switch_field( 'Advanved Settings', 'advanced' ),
+            create_switch_field( 'Advanced Settings', 'advanced' ),
             [
                 'id'            =>  'wrapper-settings',
                 'type'          =>  'group',
