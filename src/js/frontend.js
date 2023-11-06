@@ -36,7 +36,7 @@ import {
 // import { initSwipers } from "./swiper/initSwipers";
 
 // Mouse Follower
-import initMouseFollower from "./libs/mouseFollower";
+// import initMouseFollower from "./libs/mouseFollower";
 
 // GLightbox
 import initGLightbox from "./libs/gLightbox";
@@ -67,7 +67,7 @@ function documentReady() {
     initGsap();
     // initSwipers();
     initVideos();
-    if (!ScrollTrigger.isTouch) initMouseFollower();
+    // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     anchorSetupListeners();
 
@@ -165,7 +165,7 @@ barba.hooks.after(() => {
     anchorSetupListeners();
 
     // Other setup after entering a new page
-    if (!ScrollTrigger.isTouch) initMouseFollower();
+    // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     initTriggers();
     updateEffects();
