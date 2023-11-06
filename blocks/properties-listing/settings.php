@@ -7,7 +7,58 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
     $block_slug = 'properties-listing';
 
     $fields = [
-        
+        [
+            'id'            =>  'headings',
+            'type'          =>  'group',
+            'clone'         =>  false,
+            'sort_clone'    =>  false,
+
+            'fields'        =>  [
+                [
+                    'name'  =>  'Heading',
+                    'id'    =>  'heading',
+                    'type'  =>  'textarea',
+                ],
+                create_switch_field( 'Advanced Settings', 'advanced' ),
+                [
+                    'id'        =>  'heading-settings',
+                    'type'      =>  'group',
+                    'visible'   =>  [ 'advanced', true ],
+    
+                    'fields'    =>  [
+                        [
+                            'name'      =>  'Tag',
+                            'id'        =>  'heading-tag',
+                            'type'      =>  'button_group',
+                            'desc'      =>  'Specify HTML tag for SEO purposes.',
+                            'options'   =>  [
+                                'h1'    =>  'h1',
+                                'h2'    =>  'h2',
+                                'h3'    =>  'h3',
+                                'h4'    =>  'h4',
+                                'h5'    =>  'h5',
+                                'h6'    =>  'h6',
+                            ],
+                            'std'       =>  'h2',
+                        ],
+                        [
+                            'name'  =>  'CSS CLASS(ES)',
+                            'id'    =>  'classes',
+                            'type'  =>  'text',
+                            'rows'  =>  '10',
+                            'desc'  =>  'Separate multiple classes with spaces.'
+                        ],
+                        [
+                            'name'  =>  'ATTRIBUTE(S)',
+                            'id'    =>  'attributes',
+                            'type'  =>  'text',
+                            'rows'  =>  '10',
+                            'desc'  =>  'Separate multiple attributes with spaces or line break.'
+                        ],
+                    ],
+                ],
+            ],
+        ],
         [
             'name'            => 'Operation',
             'id'              => 'operation',

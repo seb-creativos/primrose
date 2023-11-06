@@ -6,8 +6,8 @@
 
 <div class="row listing">
     
-    <div class="col-md-12 listing-top_bar p-4 mb-5 bg-light">
-        <?php if(!$data['hide-sort']): ?>
+    <?php if(!$data['hide-sort']): ?>
+        <div class="col-md-12 listing-top_bar p-4 mb-5 bg-light">
             <div class="row">
                 <div class="col-md-6">
                     <span><?php echo $query->found_posts . ' ' . __('Properties Found') ?></span>
@@ -16,8 +16,8 @@
                     <?php $fields->get_field('sortby'); ?>
                 </div>
             </div>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?>
 
     <?php while($query->have_posts()) : $query->the_post(); ?>
         <?php koble_public::renderTemplate('listing/' . $data['grid-layout'] . '.php'); ?>

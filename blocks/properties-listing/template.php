@@ -48,8 +48,8 @@ foreach($taxs as $tax){
 }
 
 $shortcode_atts =  [];
-
-foreach($fields as $key => $value): 
+foreach($fields as $key => $value):
+    if (is_array($value)) continue;
     $shortcode_atts[] = $key . '="' . $value . '" ' ;
 endforeach;
 
@@ -66,6 +66,25 @@ endforeach;
 
 <?php else: ?>
 
+    <?php 
+    $headings = $fields['headings'] ?? '';
+    $heading_ = $headings['heading'] ?? '';
+    $heading_tag = $headings['heading-settings']['heading-tag'] ?? '';
+    $classes = trim(preg_replace('/\s+/', ' ', $headings['heading-settings']['classes'] ?? 'text-primary text-center my-50'));
+    $attributes = trim(preg_replace('/\s+/', ' ', $headings['heading-settings']['attributes'] ?? ''));
+    ?>
+
+    <?php if ( $heading_ && $heading_tag ) : ?>
+
+        <<?= $heading_tag ?>
+            <?= $classes ? "class='$classes'" : '' ?>
+            <?= $attributes ?>
+        >
+            <?= $heading_ ?>
+        </<?= $heading_tag ?>>
+        
+    <?php endif ?>
+    
     <?= do_shortcode('[koble_listing ' . implode(' ' , $shortcode_atts) . ']') ?>
     
 <?php endif; ?>
