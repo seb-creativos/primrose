@@ -1,7 +1,7 @@
 				</main> <!-- #siteMain -->
 
 				<!-- Footer -->
-				<footer id="siteFooter">
+				<footer id="siteFooter" class="reveal__container bg-primary text-white py-60">
 					<?php render_pattern('Footer') ?>
 				</footer>
 

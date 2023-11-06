@@ -71,7 +71,7 @@ function documentReady() {
 
     anchorSetupListeners();
 
-    new FPSMeter();
+    if (DEBUG) new FPSMeter();
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
@@ -179,7 +179,7 @@ barba.hooks.after(() => {
     // barbaBackButton();
 
     // if (!window.isBackButtonClicked) {
-    scrollTo(0, false);
+    // scrollTo(0, false);
     // }
     // window.isBackButtonClicked = false;
 

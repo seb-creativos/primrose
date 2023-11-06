@@ -1,4 +1,36 @@
 #siteFooter {
+    .col-md {
+        > h1,h2,h3,h4,h5,h6 {
+            line-height: 4.375rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        padding-left: 0;
+        list-style-type: none;
+        margin-bottom: 0;
+
+        &.gdpr {
+            flex-direction: row;
+            gap: 2rem;
+
+            li {
+                position: relative;
+
+                &:not(:last-child) {
+                    &::after {
+                        content: '|';
+                        position: absolute;
+                        left: calc( 100% + 1rem );
+                    }
+                }
+            }
+        }
+    }
     .reveal__container {
         box-shadow: 0 0 80px -30px rgb(0 0 0 / 10%);
     }
