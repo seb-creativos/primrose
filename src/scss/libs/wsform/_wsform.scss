@@ -71,6 +71,10 @@ $formAlignment: "center";
         font-size: var(--label-font-size) !important;
         font-weight: var(--label-font-weight) !important;
     }
+    
+    &__selected-dial-code {
+        display: none;
+    }
 
     &__arrow {
         border-top-color: currentColor !important;
