@@ -9,163 +9,57 @@ $formAlignment: "center";
     --form-gutter--y: var(--gutter);
     --form-gutter--x: var(--form-gutter--y);
 
-    --field-height: 5rem;
+    --field-height: 3.125rem;
     --field-radius: 0;
     --field-padding--y: 1.5rem;
     --field-padding--x: 1rem;
 
     // Fonts
-    --field-font-size: 0.875rem;
+    --field-font-size: 1rem;
     --label-font-size: var(--field-font-size);
 
-    --field-font-weight: 400;
-    --label-font-weight: 320;
+    --field-font-weight: 300;
+    --label-font-weight: 300;
 
-    --field-line-height: 1.6;
+    --field-line-height: 2;
     --label-line-height: var(--field-line-height);
 
     // Colors
     --field-bg-color: rgb(var(--bs-primary-rgb), 40%);
     --field-border-color: rgb(var(--bs-primary-rgb), 80%);
 
-    --field-text-color: rgb(var(--bs-light-rgb), 90%);
-    --label-text-color: rgb(var(--bs-light-rgb), 60%);
+    --field-text-color: rgb(var(--bs-primary-rgb), 90%);
+    --label-text-color: rgb(var(--bs-primary-rgb), 60%);
 
     --switch-bg-color: var(--field-bg-color);
     --switch-border-color: var(--field-border-color);
-    --switch-color: rgb(var(--bs-light-rgb), 30%);
+    --switch-color: rgb(var(--bs-primary-rgb), 30%);
 
-    --form-accent-color: rgb(var(--bs-light-rgb), 80%);
+    --form-accent-color: rgb(var(--bs-primary-rgb), 80%);
 }
 // #endregion
 
 // #region FIELD
 .wsf-field {
     min-height: var(--field-height) !important;
-    border-radius: var(--field-radius) !important;
-    &:not([data-intl-tel-input]) {
-        padding: var(--field-padding--y) var(--field-padding--x) !important;
-    }
 
     font-size: var(--field-font-size) !important;
     font-weight: var(--field-font-weight) !important;
     line-height: var(--field-line-height) !important;
-
-    background-color: var(--field-bg-color) !important;
-    border-color: var(--field-border-color) !important;
-    color: var(--field-text-color) !important;
-
-    &:hover {
-        border-color: var(--form-accent-color) !important;
-    }
-    &:focus {
-        box-shadow: unset !important;
-    }
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0 1000px var(--field-bg-color) inset !important;
-        -webkit-text-fill-color: var(--field-text-color) !important;
-    }
-
-    transition: border-color var(--form-trans) !important;
 }
 // #endregion
 
-// #region LABELS
-.wsf-label,
-.wsf-field::placeholder {
-    font-size: var(--label-font-size) !important;
-    font-weight: var(--label-font-weight) !important;
-    line-height: var(--label-line-height) !important;
-
-    color: var(--label-text-color) !important;
-}
-
-.wsf-label-position-inside {
-    position: relative;
-
-    .wsf-label {
-        top: calc(
-            (var(--field-height) / 2) - (var(--label-font-size) / 2)
-        ) !important;
-        left: var(--field-padding--x) !important;
-        line-height: 1 !important;
-        background-color: transparent !important;
-
-        transition: transform var(--form-trans) !important;
-    }
-
-    .wsf-field {
-        padding: var(--field-padding--y) var(--field-padding--x) 0
-            var(--field-padding--x) !important;
-
-        &[data-textarea-toolbar] {
-            padding-top: calc(var(--field-padding--y) * 2.5) !important;
-        }
-
-        &:focus + .wsf-label,
-        &:not(:placeholder-shown) + .wsf-label {
-            transform: translateY(-90%) scale(90%) !important;
-        }
-    }
+// #region LABEL
+.wsf-label {
+    line-height: var(--field-line-height) !important;
 }
 // #endregion
 
-// #region SUBMIT
-.wsf-button[type="submit"] {
-    margin-top: calc(var(--form-gutter--y) * 2);
-    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x) !important;
-    border-radius: var(--bs-btn-border-radius) !important;
-
-    font-size: var(--bs-btn-font-size) !important;
-    font-weight: var(--bs-btn-font-weight) !important;
-    line-height: var(--bs-btn-line-height) !important;
-
-    background-color: var(--bs-btn-bg) !important;
-    border-color: var(--bs-btn-border-color) !important;
-    color: var(--bs-btn-color) !important;
-
-    &:hover {
-        letter-spacing: 0.5em;
-    }
-    &:focus {
-        box-shadow: unset !important;
-    }
-
-    transition: letter-spacing var(--form-trans) !important;
+// #region BUTTON
+.wsf-button {
+    line-height: var(--field-line-height) !important;
 }
 // #endregion
-
-// #region COMPONENTS
-.wsf-text-danger {
-    color: var(--form-accent-color) !important;
-}
-
-.wsf-switch {
-    + .wsf-label {
-        margin-bottom: 0 !important;
-        padding-inline-start: 50px !important;
-        line-height: 20px !important;
-
-        &::before {
-            background-color: var(--switch-bg-color) !important;
-            border-color: var(--switch-border-color) !important;
-        }
-        &::after {
-            background-color: var(--switch-color) !important;
-        }
-    }
-
-    &:checked + .wsf-label {
-        &::before {
-            border-color: var(--form-accent-color) !important;
-        }
-        &::after {
-            background-color: var(--form-accent-color) !important;
-        }
-    }
-}
 
 .iti {
     &__selected-flag {
@@ -191,147 +85,3 @@ $formAlignment: "center";
         box-shadow: unset !important;
     }
 }
-
-.wsf-form .dropzone {
-    min-height: var(--field-height);
-    border-radius: var(--field-radius) !important;
-    display: grid;
-    place-content: center;
-
-    font-size: var(--label-font-size) !important;
-    font-weight: var(--label-font-weight) !important;
-
-    background-color: var(--field-bg-color) !important;
-    border-color: var(--field-border-color) !important;
-
-    .wsf-help {
-        color: var(--field-text-color) !important;
-    }
-
-    .dz-message {
-        color: var(--label-text-color) !important;
-    }
-
-    [data-dz-thumbnail] {
-        border-radius: var(--field-radius);
-    }
-
-    .wsf-upload {
-        background-color: var(--form-accent-color) !important;
-    }
-
-    .wsf-invalid-feedback {
-        position: revert;
-    }
-}
-
-select.wsf-field {
-    background-image: unset !important;
-}
-// #endregion
-
-// #region GRID GAP
-.wsf-grid {
-    margin-left: calc(var(--form-gutter--x) / -2) !important;
-    margin-right: calc(var(--form-gutter--x) / -2) !important;
-}
-
-.wsf-tile {
-    padding-left: calc(var(--form-gutter--x) / 2) !important;
-    padding-right: calc(var(--form-gutter--x) / 2) !important;
-    transition: margin-bottom var(--form-trans);
-}
-
-.wsf-field-wrapper {
-    margin-bottom: var(--form-gutter--y) !important;
-
-    &:last-of-type {
-        margin-bottom: 0 !important;
-    }
-}
-
-// #endregion
-
-// #region ALERTS
-.wsf-alert {
-    width: fit-content;
-    padding: 2vmax !important;
-    border: 1px solid currentColor !important;
-    border-radius: 0 !important;
-
-    background-color: transparent !important;
-    color: currentColor !important;
-
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-}
-
-.wsf-invalid-feedback {
-    position: absolute;
-    margin-top: 0.625rem !important;
-
-    font-weight: var(--field-font-weight) !important;
-    line-height: var(--field-line-height) !important;
-
-    color: var(--form-accent-color) !important;
-}
-
-.wsf-validated .wsf-field-wrapper {
-    margin-bottom: calc(var(--form-gutter--y) * 2) !important;
-}
-// #endregion
-
-// #region OPTins
-@if $interactiveLabelStyle == "complex" {
-    .wsf-form .wsf-label-position-inside {
-        .wsf-label {
-            opacity: 0;
-            transition: transform var(--form-trans), opacity var(--form-trans) !important;
-        }
-
-        .wsf-field {
-            &[placeholder]::placeholder {
-                color: var(--label-text-color) !important;
-                line-height: 1 !important;
-                transform: translate(-1px, calc(var(--field-padding--y) / -2));
-                transform-origin: 0 0;
-                transition: transform var(--form-trans),
-                    opacity var(--form-trans);
-            }
-
-            &:focus::placeholder {
-                transform: translate(-1px, 0);
-                opacity: 0;
-            }
-
-            &:focus + .wsf-label,
-            &:not(:placeholder-shown) + .wsf-label {
-                opacity: 1;
-            }
-        }
-    }
-}
-
-@if $formAlignment == "center" {
-    .wsf-field {
-        text-align: center;
-    }
-
-    .wsf-label-position-inside .wsf-label {
-        width: 100% !important;
-        transform-origin: center center !important;
-        left: 0 !important;
-        margin-inline-start: 0 !important;
-    }
-
-    .wsf-invalid-feedback {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .wsf-alert {
-        margin: auto;
-    }
-}
-// #endregion

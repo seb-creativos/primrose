@@ -1,15 +1,10 @@
-.wsf-form {
-    --form-gutter--y: 1.5rem;
-    --field-padding--y: 1rem;
-}
-
 .wsf-field {
     background-color: transparent !important;
-    border: 0 !important;
-    border-bottom: 1px solid var(--field-border-color) !important;
 }
 
-.wsf-label,
-.wsf-field::placeholder {
-    text-transform: uppercase;
+.wsf-field-wrapper[data-type='texteditor'] {
+    font-size: 0.875rem;
+    a {
+        text-decoration: underline;
+    }
 }
