@@ -139,6 +139,9 @@ barba.hooks.beforeLeave(() => {
 
 barba.hooks.leave((data) => {
     if (DEBUG) console.log(`Leaving: ${data.current.namespace}`);
+    if (data.current.namespace === 'Home') {
+        document.body.classList.remove('home');
+    }
 });
 
 barba.hooks.afterLeave(() => {
@@ -152,6 +155,9 @@ barba.hooks.beforeEnter(() => {
 
 barba.hooks.enter((data) => {
     if (DEBUG) console.log(`Entering: ${data.next.namespace}`);
+    if (data.next.namespace === 'Home') {
+        document.body.classList.add('home');
+    }
 });
 
 barba.hooks.afterEnter(() => {
