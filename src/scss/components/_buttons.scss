@@ -1,16 +1,18 @@
 .btn {
-    text-transform: uppercase;
+    --bs-btn-font-weight: 300;
     letter-spacing: 0.075em;
     outline: none;
-}
 
-.btn-link {
-    padding: 0;
-}
+    &-link {
+        --link-color: var(--bs-primary-rgb);
+        padding: 0;
+        text-decoration: underline;
+    }
 
-.btn.has-icon {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    width: max-content;
+    &.has-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        width: max-content;
+    }
 }
