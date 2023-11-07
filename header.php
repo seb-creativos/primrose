@@ -28,6 +28,9 @@
 		<!-- Header -->
 		<?php get_template_part( 'templates/header' ) ?>
 
+		<!-- Sticky CTAs -->
+		<?php get_template_part( 'templates/sticky-cta' ) ?>
+
 		<!-- Offcanvas Navigation -->
 		<?php get_template_part( 'templates/offcanvas-navigation' ) ?>
 

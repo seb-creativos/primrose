@@ -59,6 +59,46 @@ function primrose_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) );
 
+    // CTA Settings
+    $wp_customize->add_section( 'cta_settings', array(
+        'title'    => __( 'CTA Settings', 'primrose' ),
+        'priority' => 31,
+    ) );
+    // Phone Number
+    $wp_customize->add_setting( 'cta-phone', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'cta-phone', array(
+        'label'       => __( 'Phone Number', 'primrose' ),
+        'section'     => 'cta_settings',
+        'type'        => 'text',
+        'input_attrs' => array(
+            'placeholder'   => __( '+34 123 456 789', 'primrose' ),
+        )
+    ) );
+    // Email
+    $wp_customize->add_setting( 'cta-email', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'cta-email', array(
+        'label'       => __( 'Email', 'primrose' ),
+        'section'     => 'cta_settings',
+        'type'        => 'text',
+    ) );
+    // Whatsapp Number
+    $wp_customize->add_setting( 'cta-whatsapp', array(
+        'default' => '',
+    ) );
+    $wp_customize->add_control( 'cta-whatsapp', array(
+        'label'       => __( 'Whatsapp Number', 'primrose' ),
+        'section'     => 'cta_settings',
+        'type'        => 'text',
+        'input_attrs' => array(
+            'placeholder'   => __( '+34 123 456 789', 'primrose' ),
+        )
+    ) );
+
+
     // Additional Logo
     $wp_customize->add_setting('additional_logo', array(
         'default'   => '',
