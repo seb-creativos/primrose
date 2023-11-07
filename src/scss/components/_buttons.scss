@@ -7,6 +7,12 @@
         --link-color: var(--bs-primary-rgb);
         padding: 0;
         text-decoration: underline;
+
+        &::after {
+            font: 1em/1 'Nucleo';
+            content: "\ea0c";
+            text-decoration: none;
+        }
     }
 
     &.has-icon {
