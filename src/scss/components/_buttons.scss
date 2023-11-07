@@ -6,8 +6,10 @@
     &-link {
         --link-color: var(--bs-primary-rgb);
         padding: 0;
-        text-decoration: underline;
 
+        span {
+            text-decoration: underline;
+        }
         &::after {
             font: 1em/1 'Nucleo';
             content: "\ea0c";
@@ -18,7 +20,7 @@
     &.has-icon {
         display: inline-flex;
         align-items: center;
-        gap: 0.5em;
+        gap: 0.25em;
         width: max-content;
     }
 }

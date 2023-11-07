@@ -23,9 +23,7 @@
             <?= $is_external ? 'target="_blank"' : '' ?>
             <?= $classes ? "class='$classes'" : '' ?>
             <?= $attributes ?>
-        >
-            <?= $link_label ?>
-        </a>
+        ><?= $link_label ?></a>
 
     <?php endif ?>
 <?php endforeach ?>
