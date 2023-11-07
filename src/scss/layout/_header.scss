@@ -8,7 +8,7 @@
     transition: background-color var(--theme-trans);
 
 
-    background-color: rgb(var(--bg-color), 100%);
+    background-color: rgb(var(--header-color), 100%);
     backdrop-filter: blur(18px) saturate(150%);
     box-shadow: 0 0 40px rgb(0 0 0 / 5%);
 
