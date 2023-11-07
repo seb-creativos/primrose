@@ -1,7 +1,7 @@
 <?php
 $video = current(mb_get_block_field('video')) ?? '';
 $video_settings = mb_get_block_field('video-settings') ?? '';
-$classes = $video_settings['classes'] ?? '';
+$classes = trim(preg_replace('/\s+/', ' ', $video_settings['classes'] ?? ''));;
 $attributes = $video_settings['attributes'] ?? '';
 ?>
 
