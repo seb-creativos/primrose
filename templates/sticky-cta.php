@@ -6,7 +6,7 @@ $ctas = array(
     ],
     'email' => [
         'icon' => 'icon-letter-1',
-        'link' => get_theme_mod('cta-email'),
+        'link' => 'mailto:'.get_theme_mod('cta-email'),
     ],
     'whatsapp' => [
         'icon' => 'icon-chat_bubble',
