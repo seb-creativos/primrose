@@ -1,0 +1,6 @@
+.property-search {
+    &__wrapper {
+        background-color: rgb(var(--header-color), 70%);
+        backdrop-filter: blur(16px) saturate(150%);
+    }
+}

@@ -1,24 +1,17 @@
-<?php $headings = mb_get_block_field( 'headings' ) ?: [] ?>
+<?php 
+$search = mb_get_block_field( 'search' ) ?: false;
+$layout = $search['layout'] ?? 'horizontal';
+$page = $search['page'] ?? 'properties';
 
-<?php foreach( $headings as $heading ) : ?>
+$settings = $search['settings'] ?: false;
+$classes = $settings['classes'] ?? '';
+$attributes = $settings['attributes'] ?? '';
+?>
 
-    <?php 
-    $heading_ = $heading['heading'] ?? '';
-    $heading_tag = $heading['heading-settings']['heading-tag'] ?? '';
-    $classes = trim(preg_replace('/\s+/', ' ', $heading['heading-settings']['classes'] ?? ''));
-    $attributes = trim(preg_replace('/\s+/', ' ', $heading['heading-settings']['attributes'] ?? ''));
-    ?>
+<?php if ( $layout ) : ?>
 
-    <?php if ( $heading_ && $heading_tag ) : ?>
-
-        <<?= $heading_tag ?>
-            <?= $classes ? "class='$classes'" : '' ?>
-            <?= $attributes ?>
-        >
-            <?= $heading_ ?>
-        </<?= $heading_tag ?>>
-        
-    <?php endif ?>
-
-<?php endforeach ?>
-
+<div <?= $classes ? 'class="'.$classes.'"' : '' ?> <?= $attributes ?> >
+    <?= do_shortcode( '[koble_search layout="'.$layout.'" page="'.$page.'"]' ) ?>
+</div>
+    
+<?php endif ?>

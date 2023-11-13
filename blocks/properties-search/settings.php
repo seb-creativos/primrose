@@ -1,6 +1,17 @@
 <?php
 add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
+    // ARRAY OF PAGES FOR LANDING FIELD
+    $pageOptions = [];
+    $pages = get_pages(array('sort_order' => 'DESC'));
+    foreach ($pages as $page) {
+        $pageOptions[] = [
+            'value'  => $page->post_name,
+            'label'  => $page->post_title,
+            'parent' => $page->post_parent ? get_page( $page->post_parent )->post_name : false,
+        ];
+    }
+
     $meta_boxes[] = [
 
 		// BLOCK
@@ -26,38 +37,48 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
         // BLOCK FIELDS
         'fields'    =>  [
             [
-                'id'            =>  'headings',
+                'id'            =>  'search',
                 'type'          =>  'group',
-                'clone'         =>  true,
-                'sort_clone'    =>  true,
+                'clone'         =>  false,
+                'sort_clone'    =>  false,
 
                 'fields'        =>  [
                     [
-                        'name'  =>  'Heading',
-                        'id'    =>  'heading',
-                        'type'  =>  'textarea',
+                        'name'      =>  'Layout',
+                        'id'        =>  'layout',
+                        'type'      =>  'select',
+                        'options'   =>  [
+                            'horizontal' => 'Horizontal',
+                        ],
+                        'std'       =>  'horizontal',
+                    ],
+                    [
+                        'name'      =>  'Page',
+                        'id'        =>  'page',
+                        'type'      =>  'select',
+                        'options'   =>  $pageOptions,
+                        'std'       =>  'properties',
                     ],
                     create_switch_field( 'Advanced Settings', 'advanced' ),
                     [
-                        'id'        =>  'heading-settings',
-                        'type'      =>  'group',
-                        'visible'   =>  [ 'advanced', true ],
+                        'id'            =>  'settings',
+                        'type'          =>  'group',
+                        'visible'       =>  [ 'advanced', true ],
         
-                        'fields'    =>  [
+                        'fields'        =>  [
                             [
-                                'name'      =>  'Tag',
-                                'id'        =>  'heading-tag',
-                                'type'      =>  'button_group',
-                                'desc'      =>  'Specify HTML tag for SEO purposes.',
-                                'options'   =>  [
-                                    'h1'    =>  'h1',
-                                    'h2'    =>  'h2',
-                                    'h3'    =>  'h3',
-                                    'h4'    =>  'h4',
-                                    'h5'    =>  'h5',
-                                    'h6'    =>  'h6',
-                                ],
-                                'std'       =>  'h2',
+                                'name'  =>  'CSS CLASS(ES)',
+                                'id'    =>  'classes',
+                                'type'  =>  'textarea',
+                                'rows'  =>  '10',
+                                'desc'  =>  'Separate multiple classes with spaces.'
+                            ],
+                            [
+                                'name'  =>  'ATTRIBUTE(S)',
+                                'id'    =>  'attributes',
+                                'type'  =>  'textarea',
+                                'rows'  =>  '10',
+                                'desc'  =>  'Separate multiple attributes with spaces or line break.'
                             ],
                         ],
                     ],
