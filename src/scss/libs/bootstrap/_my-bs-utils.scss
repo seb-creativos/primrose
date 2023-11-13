@@ -156,4 +156,17 @@ $my-bs-utils: (
             20: 0.2em,
         ),
     ),
+    "border-radius": (
+        property: border-radius,
+        class: br,
+        values: (
+            0: 0,
+            4: 0.25rem,
+            8: 0.5rem,
+            10: 0.625rem,
+            12: 0.75rem,
+            16: 1rem,
+            20: 1.25rem,
+        ),
+    ),
 );
