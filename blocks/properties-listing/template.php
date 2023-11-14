@@ -70,7 +70,7 @@ endforeach;
     $headings = $fields['headings'] ?? '';
     $heading_ = $headings['heading'] ?? '';
     $heading_tag = $headings['heading-settings']['heading-tag'] ?? '';
-    $classes = trim(preg_replace('/\s+/', ' ', $headings['heading-settings']['classes'] ?? 'text-primary text-center my-50'));
+    $classes = trim(preg_replace('/\s+/', ' ', $headings['heading-settings']['classes'] ?? ''));
     $attributes = trim(preg_replace('/\s+/', ' ', $headings['heading-settings']['attributes'] ?? ''));
     ?>
 
