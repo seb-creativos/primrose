@@ -27,6 +27,10 @@ p {
     letter-spacing: 0.05em;
 }
 
+input {
+    font-weight: $font-weight-base;
+}
+
 .menu-item {
     --menu-item-fs: var(--bs-body-font-size);
 

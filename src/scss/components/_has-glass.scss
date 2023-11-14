@@ -1,6 +1,6 @@
 .has-glass {
-    background-color: rgb(var(--bg-color), 40%);
-    backdrop-filter: blur(22px) saturate(140%);
+    background-color: rgb(var(--bg-color), 70%) !important;
+    backdrop-filter: blur(16px) saturate(150%);
 
     transition: background-color var(--theme-trans);
 }
