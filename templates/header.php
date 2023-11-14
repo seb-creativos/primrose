@@ -31,7 +31,8 @@
             <!-- Actions -->
             <div>
                 <?= do_shortcode( '[favorite_count_btn]' ) ?>
-                <?= do_shortcode( '[language-switcher]' ) ?>
+                <?php #TODO ?>
+                <?= 'English' ?>
             </div>
         </nav>
 
