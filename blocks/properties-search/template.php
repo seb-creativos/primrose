@@ -8,10 +8,18 @@ $classes = $settings['classes'] ?? '';
 $attributes = $settings['attributes'] ?? '';
 ?>
 
-<?php if ( $layout ) : ?>
+<?php if($is_preview): ?>
 
-<div <?= $classes ? 'class="'.$classes.'"' : '' ?> <?= $attributes ?> >
-    <?= do_shortcode( '[koble_search layout="'.$layout.'" page="'.$page.'"]' ) ?>
-</div>
-    
+    <input type="text" disabled>
+    <input type="text" disabled>
+    <input value="Find it" type="submit" disabled>
+
+<?php else: ?>
+    <?php if ( $layout && $page ) : ?>
+
+    <div <?= $classes ? 'class="'.$classes.'"' : '' ?> <?= $attributes ?> >
+        <?= do_shortcode( '[koble_search layout="'.$layout.'" page="'.$page.'"]' ) ?>
+    </div>
+        
+    <?php endif ?>
 <?php endif ?>
