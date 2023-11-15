@@ -1,4 +1,4 @@
-<div class="container-wide text-end">
+<div class="container-wide">
     <button class="scroll-progress back-to-top" type="button">
         <div class="scroll-progress__bar">
             <span class="scroll-progress__icon">

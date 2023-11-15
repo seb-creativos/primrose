@@ -72,6 +72,10 @@ function documentReady() {
     anchorSetupListeners();
 
     if (DEBUG) new FPSMeter();
+    
+    // Back To Top button functionality
+    const btt = document.querySelector('.back-to-top');
+    btt?.addEventListener('click', () => { scrollTo(0) });
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
@@ -147,6 +151,8 @@ barba.hooks.leave((data) => {
 barba.hooks.afterLeave(() => {
     if (DEBUG) console.log("afterLeave");
     killTriggers();
+    // Restart window position on page change
+    scrollTo(0, false);
 });
 
 barba.hooks.beforeEnter(() => {
@@ -182,12 +188,6 @@ barba.hooks.after(() => {
     initGLightbox();
     initMaps();
     initForms();
-    // barbaBackButton();
-
-    // if (!window.isBackButtonClicked) {
-    // scrollTo(0, false);
-    // }
-    // window.isBackButtonClicked = false;
 
     anchorExecuteExternal();
 });
