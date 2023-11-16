@@ -1,0 +1,66 @@
+.scroll-reactive {
+    --progress: 0;
+    width: 8.75rem;
+    height: 8.75rem;
+    padding: 1rem;
+    border: 0;
+    outline: 0;
+    transition: transform 500ms var(--easeOut);
+    background-color: #0000;
+
+    &__center {
+        height: 80%;
+        aspect-ratio: 1;
+        top: 10%;
+        left: 10%;
+
+        overflow: hidden;
+        position: relative;
+        border-radius: 50%;
+        border: 1px solid var(--bs-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0000;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 5%;
+            right: 0%;
+            bottom: 5%;
+            left: 10%;
+
+
+            border-radius: 50%;
+            border: 1px solid var(--bs-primary);
+            transform-origin: center center;
+            transition: transform 1200ms var(--easeOut);
+        }
+    }
+
+    &__icon {
+        color: var(--bs-primary);
+        font-size: 2.5rem;
+        display: flex;
+        // transform: rotate(calc(var(--progress) * -12turn));
+        transition: transform 1200ms var(--easeOut);
+    }
+
+    &__text {
+        text-transform: uppercase;
+        letter-spacing: 0.075em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 140%;
+        width: 140%;
+        transform: translate(-50%, -50%)
+            rotate3d(0, 0, 1, calc(var(--progress) * 3turn));
+        transition: transform 1200ms var(--easeOut);
+
+        text {
+            color: var(--bs-primary);
+        }
+    }
+}
