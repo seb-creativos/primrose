@@ -19,7 +19,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
         'id'        =>  'koble-search',
         'type'      =>  'block',
         'icon'      =>  'admin-multisite',
-        'category'  =>  'custom-components',
+		'category'  => 'custom',
         'context'   =>  'center',
 
         // BLOCK PROPS
