@@ -34,6 +34,11 @@
 		<!-- Offcanvas Navigation -->
 		<?php get_template_part( 'templates/offcanvas-navigation' ) ?>
 
+		<!-- SVG Background Animation -->
+		<?php if( get_theme_mod( 'enable_decoration-svg', true ) ): ?>
+			<?php get_template_part( 'templates/decoration-svg' ) ?>
+		<?php endif ?>
+
 		<!-- Scroll Smoother -->
 		<div id="smooth-wrapper">
 			<div id="smooth-content">

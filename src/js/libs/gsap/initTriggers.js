@@ -9,6 +9,7 @@ import initGsapSticker from "./triggers/gsapSticker";
 import initGsapThemeSwap from "./triggers/gsapThemeSwap";
 // import initGsapXScroll from "./triggers/gsapXScroll";
 import initGsapHeader from "./triggers/gsapHeader";
+import initGsapAnimateSvg from "./triggers/gsapAnimateSvg";
 
 export default function initTriggers() {
 	if (!ScrollTrigger.isTouch) initGsapReveal();
@@ -20,4 +21,5 @@ export default function initTriggers() {
 	initGsapThemeSwap();
 	// initGsapXScroll();
 	initGsapHeader();
+	initGsapAnimateSvg();
 }

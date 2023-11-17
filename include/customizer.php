@@ -49,6 +49,16 @@ function primrose_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) );
 
+    // Decoration SVG
+    $wp_customize->add_setting( 'enable_decoration-svg', array(
+        'default' => true,
+    ) );
+    $wp_customize->add_control( 'enable_decoration-svg', array(
+        'label'    => __( 'Enable Decoration SVG', 'primrose' ),
+        'section'  => 'theme_settings',
+        'type'     => 'checkbox',
+    ) );
+
     // Scroll Progress
     $wp_customize->add_setting( 'enable_scroll-progress-indicator', array(
         'default' => true,

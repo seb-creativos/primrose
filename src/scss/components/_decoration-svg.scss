@@ -1,0 +1,37 @@
+#siteSvg {
+    position: fixed;
+    z-index: var(--layer--under);
+    pointer-events: none;
+
+    top: 20vh;
+    left: -20vh;
+    height: 60vh;
+    width: 60vh;
+
+    
+    svg {
+        overflow: visible;
+        width: 60vh;
+        height: 60vh;
+
+        circle, path {
+            // transform-origin: center !important;
+        }
+        g#logo {
+            // :nth-child(1){display: none;}
+            // :nth-child(2){display: none;}
+            // :nth-child(3){display: none;}
+            // :nth-child(4){display: none;}
+            // :nth-child(5){display: none;}
+            // :nth-child(6){display: none;}
+            // :nth-child(7){display: none;}
+            // :nth-child(8){display: none;}
+        }
+    }
+}
+
+body:not(.home) {
+    #siteSvg {
+        display: none !important;
+    }
+}
