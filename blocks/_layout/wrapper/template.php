@@ -8,9 +8,9 @@ $href = $settings['link-settings']['href'] ?? '';
 $is_external = $settings['link-settings']['is-external'] ?? '';
 ?>
 
-<?php if($is_link && $href): ?>
+<?php if($is_link && $href && !$is_preview ): ?>
     <a  
-        href="<?= !is_preview() ? $href : '' ?>"
+        href="<?= $href ?>"
         <?= $is_external ? "target='_blank'" : '' ?>
         <?= $classes ? "class='$classes'" : '' ?>
         <?= $attributes ?>
