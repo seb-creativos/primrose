@@ -3,16 +3,16 @@
     z-index: var(--layer--under);
     pointer-events: none;
 
-    top: 20vh;
-    left: -20vh;
-    height: 60vh;
-    width: 60vh;
+    top: 15vh;
+    left: -30vh;
+    height: 70vh;
+    width: 70vh;
 
     
     svg {
         overflow: visible;
-        width: 60vh;
-        height: 60vh;
+        width: 70vh;
+        height: 70vh;
 
         circle, path {
             // transform-origin: center !important;
