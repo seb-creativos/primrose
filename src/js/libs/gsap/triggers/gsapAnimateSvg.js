@@ -7,17 +7,17 @@ export default function initGsapAnimateSvg() {
         let percentage;
 
         // percentage calculator (base 1, 0% -> 0, 100% -> 1)
-        if (progress <= 0.33) {
-            // First third: Animate from 0% to 100%
-            percentage = progress * 3;
-        } else if (progress <= 0.66) {
-            // Second third: Continue animating at 100%
+        if (progress <= 0.2) {
+            // From 0% to 20%: Animate from 0% to 100%
+            percentage = progress * 5;
+        } else if (progress <= 0.8) {
+            // From 20% to 80%: Continue animating at 100%
             percentage = 1;
         } else {
-            // Final third: deanimate from 100% to 0%
-            percentage = (1 - progress) * 3;
+            // From 80% to 100%: deanimate from 100% to 0%
+            percentage = (1 - progress) * 5;
 
-            // Keep the animation in the final third
+            // Keep the animation in the final step
             // percentage = 1;
         }
 
