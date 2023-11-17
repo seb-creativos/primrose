@@ -10,7 +10,7 @@ $is_external = $settings['link-settings']['is-external'] ?? '';
 
 <?php if($is_link && $href): ?>
     <a  
-        href="<?= $href ?>"
+        href="<?= !is_preview() ? $href : '' ?>"
         <?= $is_external ? "target='_blank'" : '' ?>
         <?= $classes ? "class='$classes'" : '' ?>
         <?= $attributes ?>
