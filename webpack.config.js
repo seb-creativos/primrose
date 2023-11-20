@@ -45,7 +45,7 @@ const projectFiles = {
         use: "sass", // sass || postcss
         rules: {
             sass: {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
             },
             postcss: {
                 test: /\.pcss$/,
