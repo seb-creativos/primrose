@@ -2,59 +2,45 @@ import { gsap } from "gsap/all";
 
 export default function initGsapAnimateSvg() {
 
-    function logoAnimation(svg, progress) {
-
-        let percentage;
-
-        // percentage calculator (base 1, 0% -> 0, 100% -> 1)
-        if (progress <= 0.2) {
-            // From 0% to 20%: Animate from 0% to 100%
-            percentage = progress * 5;
-        } else if (progress <= 0.8) {
-            // From 20% to 80%: Continue animating at 100%
-            percentage = 1;
-        } else {
-            // From 80% to 100%: deanimate from 100% to 0%
-            percentage = (1 - progress) * 5;
-
-            // Keep the animation in the final step
-            // percentage = 1;
-        }
-
+    function logoAnimation(svg) {
         // svg#logo is the g containing all the paths
-        Array.from(svg.getElementById('logo').children).forEach((path, i) => {
-            gsap.to(path, {
-                opacity: percentage - (i*0.01),
-                scale: percentage,
-                rotation: (1-percentage) * 90,
-                duration: i * 0.125, //adds more delay to further childs 
-            })
-        });
+        if( svg ){
+            Array.from(svg.getElementById('logo').children).forEach((path, i) => {
+                gsap.to(path, {
+                    opacity: 1,
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.5 + (i * 0.3), //adds more delay to further childs 
+                })
+            });
+        }
     }
 
     const svg = document.querySelector('#siteSvg svg');
-    const paths = svg.querySelectorAll('circle, path');
-    const firstWhite = document.querySelectorAll('section.bg-white')[0];
-    const secondWhite = document.querySelectorAll('section.bg-white')[1];
+    const paths = svg?.querySelectorAll('circle, path');
+    const trigger = svg?.closest('section');
 
-    // set the svg to 0 by default
-    gsap.to(paths, {
-        opacity: 0,
-        scale: 0,
-    });
-
-    const animationTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: firstWhite,
-            start: "top top",
-            endTrigger: secondWhite,
-            end: "top bottom",
-            scrub: 1,   // Enable scrubbing for a smoother animation
-            // markers: true,
-
-            onUpdate: (self) => {
-                logoAnimation(svg, self.progress);
-            },
-        }
-    });
+    if( paths && trigger ) {        
+        // set the svg to 0 by default
+        gsap.to(paths, {
+            opacity: 0,
+            scale: 0,
+            rotation: 90,
+        });
+    
+        const animationTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: trigger,
+                start: "bottom bottom",
+                scrub: 1,   // Enable scrubbing for a smoother animation
+                // markers: true,
+    
+                onEnter: (self) => {
+                    console.log('you');
+                    logoAnimation(svg);
+                    // self.kill();
+                },
+            }
+        });
+    }
 }

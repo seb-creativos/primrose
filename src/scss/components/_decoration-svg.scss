@@ -1,13 +1,14 @@
 #siteSvg {
-    position: fixed;
+    position: absolute;
     z-index: var(--layer--under);
     pointer-events: none;
 
-    top: 15vh;
+    top: 50%;
     left: -30vh;
     height: 70vh;
     width: 70vh;
 
+    transform: translateY(-50%);
     
     svg {
         overflow: visible;
