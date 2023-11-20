@@ -10,7 +10,7 @@ export default function initGsapAnimateSvg() {
                     opacity: 1,
                     scale: 1,
                     rotation: 0,
-                    duration: 0.5 + (i * 0.3), //adds more delay to further childs 
+                    duration: 1 + (i * 0.3), //adds more delay to further childs 
                 })
             });
         }
