@@ -36,9 +36,8 @@ export default function initGsapAnimateSvg() {
                 // markers: true,
     
                 onEnter: (self) => {
-                    console.log('you');
                     logoAnimation(svg);
-                    // self.kill();
+                    self.kill();
                 },
             }
         });
