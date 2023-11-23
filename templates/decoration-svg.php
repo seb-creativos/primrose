@@ -1,4 +1,4 @@
-<div id="siteSvg" data-speed="0.85" data-lag="0">
+<div id="siteSvg" data-speed="0.8" data-lag="0">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="687" height="687" viewBox="0 0 687 687">
         <defs>
             <clipPath id="clip-path">

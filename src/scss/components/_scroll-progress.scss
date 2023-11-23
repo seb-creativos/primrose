@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(var(--bs-primary-rgb), 20%);
+        background-color: rgb(var(--bs-primary-rgb), 10%);
         backdrop-filter: blur(12px) saturate(300%);
 
         &::before {
@@ -33,7 +33,7 @@
             left: 0;
             transform: scaleY(var(--progress));
             transform-origin: center top;
-            background-color: rgb(255, 255, 255, 30%);
+            background-color: rgb(var(--bs-primary-rgb), 20%);
             transition: transform 1200ms var(--easeOut);
         }
     }

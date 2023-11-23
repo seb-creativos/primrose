@@ -8,3 +8,13 @@
         text-decoration: underline;
     }
 }
+
+.wsf-section {
+    &--full-textarea {
+        .wsf-fields,
+        .wsf-field-wrapper>div,
+        textarea {
+            height: 100%;
+        }
+    }
+}

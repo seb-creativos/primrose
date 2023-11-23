@@ -2,6 +2,7 @@
     position: absolute;
     z-index: var(--layer--under);
     pointer-events: none;
+    opacity: 1;
 
     top: 50%;
     left: -30vh;
@@ -9,6 +10,7 @@
     width: 70vh;
 
     transform: translateY(-50%);
+    transition: opacity 500ms var(--easeOut);
     
     svg {
         overflow: visible;
@@ -19,6 +21,6 @@
 
 body:not(.home) {
     #siteSvg {
-        display: none !important;
+        opacity: 0 !important;
     }
 }
