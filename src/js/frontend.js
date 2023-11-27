@@ -41,6 +41,9 @@ import {
 // GLightbox
 import initGLightbox from "./libs/gLightbox";
 
+// WSForm Custom modifications
+import initWSFormCollapse from "./libs/WSForm";
+
 // Utilities
 import getHeight from "./utils/getHeight";
 import initVideos from "./utils/initVideos";
@@ -86,6 +89,7 @@ function windowLoad() {
     initGLightbox();
     initMaps();
     betterOffcanvas();
+    initWSFormCollapse();
 
     exitLoader();
 }
@@ -152,7 +156,7 @@ barba.hooks.afterLeave(() => {
     if (DEBUG) console.log("afterLeave");
     killTriggers();
     // Restart window position on page change
-    scrollTo(0, false);
+    // scrollTo(0, false);
 });
 
 barba.hooks.beforeEnter(() => {
@@ -188,6 +192,7 @@ barba.hooks.after(() => {
     initGLightbox();
     initMaps();
     initForms();
+    initWSFormCollapse();
 
     anchorExecuteExternal();
 });

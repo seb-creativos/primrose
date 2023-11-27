@@ -24,3 +24,13 @@
         width: max-content;
     }
 }
+
+.collapseWrapper {
+    .btn {
+        &.selected {
+            color: var(--bs-btn-hover-color);
+            background-color: var(--bs-btn-hover-bg);
+            border-color: var(--bs-btn-hover-border-color);
+        }
+    }
+}
