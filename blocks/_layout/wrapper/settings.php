@@ -13,7 +13,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
         // BLOCK PROPS
 		'supports'  => [
-			'anchor'            => false,
+			'anchor'            => true,
             'customClassName'   => true,
         ],
 
