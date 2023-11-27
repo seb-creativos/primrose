@@ -12,6 +12,7 @@
 				its dependencies across the website.
 				-->
 				<div class="d-none">
+					<?= do_shortcode('[ws_form id="1"]') ?>
 					<?= do_shortcode('[ws_form id="2"]') ?>
 				</div>
 
