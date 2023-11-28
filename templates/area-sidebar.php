@@ -16,7 +16,6 @@ $current = get_the_ID();
         </span>
         <ul class="px-24 py-12">
         <?php
-        $query = new WP_Query( $args );
         if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
         ?>
         <?php if( get_the_ID() == $current ): ?>
