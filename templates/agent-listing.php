@@ -8,7 +8,7 @@ $args = [
 $query = new WP_Query($args);
 ?>
 
-<div class="team__listing row">
+<div class="team__listing row gx-md-16 gy-md-60">
     <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
         <?php get_template_part( 'templates/agent-grid' )?>
     <?php endwhile; endif; wp_reset_query(); ?>
