@@ -6,6 +6,7 @@ $args = [
     'order' => 'ASC',
 ];
 $query = new WP_Query($args);
+$current = get_the_ID();
 ?>
 
 <div class="area__sidebar sticky__track d-none d-md-block col-md-3">
@@ -18,7 +19,20 @@ $query = new WP_Query($args);
         $query = new WP_Query( $args );
         if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
         ?>
-            <li><?php the_title(); ?></li>
+        <?php if( get_the_ID() == $current ): ?>
+            <li class="text-primary fw-bolder">
+                <a class="has-icon" href="<?php the_permalink()?>">
+                    <?php the_title(); ?>
+                    <i class="icon icon-arrow-sm-right"></i>
+                </a>
+            </li>
+        <?php else: ?>
+            <li>
+                <a href="<?php the_permalink()?>">
+                    <?php the_title(); ?>
+                </a>
+            </li>
+        <?php endif; ?>
         <?php
         endwhile; endif;
         wp_reset_query();

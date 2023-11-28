@@ -16,13 +16,13 @@
             text-decoration: none;
         }
     }
+}
 
-    &.has-icon {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25em;
-        width: max-content;
-    }
+.has-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    width: max-content;
 }
 
 .collapseWrapper {
