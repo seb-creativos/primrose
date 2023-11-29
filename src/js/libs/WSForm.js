@@ -31,7 +31,8 @@ export function WSFormCollapse() {
             button.addEventListener( 'click', () => {
                 buttons.forEach((b)=>{b.classList.remove('selected')});
                 button.classList.add('selected');
-                collapse.querySelector('[data-preferred]').value = `Prefer to be contacted by: ${button.textContent}`;
+                if( collapse.querySelector('[data-preferred]') )
+                    collapse.querySelector('[data-preferred]').value = `Prefer to be contacted by: ${button.textContent}`;
             })
         } )
     }
@@ -43,8 +44,10 @@ export function WSFormAgent(){
     if( !name || !email ) return;
     if (DEBUG) console.log("WSForm init Agent customization");
     
-    const form = document.querySelector('.wsf-form');
-    form.querySelector('[agent-name]').value = `${name}`;
-    form.querySelector('[agent-email]').value = `${email}`;
+    const form = document.querySelector('.agent__content--contact .wsf-form');
+    if( form ){
+        form.querySelector('[agent-name]').value = `${name}`;
+        form.querySelector('[agent-email]').value = `${email}`;
+    }
 
 }

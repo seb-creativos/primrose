@@ -31,3 +31,13 @@
         }
     }
 }
+
+.agent {
+    .wsf-field {
+        &:focus, &:not(:placeholder-shown) {
+            & + label {
+                background-color: var(--bs-light) !important;
+            }
+        }
+    }
+}
