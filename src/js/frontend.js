@@ -42,7 +42,10 @@ import {
 import initGLightbox from "./libs/gLightbox";
 
 // WSForm Custom modifications
-import initWSFormCollapse from "./libs/WSForm";
+import {
+    WSFormCollapse,
+    WSFormAgent,
+} from "./libs/WSForm";
 
 // Utilities
 import getHeight from "./utils/getHeight";
@@ -89,7 +92,12 @@ function windowLoad() {
     initGLightbox();
     initMaps();
     betterOffcanvas();
-    initWSFormCollapse();
+    WSFormCollapse();
+
+    let path = window.location.pathname;
+    if (path.includes('/agent/')) {
+        WSFormAgent();
+    }
 
     exitLoader();
 }
@@ -174,7 +182,7 @@ barba.hooks.afterEnter(() => {
     if (DEBUG) console.log(`afterEnter`);
 });
 
-barba.hooks.after(() => {
+barba.hooks.after((data) => {
     if (DEBUG) console.log("after");
 
     // Reattach event listeners for anchor links
@@ -192,7 +200,12 @@ barba.hooks.after(() => {
     initGLightbox();
     initMaps();
     initForms();
-    initWSFormCollapse();
+    WSFormCollapse();
+
+    let path = data.next.url.path;
+    if (path.includes('/agent/')) {
+        WSFormAgent();
+    }
 
     anchorExecuteExternal();
 });
