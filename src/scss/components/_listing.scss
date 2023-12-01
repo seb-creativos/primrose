@@ -1,0 +1,15 @@
+.listing {
+    &-property {
+        &__data {
+            .col-auto {
+                position: relative;
+                &:not(:last-child)::after {
+                    content: '|';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
