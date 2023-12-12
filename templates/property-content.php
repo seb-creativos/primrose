@@ -24,11 +24,11 @@ $type_slug = $property->get_subterm('property-types', 'slug');
             </div><!-- !.__breadcrumbs -->
             <div class="single-header__share d-none d-md-flex col-md-auto">
                 <a href="<?= $property->generate_pdf_link() ?>" target="_blank" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
-                    <i class="icon icon-file-pdf-outline-64 font-size-24 me-8 pos-absolute end-100"></i>
+                    <i class="icon icon-file-pdf-outline-64 fs-20 text-primary me-8 pos-absolute end-100"></i>
                     <?= __('Print', 'koble'); ?>
                 </a>
                 <a href="#shareModal" data-bs-toggle="modal" role="button" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
-                    <i class="icon icon-data-upload-outline-64 font-size-24 me-8 pos-absolute end-100"></i>
+                    <i class="icon icon-data-upload-outline-64 fs-20 text-primary me-8 pos-absolute end-100"></i>
                     <?= __('Share', 'koble'); ?>
                 </a>
                 <a href="#" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
@@ -66,7 +66,7 @@ $type_slug = $property->get_subterm('property-types', 'slug');
                 </div><!-- !._sticky -->
 
                 <div class="property-content__basic">
-                    <div class="row row-cols-2 row-cols-md-auto gy-20 gx-80">
+                    <div class="row row-cols-2 row-cols-md-auto gy-20 gx-80 mt-30">
                         <?php if( $property->get_field('property-beds') ): ?>
                             <div class="beds col">
                                 <span><?= sprintf('%s Beds', $property->get_field('property-beds')); ?></span>
@@ -95,20 +95,16 @@ $type_slug = $property->get_subterm('property-types', 'slug');
                     </div>
                 </div><!-- !._basic -->
 
-                <div class="property-content__desc">
-                    <h3 class="font-size-24 text-uppercase"><?= __('Description', 'koble'); ?></h3>
-                    <div 
-                        class="js-read-more mb-16" 
-                        data-rm-words="70">
+                <div class="property-content__desc my-60">
+                    <h3 class="fs-20 text-primary mb-20"><?= __('About the property', 'koble'); ?></h3>
+                    <div class="mb-16">
                         <?= $property->get_description(); ?>
                     </div>
                 </div><!-- !._desc -->
-
-                <hr class="my-50">
                 
                 <?php if ( !empty($features) ): ?>
-                <div class="property-content__features">
-                    <h3 class="font-size-24 text-uppercase"><?= __('Features', 'koble'); ?></h3>
+                <div class="property-content__features my-60">
+                    <h3 class="fs-20 text-primary mb-20"><?= __('Features', 'koble'); ?></h3>
                     <ul class="mb-0">
                         <?php foreach ( $features as $feature ): ?>
                         <li>
@@ -118,36 +114,28 @@ $type_slug = $property->get_subterm('property-types', 'slug');
                     </ul>
                 </div><!-- !._features -->
 
-                <hr class="my-50">
                 <?php endif; ?>
 
-                <?= $property->get_map() ?>
+                <div class="property-content__area my-60">
+                    <h3 class="fs-20 text-primary mb-20"><?= __('Area', 'koble'); ?></h3>
+                    <?= $property->get_map() ?>
+                </div><!-- !._area -->
 
-                <div class="property-content__mortgage">
-                    <h3 class="font-size-24 text-uppercase"><?= __('Mortgage Calculator', 'koble'); ?></h3>
-                    <?php #echo do_shortcode( '[mortgage_calculator]' )?>
-                </div><!-- !._mortgage -->
-
-                <hr class="my-50">
-
-                <div class="property-content__downloads">
-                    <h3 class="font-size-24 text-uppercase"><?= __('Downloads', 'koble'); ?></h3>
-                    <div class="row mt-24 gx-8">
-                        <div class="col-md mb-24">
+                <div class="property-content__downloads my-60 p-24 bg-white">
+                    <h3 class="fs-20 text-primary mb-24"><?= __('Downloads', 'koble'); ?></h3>
+                    <div class="row gx-8">
+                        <div class="col-md mb-24 mb-md-0">
                             <a href="<?= $property->generate_pdf_link() ?>" target="_blank" class="btn btn-primary bg w-100 px-8 justify-content-center">
-                                <i class="icon icon-file-pdf-glyph-64 font-size-14 me-8"></i>
-                                <?= __('Print PDF', 'koble') ?>
+                                <?= __('Print in PDF', 'koble') ?>
                             </a>
                         </div>
-                        <div class="col-md mb-24">
+                        <div class="col-md mb-24 mb-md-0">
                             <a href="#TODO" class="btn btn-primary bg w-100 px-8 justify-content-center">
-                                <i class="icon icon-house-2 font-size-14 me-8"></i>
                                 <?= __("Buyer's Guide", 'koble') ?>
                             </a>
                         </div>
-                        <div class="col-md mb-24">
+                        <div class="col-md mb-0">
                             <a href="#TODO" class="btn btn-primary bg w-100 px-8 justify-content-center">
-                                <i class="icon icon-cogwheel-1 font-size-14 me-8"></i>
                                 <?= __('Aftersale Services', 'koble') ?>
                             </a>
                         </div>
