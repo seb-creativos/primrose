@@ -1,0 +1,17 @@
+.property {
+    &-content {
+        &__sticky {
+            z-index: var(--layer--above-all);
+            &::before {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                background: linear-gradient(0deg, rgb(0,0,0,0) 0%, rgb(var(--bs-light-rgb),.8) 50%, rgb(var(--bs-light-rgb),1) 100%);
+                left: calc( -1 * (var(--bs-gutter-x)*0.5) );
+                right: calc( -1 * (var(--bs-gutter-x)*0.5) );
+                top: calc( -1 * (var(--bs-gutter-x)) );
+                bottom: 0;
+            }
+        }
+    }
+}

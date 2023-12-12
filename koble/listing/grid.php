@@ -12,18 +12,26 @@
             <p class="m-0"><?= $property->get_term('property-locations'); ?></p>
             <p class="text-primary m-0"><?= $property->get_title(); ?></p>
             <div class="row g-20 justify-content-center">
-                <div class="col-auto">
-                    <p class="m-0"><?= sprintf(__('%s Beds', 'koble'), $property->get_field('property-beds')) ?></p>
-                </div>
-                <div class="col-auto">
-                    <p class="m-0"><?= sprintf(__('%s Baths', 'koble'), $property->get_field('property-baths')) ?></p>
-                </div>
-                <div class="col-auto">
-                    <p class="m-0"><?= sprintf(__('%sm<sup>2</sup>', 'koble'), $property->get_field('property-built_size')) ?></p>
-                </div>
-                <div class="col-auto">
-                    <p class="fw-bolder m-0"><?= sprintf(__('Ref. %s', 'koble'), $property->get_field('property-reference')) ?></p>
-                </div>
+                <?php if( $property->get_field('property-beds') ): ?>
+                    <div class="col-auto">
+                        <p class="m-0"><?= sprintf(__('%s Beds', 'koble'), $property->get_field('property-beds')) ?></p>
+                    </div>
+                <?php endif; ?>
+                <?php if( $property->get_field('property-baths') ): ?>
+                    <div class="col-auto">
+                        <p class="m-0"><?= sprintf(__('%s Baths', 'koble'), $property->get_field('property-baths')) ?></p>
+                    </div>
+                <?php endif; ?>
+                <?php if( $property->get_field('property-built_size') ): ?>
+                    <div class="col-auto">
+                        <p class="m-0"><?= sprintf(__('%sm<sup>2</sup>', 'koble'), $property->get_field('property-built_size')) ?></p>
+                    </div>
+                <?php endif; ?>
+                <?php if( $property->get_field('property-reference') ): ?>
+                    <div class="col-auto">
+                        <p class="fw-bold m-0"><?= sprintf(__('Ref. %s', 'koble'), $property->get_field('property-reference')) ?></p>
+                    </div>
+                <?php endif; ?>
             </div>
             <p class="fs-18 m-0"><?= $property->get_price(); ?></p>
         </div>
