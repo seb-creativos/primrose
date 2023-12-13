@@ -113,7 +113,6 @@ function createMarker(location, map) {
 
 export default function initMaps() {
 	const mapElements = document.querySelectorAll(".map:not(.on-demand)");
-	console.log(mapElements);
 
 	if (mapElements.length) {
 		mapElements.forEach(initMap);
