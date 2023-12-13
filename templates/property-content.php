@@ -9,7 +9,7 @@ $type_slug = $property->get_subterm('property-types', 'slug');
 ?>
 
 <!-- SINGLE PROPERTY - HEADER -->
-<section class="property-header pt-30">
+<section class="property-header">
     <div class="container-wide">
         <div class="row">
             <div class="single-header__breadcrumbs heading-font col-md mb-30 font-size-30 font-size-md-32">
