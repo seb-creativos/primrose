@@ -13,6 +13,7 @@ $landing = get_post_meta( get_the_ID(), 'area-landing', true );
                     <span>
                         <?= sprintf(__('View Properties in %s'), get_the_title() ) ?>
                     </span>
+                    <i class="icon icon-arrow-sm-right"></i>
                 </a>
             </div>
         </div>

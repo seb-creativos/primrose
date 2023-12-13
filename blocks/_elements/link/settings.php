@@ -48,6 +48,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
                             'btn-secondary' =>  'Secondary',
                             'btn-dark'      =>  'Dark',
                             'btn-light'     =>  'Light',
+                            'with-chev'     =>  'With chevron',
                             'raw'           =>  'Raw'
                         ],
                         'std'               =>  'raw',
