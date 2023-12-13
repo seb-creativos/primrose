@@ -19,6 +19,7 @@ import "../scss/frontend.scss";
 import barba from "@barba/core";
 import initBarba from "./libs/barba/initBarba";
 // import barbaBackButton from "./barba/barbaBackButton";
+import barbaUpdateClasses from "./libs/barba/barbaUpdateClasses.js";
 
 // GSAP
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -60,6 +61,7 @@ import {
     anchorExecuteExternal,
 } from "./utils/anchorsManager";
 import FPSMeter from "./utils/fpsMeter.js";
+import singleProperty from "./utils/singleProperty.js";
 
 // ======================
 // EVENT LISTENERS
@@ -76,6 +78,9 @@ function documentReady() {
     // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     anchorSetupListeners();
+
+    // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
+    if (document.body.classList.contains('single-property')) new singleProperty();
 
     if (DEBUG) new FPSMeter();
     
@@ -167,8 +172,9 @@ barba.hooks.afterLeave(() => {
     // scrollTo(0, false);
 });
 
-barba.hooks.beforeEnter(() => {
+barba.hooks.beforeEnter((data) => {
     if (DEBUG) console.log(`beforeEnter`);
+    barbaUpdateClasses(data.next.html);
 });
 
 barba.hooks.enter((data) => {
@@ -201,6 +207,8 @@ barba.hooks.after((data) => {
     initMaps();
     initForms();
     WSFormCollapse();
+    // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
+    if (document.body.classList.contains('single-property')) new singleProperty();
 
     let path = data.next.url.path;
     if (path.includes('/agent/')) {

@@ -1,4 +1,23 @@
 .property {
+    &-header {
+        &__back {
+            .btn {
+                overflow: hidden;
+                // VARs
+                --lines-limit: 1;
+                --line-height: 1.6;
+    
+                // OLD BROWSERs
+                line-height: var(--line-height) !important;
+                max-height: calc(var(--line-height) * var(--lines-limit));
+    
+                // NEW BROWSERs
+                display: -webkit-box;
+                -webkit-line-clamp: var(--lines-limit);
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
     &-gallery {
         &__wrapper {
             position: relative;
@@ -103,16 +122,32 @@
                 z-index: -1;
                 content: '';
                 position: absolute;
-                background: linear-gradient(0deg, rgb(0,0,0,0) 0%, rgb(var(--bs-light-rgb),.8) 40%, rgb(var(--bs-light-rgb),1) 80%, rgb(var(--bs-light-rgb),1) 100%);
+                background: linear-gradient(0deg, rgb(0,0,0,0) 0%, rgb(var(--bs-light-rgb),.8) 30%, rgb(var(--bs-light-rgb),1) 80%, rgb(var(--bs-light-rgb),1) 100%);
                 left: calc( -1 * (var(--bs-gutter-x)*0.5) );
                 right: calc( -1 * (var(--bs-gutter-x)*0.5) );
                 top: calc( -1 * (var(--bs-gutter-x)) );
-                bottom: 0;
+                bottom: calc( -1 * (var(--bs-gutter-x)) );
+            }
+        }
+        &__basic {
+            .col {
+                position: relative;
+                &:not(:last-child)::after {
+                    content: '|';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
             }
         }
         &__features {
             ul {
+                padding-left: 1rem;
                 columns: 3;
+
+                li {
+                    list-style-type: "·  ";
+                }
 
                 @media screen and (max-width: 992px) {
                     columns: 2;
@@ -121,7 +156,7 @@
         }
         &__area {
             .map {
-                min-height: 300px;
+                min-height: 350px;
                 position: relative;
                 background-position: center;
                 background-size: cover;
@@ -149,6 +184,8 @@
             --bs-btn-padding-x: 0.675rem;
             letter-spacing: -0.0063rem;
         }
+    }
+    &-sidebar {
         &__favorite {
             .add-to-favorites {
                 position: relative;

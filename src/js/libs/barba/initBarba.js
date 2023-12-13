@@ -13,6 +13,7 @@ export default function initBarba() {
 		prevent: ({ el }) =>
 			el.classList.contains("ab-item") ||
 			el.classList.contains("glightbox") ||
+			el.classList.contains("barbaless") ||
 			el.hasAttribute("data-gallery-name"),
 
 		transitions: [

@@ -1,44 +1,10 @@
 <?php
 $property = new koble_Property();
 $features = $property->get_terms('property-features');
-$listing = get_post_field('post_name', get_option('koble-searchform')['listing-page']);
-$location = $property->get_subterm('property-locations');
-$type = $property->get_subterm('property-types');
-$location_slug = $property->get_subterm('property-locations', 'slug');
-$type_slug = $property->get_subterm('property-types', 'slug');
 ?>
 
 <!-- SINGLE PROPERTY - HEADER -->
-<section class="property-header">
-    <div class="container-wide">
-        <div class="row">
-            <div class="single-header__breadcrumbs heading-font col-md mb-30 font-size-30 font-size-md-32">
-                <i class="icon icon-arrow-sm-left"></i>
-                <a class="single-header__breadcrumbs--location btn btn-link underline p-0 pt-0" href="<?= sprintf('/%s/?property-locations=%s', $listing, $location_slug); ?>">
-                    <span><?= $location ?></span>
-                </a>
-                <span>/</span>
-                <a class="single-header__breadcrumbs--type btn btn-link underline p-0 pt-0" href="<?= sprintf('/%s/?property-locations=%s&property-types=%s', $listing, $location_slug, $type_slug); ?>">
-                    <span><?= $type ?></span>
-                </a>
-            </div><!-- !.__breadcrumbs -->
-            <div class="single-header__share d-none d-md-flex col-md-auto">
-                <a href="<?= $property->generate_pdf_link() ?>" target="_blank" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
-                    <i class="icon icon-file-pdf-outline-64 fs-20 text-primary me-8 pos-absolute end-100"></i>
-                    <?= __('Print', 'koble'); ?>
-                </a>
-                <a href="#shareModal" data-bs-toggle="modal" role="button" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
-                    <i class="icon icon-data-upload-outline-64 fs-20 text-primary me-8 pos-absolute end-100"></i>
-                    <?= __('Share', 'koble'); ?>
-                </a>
-                <a href="#" class="btn btn-link underline ms-16 font-size-16 px-0 py-0">
-                    <?php #echo do_shortcode('[koble_favorites]') ?>
-                    <?= __('Favorite', 'koble'); ?>
-                </a>
-            </div><!-- !.__share -->
-        </div>
-    </div>
-</section><!-- !.single-header -->
+<?php get_template_part('templates/property-header', null, ['property' => $property]) ?>
 
 <!-- SINGLE PROPERTY - GALLERY -->
 <section class="property-gallery mb-40">
@@ -54,7 +20,8 @@ $type_slug = $property->get_subterm('property-types', 'slug');
             <div class="property-content__data sticky__track order-2 order-lg-1 col-lg-8">
 
                 <div class="property-content__sticky sticky__item row row-cols-auto justify-content-between">
-                    <div class="location col">
+                    <div class="location col has-icon">
+                        <i class="icon icon-pin-3-1 fs-24 text-primary"></i>
                         <span class="fw-bolder fs-20"><?= $property->get_term('property-locations') ?></span>
                     </div>
                     <div class="type col">
@@ -116,12 +83,9 @@ $type_slug = $property->get_subterm('property-types', 'slug');
 
                 <?php endif; ?>
 
-                <div class="property-content__area my-60">
-                    <h3 class="fs-20 text-primary mb-20"><?= __('Area', 'koble'); ?></h3>
-                    <?= $property->get_map() ?>
-                </div><!-- !._area -->
-
-                <div class="property-content__downloads my-60 p-24 bg-white">
+                <?= $property->get_map() ?>
+                
+                <div class="property-content__downloads mt-60 p-24 bg-white">
                     <h3 class="fs-20 text-primary mb-24"><?= __('Downloads', 'koble'); ?></h3>
                     <div class="row gx-8">
                         <div class="col-md mb-24 mb-md-0">

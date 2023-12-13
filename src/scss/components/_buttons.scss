@@ -11,6 +11,11 @@
             text-decoration: underline;
         }
     }
+
+    &:not(.btn-link):hover {
+        --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+        transition-property: background-color, border-color;
+    }
 }
 
 .has-icon {

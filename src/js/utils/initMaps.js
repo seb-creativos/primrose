@@ -98,7 +98,7 @@ function createMarker(location, map) {
 			? {
 					url: icon,
 					labelOrigin: { x: -100, y: 16 },
-			  }
+			}
 			: null,
 		title: title,
 		map: map,
@@ -112,7 +112,8 @@ function createMarker(location, map) {
 }
 
 export default function initMaps() {
-	const mapElements = document.querySelectorAll(".map");
+	const mapElements = document.querySelectorAll(".map:not(.on-demand)");
+	console.log(mapElements);
 
 	if (mapElements.length) {
 		mapElements.forEach(initMap);
