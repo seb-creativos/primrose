@@ -51,7 +51,7 @@ export default class singleProperty {
 
 		new google.maps.Circle({
 			center: mapOptions.center,
-			radius: 1000,
+			radius: 500,
 			fillColor: '#A02245',
 			strokeColor: '#A02245',
 			strokeWeight: 0,
