@@ -50,7 +50,7 @@ import {
 
 // Utilities
 import getHeight from "./utils/getHeight";
-import initVideos from "./utils/initVideos";
+// import initVideos from "./utils/initVideos";
 import initMaps from "./utils/initMaps";
 import initForms from "./utils/initForms";
 import exitLoader from "./utils/exitLoader";
@@ -74,7 +74,7 @@ function documentReady() {
 
     initGsap();
     // initSwipers();
-    initVideos();
+    // initVideos();
     // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     anchorSetupListeners();
@@ -202,7 +202,7 @@ barba.hooks.after((data) => {
     updateTriggers();
 
     // initSwipers();
-    initVideos();
+    // initVideos();
     initGLightbox();
     initMaps();
     initForms();
