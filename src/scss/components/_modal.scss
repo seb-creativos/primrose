@@ -1,0 +1,6 @@
+.modal {
+    z-index: var(--layer--above-all);
+    &-backdrop {
+        z-index: calc( var(--layer--above-all) - 1 );
+    }
+}

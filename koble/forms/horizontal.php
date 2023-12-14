@@ -8,13 +8,13 @@ $fields = new koble_Fields();
     <div class="row">
 
         <div class="col-md">
-            <?php $fields->get_field('property-types', 'checkbox-dropdown'); ?>
+            <?php $fields->get_field('property-types', 'checkbox-popup'); ?>
         </div>            
         <div class="col-6 col-md">
             <?php $fields->get_field('min-bedrooms', 'number'); ?>
         </div>
         <div class="col-6 col-md">
-            <?php $fields->get_field('property-locations', 'checkbox-dropdown'); ?>
+            <?php $fields->get_field('property-locations', 'checkbox-popup'); ?>
         </div>
         <div class="col-6 col-md">
             <?php $fields->get_field('price', 'price-range'); ?>

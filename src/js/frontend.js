@@ -54,6 +54,7 @@ import getHeight from "./utils/getHeight";
 import initMaps from "./utils/initMaps";
 import initForms from "./utils/initForms";
 import exitLoader from "./utils/exitLoader";
+import betterModals from "./utils/betterModals";
 import betterOffcanvas from "./utils/betterOffcanvas";
 import getScrollProgress from "./utils/getScrollProgress";
 import {
@@ -62,6 +63,7 @@ import {
 } from "./utils/anchorsManager";
 import FPSMeter from "./utils/fpsMeter.js";
 import singleProperty from "./utils/singleProperty.js";
+import appendToBody from "./utils/appendToBody.js";
 
 // ======================
 // EVENT LISTENERS
@@ -97,6 +99,7 @@ function windowLoad() {
     initGLightbox();
     initMaps();
     betterOffcanvas();
+    betterModals();
     WSFormCollapse();
 
     let path = window.location.pathname;
