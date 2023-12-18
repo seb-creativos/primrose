@@ -19,6 +19,7 @@ import "../scss/frontend.scss";
 import barba from "@barba/core";
 import initBarba from "./libs/barba/initBarba";
 // import barbaBackButton from "./barba/barbaBackButton";
+import barbaUpdateClasses from "./libs/barba/barbaUpdateClasses.js";
 
 // GSAP
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -36,17 +37,24 @@ import {
 // import { initSwipers } from "./swiper/initSwipers";
 
 // Mouse Follower
-import initMouseFollower from "./libs/mouseFollower";
+// import initMouseFollower from "./libs/mouseFollower";
 
 // GLightbox
 import initGLightbox from "./libs/gLightbox";
 
+// WSForm Custom modifications
+import {
+    WSFormCollapse,
+    WSFormAgent,
+} from "./libs/WSForm";
+
 // Utilities
 import getHeight from "./utils/getHeight";
-import initVideos from "./utils/initVideos";
+// import initVideos from "./utils/initVideos";
 import initMaps from "./utils/initMaps";
 import initForms from "./utils/initForms";
 import exitLoader from "./utils/exitLoader";
+import betterModals from "./utils/betterModals";
 import betterOffcanvas from "./utils/betterOffcanvas";
 import getScrollProgress from "./utils/getScrollProgress";
 import {
@@ -54,6 +62,8 @@ import {
     anchorExecuteExternal,
 } from "./utils/anchorsManager";
 import FPSMeter from "./utils/fpsMeter.js";
+import singleProperty from "./utils/singleProperty.js";
+import appendToBody from "./utils/appendToBody.js";
 
 // ======================
 // EVENT LISTENERS
@@ -66,12 +76,20 @@ function documentReady() {
 
     initGsap();
     // initSwipers();
-    initVideos();
-    if (!ScrollTrigger.isTouch) initMouseFollower();
+    // initVideos();
+    // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     anchorSetupListeners();
+    betterModals();
 
-    new FPSMeter();
+    // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
+    if (document.body.classList.contains('single-property')) new singleProperty();
+
+    if (DEBUG) new FPSMeter();
+    
+    // Back To Top button functionality
+    const btt = document.querySelector('.back-to-top');
+    btt?.addEventListener('click', () => { scrollTo(0) });
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
@@ -82,6 +100,12 @@ function windowLoad() {
     initGLightbox();
     initMaps();
     betterOffcanvas();
+    WSFormCollapse();
+
+    let path = window.location.pathname;
+    if (path.includes('/agent/')) {
+        WSFormAgent();
+    }
 
     exitLoader();
 }
@@ -139,49 +163,61 @@ barba.hooks.beforeLeave(() => {
 
 barba.hooks.leave((data) => {
     if (DEBUG) console.log(`Leaving: ${data.current.namespace}`);
+    if (data.current.namespace === 'Home') {
+        document.body.classList.remove('home');
+    }
 });
 
 barba.hooks.afterLeave(() => {
     if (DEBUG) console.log("afterLeave");
     killTriggers();
+    // Restart window position on page change
+    // scrollTo(0, false);
 });
 
-barba.hooks.beforeEnter(() => {
+barba.hooks.beforeEnter((data) => {
     if (DEBUG) console.log(`beforeEnter`);
+    barbaUpdateClasses(data.next.html);
 });
 
 barba.hooks.enter((data) => {
     if (DEBUG) console.log(`Entering: ${data.next.namespace}`);
+    if (data.next.namespace === 'Home') {
+        document.body.classList.add('home');
+    }
 });
 
 barba.hooks.afterEnter(() => {
     if (DEBUG) console.log(`afterEnter`);
 });
 
-barba.hooks.after(() => {
+barba.hooks.after((data) => {
     if (DEBUG) console.log("after");
 
     // Reattach event listeners for anchor links
     anchorSetupListeners();
 
     // Other setup after entering a new page
-    if (!ScrollTrigger.isTouch) initMouseFollower();
+    // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     initTriggers();
     updateEffects();
     updateTriggers();
 
     // initSwipers();
-    initVideos();
+    // initVideos();
     initGLightbox();
     initMaps();
     initForms();
-    // barbaBackButton();
+    WSFormCollapse();
+    betterModals();
+    // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
+    if (document.body.classList.contains('single-property')) new singleProperty();
 
-    // if (!window.isBackButtonClicked) {
-    scrollTo(0, false);
-    // }
-    // window.isBackButtonClicked = false;
+    let path = data.next.url.path;
+    if (path.includes('/agent/')) {
+        WSFormAgent();
+    }
 
     anchorExecuteExternal();
 });

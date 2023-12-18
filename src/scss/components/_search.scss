@@ -1,0 +1,33 @@
+.property-search {
+    &__wrapper {
+        --bg-color: var(--header-color);
+        background-color: rgb(var(--bg-color), 100%);
+    }
+
+    &-form {
+        &.sortby {
+            #sortby {
+                border: 0;
+                font-weight: 500;
+                color: var(--bs-primary);
+            }
+        }
+    }
+
+    .form-control {
+        --text-color: var(--bs-primary-rgb);
+        --border-color: var(--bs-primary);
+
+        width: 100%;
+        height: 50px;
+
+        text-align: center;
+        color: rgb(var(--text-color), 100%);
+        background-color: transparent;
+        border: 1px solid var(--border-color);
+
+        &::placeholder {
+            color: rgb(var(--text-color), 70%);
+        }
+    }
+}

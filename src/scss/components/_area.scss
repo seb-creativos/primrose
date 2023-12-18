@@ -1,0 +1,10 @@
+.area {
+    &__nav {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+            list-style-type: none;
+        }
+    }
+}

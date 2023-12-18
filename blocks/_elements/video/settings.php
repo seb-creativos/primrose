@@ -29,7 +29,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
                 'max_file_uploads'  => 1,
                 'max_status'        => false,
             ],
-            create_switch_field( 'Advanved Settings', 'advanced' ),
+            create_switch_field( 'Advanced Settings', 'advanced' ),
             [
                 'id'        =>  'video-settings',
                 'type'      =>  'group',

@@ -1,0 +1,16 @@
+.parallax {
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+    &__element {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 120%;
+        max-height: 150%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

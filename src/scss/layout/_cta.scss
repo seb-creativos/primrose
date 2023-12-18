@@ -1,0 +1,45 @@
+.siteCta {
+    position: fixed;
+    right: 0;
+    top: 55%;
+    z-index: var(--layer--above-bs);
+
+    background-color: rgb(var(--header-color), 100%);
+    border-radius: 24px 0 0 24px;
+    box-shadow: 0 0 40px rgb(0 0 0 / 5%);
+    color: var(--bs-primary);
+
+    &__wrapper {
+        list-style-type: none;
+    }
+    &__item {
+        a {
+            display: block;
+            line-height: 0;
+        }
+        .icon {
+            font-size: 1.125rem !important;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var(--bs-primary);
+            transition: color var(--theme-trans),transform var(--theme-trans);
+        }
+        &:not(:last-child){
+            border-bottom: 1px solid var(--bs-primary);
+        }
+
+        &:hover {
+            .icon {
+                color: var(--bs-primary);
+            }
+        }
+        // inner border fix for email item
+        &--email {
+            &:hover {
+                .icon {
+                    -webkit-text-stroke-color: white;
+                }
+            }
+        }
+    }
+}

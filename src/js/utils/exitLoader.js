@@ -3,26 +3,24 @@
  * goes away as soon as the page is loaded.
  * Remove it from the DOM after X seconds, just in case.
  */
-const exitLoader = () => {
-	const loaderElement = document.querySelector(`#siteLoader`);
+export default function exitLoader() {
+    const loaderElement = document.querySelector(`#siteLoader`);
 
-	if (loaderElement) {
-		const bodyElement = document.querySelector(`body`);
-		bodyElement.classList.add(`page--loaded`);
+    if (loaderElement) {
+        const rootElement = document.querySelector(`html`);
+        rootElement.classList.add(`page--loaded`);
 
-		if (window.DEBUG) {
-			console.log(`Loader has been dismissed.`);
-		}
+        if (window.DEBUG) {
+            console.log(`Loader has been dismissed.`);
+        }
 
-		// Escape the Loader
-		setTimeout(() => {
-			loaderElement.remove();
+        // Escape the Loader
+        setTimeout(() => {
+            loaderElement.remove();
 
-			if (window.DEBUG) {
-				console.log(`Loader has been destroyed.`);
-			}
-		}, 7000);
-	}
-};
-
-export default exitLoader;
+            if (window.DEBUG) {
+                console.log(`Loader has been destroyed.`);
+            }
+        }, 7000);
+    }
+}

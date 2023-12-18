@@ -5,9 +5,9 @@
  * The scrollable area is the total height of the document minus the viewport height.
  */
 const getScrollProgress = () => {
-	const scrollProgressElement = document.querySelector(".scroll-progress");
+	const scrollProgressElements = document.querySelectorAll(".scroll-progress, .scroll-reactive");
 
-	if (scrollProgressElement) {
+	scrollProgressElements.forEach( scrollProgressElement => {
 		const documentScrollableArea =
 			document.documentElement.scrollHeight - window.innerHeight;
 		const currentScrollProgress = window.scrollY / documentScrollableArea;
@@ -16,7 +16,7 @@ const getScrollProgress = () => {
 			`--progress`,
 			`${currentScrollProgress}`
 		);
-	}
+	})
 };
 
 export default getScrollProgress;

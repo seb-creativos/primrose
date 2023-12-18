@@ -1,16 +1,36 @@
 .btn {
-    text-transform: uppercase;
+    --bs-btn-font-weight: 300;
     letter-spacing: 0.075em;
     outline: none;
+
+    &-link {
+        --link-color: var(--bs-primary-rgb);
+        padding: 0;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+
+    &:not(.btn-link):hover {
+        --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+        transition-property: background-color, border-color;
+    }
 }
 
-.btn-link {
-    padding: 0;
-}
-
-.btn.has-icon {
+.has-icon {
     display: inline-flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.25em;
     width: max-content;
+}
+
+.collapseWrapper {
+    .btn {
+        &.selected {
+            color: var(--bs-btn-hover-color);
+            background-color: var(--bs-btn-hover-bg);
+            border-color: var(--bs-btn-hover-border-color);
+        }
+    }
 }

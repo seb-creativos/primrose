@@ -1,7 +1,7 @@
 				</main> <!-- #siteMain -->
 
 				<!-- Footer -->
-				<footer id="siteFooter">
+				<footer id="siteFooter" class="reveal__container bg-primary text-white py-60">
 					<?php render_pattern('Footer') ?>
 				</footer>
 
@@ -13,6 +13,7 @@
 				-->
 				<div class="d-none">
 					<?= do_shortcode('[ws_form id="1"]') ?>
+					<?= do_shortcode('[ws_form id="2"]') ?>
 				</div>
 
 			</div> <!-- #smooth-content -->

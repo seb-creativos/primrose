@@ -1,7 +1,7 @@
 <?php
 
-add_filter( 'rwmb_meta_boxes', 'barbasap_register_meta_boxes' );
-function barbasap_register_meta_boxes( $meta_boxes ) {
+add_filter( 'rwmb_meta_boxes', 'primrose_register_meta_boxes' );
+function primrose_register_meta_boxes( $meta_boxes ) {
     $meta_boxes[] = array(
         'title'      => 'Custom Settings',
         'post_types' => 'page',

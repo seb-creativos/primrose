@@ -14,7 +14,7 @@ const projectFiles = {
         port: 3000,
 
         mode: "proxy",
-        proxy: "http://barbasap.faster",
+        proxy: "http://primrose.local",
 
         // files: "**/*.php",
         // reload: true,
@@ -45,7 +45,7 @@ const projectFiles = {
         use: "sass", // sass || postcss
         rules: {
             sass: {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
             },
             postcss: {
                 test: /\.pcss$/,

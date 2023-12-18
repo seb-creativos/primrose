@@ -48,11 +48,12 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
                             'btn-secondary' =>  'Secondary',
                             'btn-dark'      =>  'Dark',
                             'btn-light'     =>  'Light',
+                            'with-chev'     =>  'With chevron',
                             'raw'           =>  'Raw'
                         ],
                         'std'               =>  'raw',
                     ],
-                    create_switch_field( 'Advanved Settings', 'advanced' ),
+                    create_switch_field( 'Advanced Settings', 'advanced' ),
                     [
                         'id'        =>  'link-settings',
                         'type'      =>  'group',

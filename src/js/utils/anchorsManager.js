@@ -68,7 +68,6 @@ export function anchorExecuteInternalSetupExternal(event) {
 		// Check if the link is for an anchor on a different page (external anchor)
 		else if (baseUrl) {
 			sessionStorage.setItem("externalAnchor", anchor);
-			barba.go(baseUrl);
 		}
 	}
 }
@@ -85,8 +84,9 @@ export function anchorExecuteExternal() {
 		if (targetElement) {
 			scrollTo(targetElement, false);
 		}
-
 		// Clear the stored anchor
 		sessionStorage.removeItem("externalAnchor");
+	} else {
+		scrollTo(0, false);
 	}
 }

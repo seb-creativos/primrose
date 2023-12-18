@@ -4,6 +4,9 @@ export default function initGsapSticker() {
 	function gsapSticker(section) {
 		const element = gsap.utils.toArray(".sticky__item", section);
 
+		const topGutter =
+			gsap.getProperty(":root", "--siteHeader-height") + 20;
+
 		ScrollTrigger.create({
 			// markers: true,
 			id: `Sticking`,
@@ -12,8 +15,7 @@ export default function initGsapSticker() {
 			pin: element[0],
 
 			// TOP TOP
-			start: () =>
-				`-=${gsap.getProperty(":root", "--siteNavbar-height")}`,
+			start: () => `-=${topGutter}`,
 			end: () => `+=${section.offsetHeight - element[0].offsetHeight}`,
 
 			// TOP CENTER

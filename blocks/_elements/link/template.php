@@ -12,7 +12,7 @@
     $link_type = $link['link-type'] ?? '';
     $is_external = $link['link-settings']['is-external'] ?? '';
     $classes = $link['link-settings']['classes'] ?? '';
-    $classes = trim( ($link_type !== 'raw' ? "btn $link_type" : '') . " $classes");
+    $classes = trim( (($link_type !== 'raw' && $link_type !== 'with-chev') ? "btn $link_type" : '') . " $classes");
     $attributes = $link['link-settings']['attributes'] ?? '';
     ?>
 
@@ -25,6 +25,7 @@
             <?= $attributes ?>
         >
             <?= $link_label ?>
+            <?= $link_type === 'with-chev' ? '<i class="icon icon-arrow-sm-right"></i>' : '' ?>
         </a>
 
     <?php endif ?>

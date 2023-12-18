@@ -1,0 +1,43 @@
+.team {
+    &__pfp {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--bs-dark);
+            opacity: 0;
+            transition: opacity 500ms var(--easeOut);
+        }
+        p {
+            position: absolute;
+            bottom: 1.5rem;
+            width: 100%;
+            text-align: center;
+
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 500ms var(--easeOut),
+                        transform 500ms var(--easeOut);
+        }
+        &:hover, &--hover {
+            &::after {
+                opacity: .4;
+            }
+            p {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.agent {
+    .wsf-field {
+        &:focus, &:not(:placeholder-shown) {
+            & + label {
+                background-color: var(--bs-light) !important;
+            }
+        }
+    }
+}

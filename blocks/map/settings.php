@@ -41,7 +41,7 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
                 'std'           => '36.6669397, -4.4776874, 15',
                 'api_key'       => get_option('map_api_key', 'AIzaSyBY4Y942umBAtFyrAyHtp69JehsJRPyPSQ'),
             ],
-            create_switch_field( 'Advanved Settings', 'advanced' ),
+            create_switch_field( 'Advanced Settings', 'advanced' ),
             [
                 'id'        =>  'map-settings',
                 'type'      =>  'group',

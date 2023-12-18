@@ -21,6 +21,7 @@
 @import "typography";
 
 @import "layout/header";
+@import "layout/cta";
 @import "layout/main";
 @import "layout/footer";
 
@@ -28,29 +29,39 @@
 @import "components/marquee";
 @import "components/gdpr";
 @import "components/offcanvas";
+@import "components/modal";
 @import "components/dropdown";
 @import "components/buttons";
 @import "components/icons/hamburger-icon";
 @import "components/icons/plus-icon";
 @import "components/decoration-filter";
 @import "components/decoration-noise";
+@import "components/decoration-svg";
 @import "components/has-border";
 @import "components/has-gradient";
 @import "components/has-shadow";
 @import "components/hzscroll";
 @import "components/scroll-progress";
+@import "components/scroll-reactive";
 @import "components/strikewrap";
 @import "components/comparison";
 @import "components/has-glass";
+@import "components/search";
+@import "components/parallax";
 @import "components/reveal";
 @import "components/adminbar";
+
+@import "components/area";
+@import "components/agent";
+@import "components/listing";
+@import "components/property";
 
 // @import "libs/swiper";
 @import "libs/cmplz";
 @import "libs/odometer";
 
-@import "mouse-follower/src/scss/index";
-@import "libs/mouse-follower";
+// @import "mouse-follower/src/scss/index";
+// @import "libs/mouse-follower";
 
 @import "glightbox/dist/css/glightbox.min.css";
 @import "libs/glightbox";
