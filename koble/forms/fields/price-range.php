@@ -9,8 +9,8 @@ $max_price_value = isset($_REQUEST['max-price']) ? $_REQUEST['max-price'] : fals
 
 ?>
 <div class="checkbox-popup pos-relative" data-id-field="field-<?= $data['source'] ?>">
-    <input type="hidden" class="form-control" name="min-price" id="minPrice-field" value="<?= $min_price_value ?>">
-    <input type="hidden" class="form-control" name="max-price" id="maxPrice-field" value="<?= $max_price_value ?>">
+    <input type="hidden" class="form-control" name="min-price" id="minPrice-field" value="<?= $min_price_value ?? '' ?>">
+    <input type="hidden" class="form-control" name="max-price" id="maxPrice-field" value="<?= $max_price_value ?? '' ?>">
     <input type="text" class="form-control br-0 MinMaxPriceText" placeholder="<?= __('Price Range', 'koble') ?>" >
     <a class="cbpopup-btn" role="button" data-bs-toggle="modal" data-bs-target="#<?= $data['source'] ?>-modal"></a>
 
