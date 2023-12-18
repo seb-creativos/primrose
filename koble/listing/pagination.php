@@ -9,12 +9,12 @@ $format = '&page=%#%';
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ): 1;
 ?>
 
-<div class="pagination text-center justify-content-center">
+<div class="pagination d-flex justify-content-center gap-30 mt-60 mb-120">
     <?= paginate_links( array(
         'current'    => max( 1, $paged ),
         'total'      => $max_page,
         'show_all'   => false,
-        'mid_size'   => 3,
+        'mid_size'   => 2,
         'prev_text'  => __('<'),
         'next_text'  => __('>'),
     ) ) ?>

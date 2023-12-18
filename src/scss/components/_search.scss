@@ -4,6 +4,16 @@
         background-color: rgb(var(--bg-color), 100%);
     }
 
+    &-form {
+        &.sortby {
+            #sortby {
+                border: 0;
+                font-weight: 500;
+                color: var(--bs-primary);
+            }
+        }
+    }
+
     .form-control {
         --text-color: var(--bs-primary-rgb);
         --border-color: var(--bs-primary);

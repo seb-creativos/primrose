@@ -1,4 +1,4 @@
-<form class="property-search-form sortby" method="GET" action="<?= get_permalink() ?>">
+<form class="property-search-form sortby text-primary mb-24" method="GET" action="<?= get_permalink() ?>">
 
     <label class="d-inline-block" for="<?= $data['source'] ?>">
         <?= __('Sorted by:', 'koble') ?>

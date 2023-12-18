@@ -13,3 +13,10 @@
         }
     }
 }
+.pagination {
+    .current {
+        font-weight: bold;
+        color: var(--bs-primary);
+        // color: #B1B1B1;
+    }
+}

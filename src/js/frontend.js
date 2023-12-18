@@ -80,6 +80,7 @@ function documentReady() {
     // if (!ScrollTrigger.isTouch) initMouseFollower();
 
     anchorSetupListeners();
+    betterModals();
 
     // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
     if (document.body.classList.contains('single-property')) new singleProperty();
@@ -99,7 +100,6 @@ function windowLoad() {
     initGLightbox();
     initMaps();
     betterOffcanvas();
-    betterModals();
     WSFormCollapse();
 
     let path = window.location.pathname;
@@ -210,6 +210,7 @@ barba.hooks.after((data) => {
     initMaps();
     initForms();
     WSFormCollapse();
+    betterModals();
     // INITIALIZATION: ONLY ON SINGLE PROPERTY PAGE
     if (document.body.classList.contains('single-property')) new singleProperty();
 

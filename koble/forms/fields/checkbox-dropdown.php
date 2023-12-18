@@ -4,11 +4,11 @@ $taxonomy = get_taxonomy($data['source']);
 
 ?>
 <div class="dropdown">
-    <input type="hidden" class="form-control" name="<?php echo $data['source'] ?>" id="<?php echo $data['source'] ?>-field" placeholder="<?php echo __($data['label'], 'koble') ?>" value="">
-    <input type="text" class="form-control" id="<?php echo $data['source'] ?>-text" placeholder="<?php echo __($data['label'], 'koble') ?>" >
-    <a class="dropdown-btn" id="<?php echo $data['source'] ?>-dropdown"" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+    <input type="hidden" class="form-control" name="<?= $data['source'] ?>" id="<?= $data['source'] ?>-field" placeholder="<?= __($data['label'], 'koble') ?>" value="">
+    <input type="text" class="form-control br-0" id="<?= $data['source'] ?>-text" placeholder="<?= __($data['label'], 'koble') ?>" >
+    <a class="dropdown-btn" id="<?= $data['source'] ?>-dropdown"" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
 
-    <div class="dropdown-menu" data-items-selected="<?php _e($taxonomy->labels->name . ' selected', 'koble') ?>" data-field="<?php echo $data['source'] ?>" aria-labelledby="#<?php echo $data['source'] ?>-dropdown">
+    <div class="dropdown-menu" data-items-selected="<?php _e($taxonomy->labels->name . ' selected', 'koble') ?>" data-field="<?= $data['source'] ?>" aria-labelledby="#<?= $data['source'] ?>-dropdown">
         <div class="dropdown-header">
             <input type="text" class="search-dropdown form-control" autofocus>
         </div>
@@ -23,8 +23,8 @@ $taxonomy = get_taxonomy($data['source']);
                     <div class="option-group">
                         <ul>
                             <li class="parent" >
-                                <input type="checkbox" <?php echo $selected ?> data-field="<?php echo $data['source'] ?>" data-label="<?php echo __($option['label'], 'koble') ?>" data-value="<?php echo $option['value'] ?>" id="option-<?php echo $uniqId ?>">
-                                <label for="option-<?php echo $uniqId ?>"> <?php _e($option['label'],'koble') ?> </label>
+                                <input type="checkbox" <?= $selected ?> data-field="<?= $data['source'] ?>" data-label="<?= __($option['label'], 'koble') ?>" data-value="<?= $option['value'] ?>" id="option-<?= $uniqId ?>">
+                                <label for="option-<?= $uniqId ?>"> <?php _e($option['label'],'koble') ?> </label>
                             </li>
                             <?php foreach ($option['childrens'] as $option) :?>
                                 <?php
@@ -32,8 +32,8 @@ $taxonomy = get_taxonomy($data['source']);
                                     $selected = (isset($_REQUEST[$data['source']]) && in_array($option['value'], explode(',', $_REQUEST[$data['source']]) ) !== false ) ? 'checked' : '';   
                                 ?>
                                 <li class="child" >
-                                    <input type="checkbox" <?php echo $selected ?> data-field="<?php echo $data['source'] ?>" data-label="<?php echo __($option['label'], 'koble') ?>" data-value="<?php echo $option['value'] ?>" id="option-<?php echo $uniqId ?>">
-                                    <label for="option-<?php echo $uniqId ?>"> <?php _e($option['label'],'koble') ?> </label>
+                                    <input type="checkbox" <?= $selected ?> data-field="<?= $data['source'] ?>" data-label="<?= __($option['label'], 'koble') ?>" data-value="<?= $option['value'] ?>" id="option-<?= $uniqId ?>">
+                                    <label for="option-<?= $uniqId ?>"> <?php _e($option['label'],'koble') ?> </label>
                                 </li>
                                 
                             <?php endforeach; ?>

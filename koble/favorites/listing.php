@@ -16,7 +16,7 @@ $fields = new koble_Fields();
         <div class="col-md-12 listing-top_bar p-10 mb-10">
             <div class="row">
                 <div class="col-md-6">
-                    <span><?php echo sprintf(__('You have %s favourite properties'), $query->found_posts); ?></span>
+                    <span><?= sprintf(__('You have %s favourite properties'), $query->found_posts); ?></span>
                 </div>
                 <div class="col-md-6">
                     <?php $fields->get_field('sortby'); ?>

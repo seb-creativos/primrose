@@ -7,9 +7,9 @@ if( isset($options['favorite-page']) ):
     $show = ( $favorites->found_posts > 0) ? 'show' : ''; 
     ?>
     
-    <a href="<?php echo $link ?>" class="favorites-count <?php echo $show ?> ">
+    <a href="<?= $link ?>" class="favorites-count <?= $show ?> ">
         <i class="icon icon-hearts-suit-1 font-size--28"></i>
-        <span class="number font-size--12"><?php echo $favorites->found_posts ?></span>
+        <span class="number font-size--12"><?= $favorites->found_posts ?></span>
     </a>
 
     
