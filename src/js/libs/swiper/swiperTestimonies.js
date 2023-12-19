@@ -1,5 +1,6 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
 
 export default {
 	selector: ".swiper-testimonies",
@@ -16,29 +17,26 @@ export default {
 			pauseOnMouseEnter: true,
 		},
 
-		// Navigation
-		navigation: {
-			prevEl: ".swiper-button--prev",
-			nextEl: ".swiper-button--next",
-		},
-
 		// Pagination
 		pagination: {
 			el: ".swiper-pagination",
-			type: "fraction",
+			dynamicBullets: false,
 		},
 
 		// Responsive
 		breakpoints: {
 			768: {
 				slidesPerView: 2,
+				slidesPerGroup: 2,
 			},
 			992: {
 				slidesPerView: 2,
+				slidesPerGroup: 2,
 				spaceBetween: 100,
 			},
 			1600: {
 				slidesPerView: 2,
+				slidesPerGroup: 2,
 				spaceBetween: 300,
 			},
 		},
