@@ -14,6 +14,7 @@
 				<div class="d-none">
 					<?= do_shortcode('[ws_form id="1"]') ?>
 					<?= do_shortcode('[ws_form id="2"]') ?>
+					<?= do_shortcode('[ws_form id="3"]') ?>
 				</div>
 
 			</div> <!-- #smooth-content -->

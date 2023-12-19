@@ -2,9 +2,15 @@ import Swiper from "swiper";
 
 import swiperExample from "./swiperExample";
 import swiperTestimonies from "./swiperTestimonies";
+import {swiperPropertyThumbs, swiperPropertySingle} from "./swiperPropertySingle";
 
 // Declare an array of the configuration objects for the Swiper instances.
-const swiperConfigs = [swiperExample, swiperTestimonies];
+const swiperConfigs = [
+	swiperExample, 
+	swiperTestimonies,
+	swiperPropertyThumbs,
+	swiperPropertySingle
+];
 
 // Declare an object to keep track of the active Swiper instances. The keys are selectors and the values are Swiper instances.
 const swiperInstances = {};

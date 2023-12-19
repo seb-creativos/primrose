@@ -19,14 +19,22 @@ $plans = wp_get_attachment_url($property->get_field('property-plans')) ?? false;
     <div class="property-gallery__item main">
         <?php #do_shortcode('[koble_favorites]') ?>
 
-        <?php if( isset($images[0]) ): ?>
-            <img src="<?= $images[0] ?>" class="glightbox" alt="Property Image">
+        <?php if( isset($images) ): ?>
+            <div class="swiper-single swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach( $images as $image ): ?>
+                        <img src="<?= $image ?>" class="glightbox swiper-slide" alt="Property Image">
+                    <?php endforeach; ?>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         <?php endif; ?>
 
         <div class="property-gallery__btns row row-cols-4 g-16 m-0 px-8">
             <?php if($video): ?>
                 <div class="col my-16">
-                    <a href="#" data-src="<?= $video ?>" class="glightbox-video barbaless btn btn-primary has-icon bg w-100 justify-content-center px-8" data-gallery="property-video">
+                    <a href="#" data-src="<?= $video ?>" class="glightbox-video ab-item btn btn-primary has-icon bg w-100 justify-content-center px-8" data-gallery="property-video">
                         <i class="icon icon-media-player d-none d-xl-block font-size-16 me-8"></i>
                         <span>
                             <?= __('View video', 'koble') ?>
@@ -70,23 +78,16 @@ $plans = wp_get_attachment_url($property->get_field('property-plans')) ?? false;
         </div>
     </div>
 
-    <div class="property-gallery__item thumb1">
-        <?php if( isset($images[1]) ): ?>
-            <img src="<?= $images[1] ?>" class="glightbox" alt="Property Image">
+    <div class="property-gallery__item thumbs">
+        <?php if( isset($images) ): ?>
+            <div class="swiper-single--thumbs swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach( $images as $image ): ?>
+                        <img src="<?= $image ?>" class="swiper-slide" alt="Property Image">
+                    <?php endforeach; ?>
+                </div>
+            </div>
         <?php endif; ?>
     </div>
-
-    <div class="property-gallery__item thumb2">
-        <?php if( isset($images[2]) ): ?>
-            <img src="<?= $images[2] ?>" class="glightbox" alt="Property Image">
-        <?php endif; ?>
-    </div>
-
-    <?php if($property->get_total_images() > 3): ?>
-        <!-- rest of the images -->
-        <?php foreach( array_slice($images, 3) as $image ): ?>
-            <div data-src="<?= $image ?>" class="d-none glightbox"></div>
-        <?php endforeach; ?>
-    <?php endif; ?>
     
 </div><!-- !.__wrapper -->

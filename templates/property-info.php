@@ -3,6 +3,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body text-center">
+                <?= do_shortcode( '[ws_form id="2"]' ) ?>
             </div>
         </div>
     </div>

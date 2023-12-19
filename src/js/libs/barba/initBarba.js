@@ -10,20 +10,21 @@ export default function initBarba() {
 		debug: window.DEBUG,
 		preventRunning: true,
 
-		prevent: ({ el }) =>
+		prevent: ({ el }) => {(
 			el.classList.contains("ab-item") ||
 			el.classList.contains("glightbox") ||
 			el.classList.contains("barbaless") ||
-			el.hasAttribute("data-gallery-name"),
+			el.hasAttribute("data-gallery-name")
+		)},
 
 		transitions: [
 			{
 				name: "self",
-				leave: ({ current }) =>
-					barbaAnimations.fadeOut(current.container),
-				enter({ next }) {
-					barbaAnimations.fadeIn(next.container);
-				},
+				// leave: ({ current }) =>
+				// 	barbaAnimations.fadeOut(current.container),
+				// enter({ next }) {
+				// 	barbaAnimations.fadeIn(next.container);
+				// },
 			},
 			{
 				name: "fade",
