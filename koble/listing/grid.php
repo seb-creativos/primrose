@@ -6,7 +6,17 @@
     <a class="p-0 d-block h-100" href="<?= get_permalink() ?>" >
 
         <?php #TODO ?>
-        <div style="background-image:url(<?= $property->get_image(); ?>);height:300px;background-size:cover;background-position:cover" ></div>
+        <div class="swiper-grid swiper">
+            <div class="swiper-wrapper">
+                <?php foreach( $property->get_images() as $image ): ?>
+                    <div style="background-image:url(<?= $image ?>);height:300px;background-size:cover;background-position:cover" class="swiper-slide"></div>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-navigation">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
         
         <div class="listing-property__data d-flex flex-column gap-8 text-center">
             <p class="m-0"><?= $property->get_term('property-locations'); ?></p>

@@ -20,11 +20,11 @@ export default function initBarba() {
 		transitions: [
 			{
 				name: "self",
-				// leave: ({ current }) =>
-				// 	barbaAnimations.fadeOut(current.container),
-				// enter({ next }) {
-				// 	barbaAnimations.fadeIn(next.container);
-				// },
+				leave: ({ current }) =>
+					barbaAnimations.fadeOut(current.container),
+				enter({ next }) {
+					barbaAnimations.fadeIn(next.container);
+				},
 			},
 			{
 				name: "fade",
